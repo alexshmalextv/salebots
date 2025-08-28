@@ -143,13 +143,17 @@
       .steps{display:grid; grid-template-columns:repeat(3,1fr)}
       .cases-grid{display:grid; grid-template-columns:repeat(3,1fr)}
       .results-grid{grid-template-columns:repeat(2,1fr)}
-      .cta-grid{display:grid; grid-template-columns:1.2fr .8fr; text-align:left}
+
     }
 
     @media (max-width: 420px){
       .btn{padding:12px 14px}
       .hero{padding-top:64px}
       .nav-cta{flex-direction:column; gap:8px}
+    }
+
+    @media (max-width: 767px){
+      .chart-container{display:none}
     }
   </style>
 </head>
@@ -428,26 +432,13 @@
 
   <section id="cta" class="section">
     <div class="container cta reveal">
-      <div class="cta-grid">
-        <div>
-          <h2>Готовы перестать терять клиентов?</h2>
-          <p class="muted">Аудит за 15 минут: найдём точки роста и покажем, как бот окупится за 2–4 недели.</p>
-          <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; justify-content:center">
-            <a class="btn btn-primary" href="https://t.me/avtohtonny" target="_blank">Написать в Telegram</a>
-            <a class="btn" href="https://wa.me/66836840045?text=Хочу%20аудит%20по%20Salebots" target="_blank">Написать в WhatsApp</a>
-            <a class="btn" href="mailto:hello@salebots.org">hello@salebots.org</a>
-          </div>
-        </div>
-        <div class="screen">
-          <div style="background:#0d141a; padding:18px">
-            <div style="width:220px; margin:0 auto; border:1px solid rgba(255,255,255,.08); border-radius:22px; overflow:hidden">
-              <div style="background:#0f1a22; padding:12px; color:#9FB0C6; text-align:center">Salebots</div>
-              <div style="background:#0b1218; padding:14px; min-height:260px; display:grid; gap:8px">
-                <div style="justify-self:flex-start; max-width:80%; background:#13202b; color:#cfe7ff; padding:8px 10px; border-radius:12px 12px 12px 6px;">Готовы начать?</div>
-                <div style="justify-self:flex-end; max-width:80%; background:#1a3b2f; color:#c9ffe7; padding:8px 10px; border-radius:12px 12px 6px 12px;">Напишите мне в Telegram — отвечу в течение 2 часов.</div>
-              </div>
-            </div>
-          </div>
+      <div style="text-align:center">
+        <h2>Готовы перестать терять клиентов?</h2>
+        <p class="muted">Аудит за 15 минут: найдём точки роста и покажем, как бот окупится за 2–4 недели.</p>
+        <div style="display:flex; gap:10px; margin-top:20px; flex-wrap:wrap; justify-content:center">
+          <a class="btn btn-primary" href="https://t.me/avtohtonny" target="_blank">Написать в Telegram</a>
+          <a class="btn" href="https://wa.me/66836840045?text=Хочу%20аудит%20по%20Salebots" target="_blank">Написать в WhatsApp</a>
+          <a class="btn" href="mailto:hello@salebots.org">hello@salebots.org</a>
         </div>
       </div>
     </div>
