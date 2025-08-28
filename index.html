@@ -92,21 +92,30 @@
     .step{position:relative; padding:24px; background:var(--soft); border-radius:var(--radius); border:1px solid rgba(255,255,255,.08)}
     .step-number{position:absolute; top:12px; right:12px; font-weight:800; color:rgba(255,255,255,.2); font-size:28px}
 
-    .showcase{display:flex; flex-direction:column; gap:18px}
-    .showcase .big{border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.08)}
-    .showcase .stack{display:flex; flex-direction:column; gap:18px}
+    .showcase{display:flex; flex-direction:column; gap:24px}
+    .chart-container{border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.08); background:linear-gradient(180deg, rgba(255,255,255,.03), transparent)}
+    .cases-grid{display:flex; flex-direction:column; gap:18px}
 
     .case-card{background:var(--card); padding:20px; border-radius:var(--radius); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow); position:relative}
     .case-icon{width:48px; height:48px; border-radius:12px; margin-bottom:12px; display:flex; align-items:center; justify-content:center; font-size:24px}
     .case-metric{font-size:28px; font-weight:800; color:var(--brand); margin:8px 0 4px}
 
-    .offer{display:flex; flex-direction:column; gap:18px; align-items:stretch}
-    .price-card{background:linear-gradient(180deg, rgba(111,210,255,.10), rgba(124,245,198,.08)); border:1px solid rgba(255,255,255,.12); padding:26px; border-radius:20px; box-shadow:var(--shadow)}
+    .offer{display:flex; flex-direction:column; gap:18px; align-items:center; max-width:800px; margin:0 auto}
+    .price-card{background:linear-gradient(180deg, rgba(111,210,255,.10), rgba(124,245,198,.08)); border:1px solid rgba(255,255,255,.12); padding:32px; border-radius:20px; box-shadow:var(--shadow); text-align:center; width:100%}
     .price{font-size:34px; font-weight:800}
     .strike{opacity:.6; text-decoration:line-through; margin-right:8px}
 
     .guarantee-block{background:rgba(255,139,110,.08); border:1px solid rgba(255,139,110,.2); border-radius:14px; padding:18px; margin:16px 0; text-align:center}
     .guarantee-block strong{color:var(--danger)}
+
+    .results-card{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:20px; padding:32px; box-shadow:var(--shadow); text-align:center; width:100%; margin-top:24px}
+    .results-card h3{font-size:28px; margin:0 0 24px; color:var(--text)}
+    .results-grid{display:grid; gap:20px; grid-template-columns:1fr}
+    .result-item{display:flex; align-items:center; gap:16px; padding:16px; background:rgba(255,255,255,.02); border-radius:12px; border:1px solid rgba(255,255,255,.06)}
+    .result-icon{font-size:24px; width:48px; height:48px; display:flex; align-items:center; justify-content:center; border-radius:12px; background:linear-gradient(135deg, rgba(111,210,255,.15), rgba(124,245,198,.10))}
+    .result-text{flex:1; text-align:left}
+    .result-text strong{color:var(--text); font-size:18px; display:block; margin-bottom:4px}
+    .result-text span{color:var(--muted); font-size:14px}
 
     .faq-item{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:18px; margin-bottom:12px}
     .faq-question{font-weight:600; margin-bottom:8px; color:var(--text)}
@@ -132,9 +141,8 @@
       .badges{justify-content:flex-start}
       .grid-3{display:grid; grid-template-columns:repeat(3,1fr)}
       .steps{display:grid; grid-template-columns:repeat(3,1fr)}
-      .showcase{display:grid; grid-template-columns: 1.2fr .8fr}
-      .showcase .stack{display:grid}
-      .offer{display:grid; grid-template-columns:1.1fr .9fr}
+      .cases-grid{display:grid; grid-template-columns:repeat(3,1fr)}
+      .results-grid{grid-template-columns:repeat(2,1fr)}
       .cta-grid{display:grid; grid-template-columns:1.2fr .8fr; text-align:left}
     }
 
@@ -167,11 +175,11 @@
         <h1>Перестаньте терять клиентов в мессенджерах</h1>
         <p class="lead">Настраиваем умных Sales-ботов за 7 дней. Мгновенные ответы 24/7, +30% конверсии, экономия 15+ часов в неделю. Работает на базе ваших сценариев и данных.</p>
         <div class="kpis">
-          <div class="kpi"><b>+30–60%</b><span class="muted">конверсия из заявок в продажи</span></div>
+          <div class="kpi"><b>+30–60%</b> <span class="muted">конверсия из заявок в продажи</span></div>
           <div class="kpi"><b>≤7 дней</b><span class="muted">от анализа до запуска</span></div>
           <div class="kpi"><b>80%</b><span class="muted">FAQ закрывает бот</span></div>
         </div>
-        <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; justify-content:center">
+        <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap">
           <a class="btn btn-primary" href="https://t.me/avtohtonny" target="_blank">Получить аудит за 15 минут</a>
           <a class="btn" href="#how">Как это работает</a>
         </div>
@@ -279,11 +287,12 @@
       <h2 class="reveal">Результаты клиентов</h2>
       <p class="muted reveal" style="text-align:center">Кейсы из разных ниш — те же механики, другие продукты.</p>
 
-      <div class="showcase" style="margin-top:16px">
-        <div class="big reveal screen">
-          <canvas id="convChart" width="1200" height="630" style="background:linear-gradient(180deg, rgba(255,255,255,.03), transparent);"></canvas>
+      <div class="showcase" style="margin-top:24px">
+        <div class="chart-container reveal">
+          <canvas id="resultsChart" width="1200" height="400"></canvas>
         </div>
-        <div class="stack">
+        
+        <div class="cases-grid" style="margin-top:24px">
           <div class="case-card reveal">
             <div class="case-icon" style="background:linear-gradient(135deg, #FF9A8B, #FECFEF);">🧘</div>
             <h3>Ретрит-центр на Бали</h3>
@@ -298,7 +307,7 @@
           </div>
           <div class="case-card reveal">
             <div class="case-icon" style="background:linear-gradient(135deg, #FFD93D, #FF6B6B);">🏢</div>
-            <h3>Агентство услуг</h3>
+            <h3>Маркетинговое агентство</h3>
             <div class="case-metric">+35%</div>
             <p class="muted">лидов, CRM-связка и авто‑назначение менеджеру по очереди. 90% повторных вопросов закрывает бот.</p>
           </div>
@@ -311,13 +320,13 @@
     <div class="container offer">
       <div class="price-card reveal">
         <h2>Пакет "Умный Sales‑бот"</h2>
-        <ul class="list" style="margin-top:10px">
+        <ul class="list" style="margin-top:16px">
           <li><span class="li-dot"></span><span>Диагностика, сценарии, база ответов</span></li>
           <li><span class="li-dot"></span><span>WhatsApp и Telegram подключение</span></li>
           <li><span class="li-dot"></span><span>Интеграция с CRM и календарём</span></li>
           <li><span class="li-dot"></span><span>Обучение команды, 30 дней поддержки</span></li>
         </ul>
-        <div style="margin:16px 0">
+        <div style="margin:20px 0">
           <span class="strike">$2,000</span><span class="price">$1,200</span> <span class="muted">до конца месяца</span>
         </div>
         
@@ -325,60 +334,47 @@
           <strong>⚡ Гарантия сроков:</strong> компенсация $200 за каждый день просрочки
         </div>
         
-        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center">
+        <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:20px">
           <a class="btn btn-primary" href="https://wa.me/66836840045?text=Хочу%20аудит%20по%20Salebots" target="_blank">Забронировать слот</a>
           <a class="btn" href="#faq">Вопросы</a>
         </div>
-        <div class="badges" style="margin-top:14px; justify-content:center">
+        <div class="badges" style="margin-top:16px; justify-content:center">
           <span class="badge">Гарантия +20% конверсии</span>
           <span class="badge">Срок — 7 дней</span>
         </div>
       </div>
 
-      <div class="card reveal">
-        <h3>Что получите в итоге</h3>
-        <ul class="list">
-          <li><span class="li-dot"></span><span>Ответы 24/7 и нулевая потеря лидов</span></li>
-          <li><span class="li-dot"></span><span>Чёткие метрики: конверсия, SLA, источники</span></li>
-          <li><span class="li-dot"></span><span>Автоматический прогрев, напоминания, доп. продажи</span></li>
-          <li><span class="li-dot"></span><span>Освобождено 15+ часов в неделю руководителя и менеджеров</span></li>
-        </ul>
-        <div class="screen" style="margin-top:14px; background:rgba(255,255,255,.02);">
-          <svg viewBox="0 0 800 360" width="100%" height="auto">
-            <defs>
-              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#6FD2FF"/><stop offset="1" stop-color="#7CF5C6"/>
-              </linearGradient>
-              <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
-                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-            <rect x="40" y="40" width="200" height="120" rx="14" fill="#0f1620" stroke="url(#g1)"/>
-            <text x="140" y="105" fill="#9FB0C6" font-family="Inter" font-size="16" text-anchor="middle">Бот</text>
-
-            <rect x="300" y="40" width="200" height="120" rx="14" fill="#0f1620" stroke="url(#g1)"/>
-            <text x="400" y="105" fill="#9FB0C6" font-family="Inter" font-size="16" text-anchor="middle">CRM</text>
-
-            <rect x="560" y="40" width="200" height="120" rx="14" fill="#0f1620" stroke="url(#g1)"/>
-            <text x="660" y="105" fill="#9FB0C6" font-family="Inter" font-size="16" text-anchor="middle">Календарь</text>
-
-            <rect x="300" y="200" width="200" height="120" rx="14" fill="#0f1620" stroke="url(#g1)"/>
-            <text x="400" y="265" fill="#9FB0C6" font-family="Inter" font-size="16" text-anchor="middle">Менеджер</text>
-
-            <g stroke="url(#g1)" stroke-width="2.5" marker-end="url(#arrow)">
-              <defs>
-                <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
-                  <path d="M0,0 L0,6 L9,3 z" fill="url(#g1)"/>
-                </marker>
-              </defs>
-              <line x1="240" y1="100" x2="300" y2="100" filter="url(#glow)"/>
-              <line x1="500" y1="100" x2="560" y2="100" filter="url(#glow)"/>
-              <line x1="400" y1="160" x2="400" y2="200" filter="url(#glow)"/>
-              <line x1="560" y1="120" x2="500" y2="120" opacity=".5"/>
-              <line x1="300" y1="120" x2="240" y2="120" opacity=".5"/>
-            </g>
-          </svg>
+      <div class="results-card reveal">
+        <h3>🎯 Что получите в итоге</h3>
+        <div class="results-grid">
+          <div class="result-item">
+            <div class="result-icon">🚀</div>
+            <div class="result-text">
+              <strong>Ответы 24/7 и нулевая потеря лидов</strong>
+              <span>Мгновенная реакция на каждое обращение</span>
+            </div>
+          </div>
+          <div class="result-item">
+            <div class="result-icon">📊</div>
+            <div class="result-text">
+              <strong>Чёткие метрики: конверсия, SLA, источники</strong>
+              <span>Полная аналитика и контроль процессов</span>
+            </div>
+          </div>
+          <div class="result-item">
+            <div class="result-icon">🔄</div>
+            <div class="result-text">
+              <strong>Автоматический прогрев и доп. продажи</strong>
+              <span>Умные напоминания и кросс-селл</span>
+            </div>
+          </div>
+          <div class="result-item">
+            <div class="result-icon">⏰</div>
+            <div class="result-text">
+              <strong>Освобождено 15+ часов в неделю</strong>
+              <span>Руководители и менеджеры фокусируются на важном</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -479,38 +475,37 @@
     }, {threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    const ctx = document.getElementById('convChart')?.getContext('2d');
+    const ctx = document.getElementById('resultsChart')?.getContext('2d');
     if(ctx){
-      const gradient = ctx.createLinearGradient(0,0,0,400);
-      gradient.addColorStop(0,'rgba(111,210,255,0.35)');
-      gradient.addColorStop(1,'rgba(124,245,198,0.10)');
-      const borderGrad = ctx.createLinearGradient(0,0,800,0);
-      borderGrad.addColorStop(0,'#6FD2FF');
-      borderGrad.addColorStop(1,'#7CF5C6');
-
       new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: {
-          labels: ['Нед 1','Нед 2','Нед 3','Нед 4','Нед 5','Нед 6','Нед 7','Нед 8'],
-          datasets: [{
-            label: 'Конверсия, %',
-            data: [7,8,8.5,9,10,11.5,12.5,14],
-            fill: true,
-            backgroundColor: gradient,
-            borderColor: borderGrad,
-            borderWidth: 2.5,
-            tension: .35,
-            pointBackgroundColor: '#0A0C10',
-            pointBorderColor: '#7CF5C6',
-            pointBorderWidth: 2,
-            pointRadius: 3
-          }]
+          labels: ['Конверсия +30%', 'Повторные продажи +60%', 'Потерянные клиенты -90%'],
+          datasets: [
+            {
+              label: 'До',
+              data: [30, 40, 90],
+              backgroundColor: '#FF8B6E',
+              borderRadius: 8,
+              maxBarThickness: 80
+            },
+            {
+              label: 'После',
+              data: [60, 100, 10],
+              backgroundColor: '#76E39E',
+              borderRadius: 8,
+              maxBarThickness: 80
+            }
+          ]
         },
         options: {
           responsive: true,
           maintainAspectRatio: true,
           plugins: {
-            legend: { display: false },
+            legend: { 
+              labels: { color: '#9FB0C6', font: { size: 16, weight: 'bold' } },
+              position: 'top'
+            },
             tooltip: {
               backgroundColor: 'rgba(10,12,16,.9)',
               borderColor: 'rgba(255,255,255,.08)',
@@ -521,16 +516,14 @@
           },
           scales: {
             x: { 
-              ticks: { display: false }, 
+              ticks: { color:'#9FB0C6', font: { size: 14, weight: 'bold' } }, 
               grid: { display: false },
               border: { display: false }
             },
             y: { 
               ticks: { display: false }, 
               grid: { display: false },
-              border: { display: false },
-              suggestedMin:6, 
-              suggestedMax:15 
+              border: { display: false }
             }
           }
         }
