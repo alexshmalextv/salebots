@@ -122,8 +122,8 @@
     .faq-answer{color:var(--muted); line-height:1.5}
 
     /* Lead Form Styles */
-    .lead-form{background:linear-gradient(135deg, rgba(111,210,255,.12), rgba(124,245,198,.08)); 
-      border:1px solid rgba(255,255,255,.12); border-radius:20px; padding:32px; 
+    .lead-form{background:linear-gradient(135deg, rgba(111,210,255,.12), rgba(124,245,198,.08));
+      border:1px solid rgba(255,255,255,.12); border-radius:20px; padding:32px;
       box-shadow:var(--shadow); max-width:600px; margin:0 auto}
     .form-grid{display:grid; gap:20px}
     .form-group{display:flex; flex-direction:column; gap:8px}
@@ -132,6 +132,8 @@
       padding:14px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04); color:var(--text); font-size:16px;
       transition:.25s ease; font-family:inherit}
+    .form-select option{
+      background:var(--card); color:var(--text); padding:8px}
     .form-input:focus, .form-select:focus, .form-textarea:focus{
       outline:none; border-color:var(--brand); background:rgba(255,255,255,.08);
       box-shadow:0 0 0 3px rgba(111,210,255,.15)}
@@ -313,13 +315,13 @@
   <section id="cases" class="section">
     <div class="container">
       <h2 class="reveal">Результаты клиентов</h2>
-      <p class="muted reveal" style="text-align:center">Кейсы из разных ниш — те же механики, другие продукты.</p>
+      <p class="muted reveal" style="text-align:center">Кейсы из разных ниш.</p>
 
       <div class="showcase" style="margin-top:24px">
         <div class="chart-container reveal">
           <canvas id="resultsChart" width="1200" height="400"></canvas>
         </div>
-        
+
         <div class="cases-grid" style="margin-top:24px">
           <div class="case-card reveal">
             <div class="case-icon" style="background:linear-gradient(135deg, #FF9A8B, #FECFEF);">🧘</div>
@@ -348,19 +350,19 @@
     <div class="container">
       <h2 class="reveal">Получите бесплатный аудит за 15 минут</h2>
       <p class="muted reveal" style="text-align:center; margin-bottom:32px">Найдём точки роста и покажем, как бот окупится за 2–4 недели</p>
-      
+
       <form class="lead-form reveal" action="https://formspree.io/f/xwpnpyln" method="POST">
         <div class="form-grid">
           <div class="form-group">
             <label class="form-label" for="name">Имя <span class="form-required">*</span></label>
             <input class="form-input" type="text" id="name" name="name" required placeholder="Как к вам обращаться?">
           </div>
-          
+
           <div class="form-group">
-            <label class="form-label" for="contact">Telegram или WhatsApp <span class="form-required">*</span></label>
+            <label class="form-label" for="contact">Ваш Telegram или WhatsApp <span class="form-required">*</span></label>
             <input class="form-input" type="text" id="contact" name="contact" required placeholder="@username или +7 900 123-45-67">
           </div>
-          
+
           <div class="form-group">
             <label class="form-label" for="niche">Ниша бизнеса</label>
             <select class="form-select" id="niche" name="niche">
@@ -372,7 +374,7 @@
               <option value="other">Другое</option>
             </select>
           </div>
-          
+
           <div class="form-group">
             <label class="form-label" for="leads">Заявок в месяц сейчас</label>
             <select class="form-select" id="leads" name="leads">
@@ -383,12 +385,12 @@
               <option value="100+">100+</option>
             </select>
           </div>
-          
+
           <div class="form-group full-width">
             <label class="form-label" for="comment">Комментарий</label>
             <textarea class="form-textarea" id="comment" name="comment" placeholder="Когда и как с вами лучше связаться?"></textarea>
           </div>
-          
+
           <div class="form-group full-width">
             <button class="btn btn-primary form-submit" type="submit">Получить бесплатный аудит</button>
           </div>
@@ -408,13 +410,14 @@
           <li><span class="li-dot"></span><span>Обучение команды, 30 дней поддержки</span></li>
         </ul>
         <div style="margin:20px 0">
-          <span class="strike">$2,000</span><span class="price">$1,200</span> <span class="muted">до конца месяца</span>
+          <span class="strike">$2,000</span><span class="price">$1,200</span> <span class="muted">за полную разработку</span>
         </div>
-        
+        <p class="muted" style="font-size:14px; margin:0 0 16px">Единоразовая оплата за создание и настройку бота под ключ</p>
+
         <div class="guarantee-block">
           <strong>⚡ Гарантия сроков:</strong> компенсация $200 за каждый день просрочки
         </div>
-        
+
         <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:20px">
           <a class="btn btn-primary" href="#lead-form">Забронировать слот</a>
           <a class="btn" href="#faq">Вопросы</a>
@@ -464,42 +467,42 @@
   <section id="faq" class="section">
     <div class="container">
       <h2 class="reveal">Частые вопросы</h2>
-      
+
       <div class="faq-item reveal">
         <div class="faq-question">А если бот ответит неправильно?</div>
         <div class="faq-answer">Обучаем бота на ваших сценариях, добавляем эскалацию: сложный вопрос уходит менеджеру. Плюс мониторинг качества в первые 30 дней.</div>
       </div>
-      
+
       <div class="faq-item reveal">
         <div class="faq-question">Как быстро окупится?</div>
         <div class="faq-answer">В среднем 2–4 недели: рост конверсии + экономия времени = быстрый ROI. Большинство клиентов видят результат уже в первую неделю работы.</div>
       </div>
-      
+
       <div class="faq-item reveal">
         <div class="faq-question">Можно ли без CRM?</div>
         <div class="faq-answer">Да. Начинаем с бота и таблиц. Когда увидите результат — подключим CRM без боли. Интеграция с популярными системами занимает 1-2 дня.</div>
       </div>
-      
+
       <div class="faq-item reveal">
         <div class="faq-question">Работаете ли с моей нишей?</div>
         <div class="faq-answer">Работаем с любыми B2B и B2C услугами: от ретритов до IT-консалтинга. Главное — есть повторяющиеся вопросы и процесс продаж через мессенджеры.</div>
       </div>
-      
+
       <div class="faq-item reveal">
         <div class="faq-question">Как защищены данные клиентов?</div>
         <div class="faq-answer">Используем только официальные API WhatsApp и Telegram. Данные хранятся в зашифрованном виде, доступ только у вас и назначенных сотрудников.</div>
       </div>
-      
+
       <div class="faq-item reveal">
         <div class="faq-question">Что если продажи не вырастут?</div>
         <div class="faq-answer">Гарантируем рост конверсии минимум на 20% или возвращаем деньги. Плюс бесплатная доработка до достижения результата.</div>
       </div>
-      
+
       <div class="faq-item reveal">
         <div class="faq-question">Сколько стоит поддержка после 30 дней?</div>
         <div class="faq-answer">$200/месяц за техподдержку и мелкие правки. Крупные доработки и новые сценарии — от $300 за задачу.</div>
       </div>
-      
+
       <div class="faq-item reveal">
         <div class="faq-question">Можно ли оплатить частями?</div>
         <div class="faq-answer">Да: 50% предоплата, 50% после запуска и первых результатов. Принимаем карты, криптовалюту, банковские переводы.</div>
@@ -526,7 +529,7 @@
         <div>© <span id="y"></span> Salebots</div>
       </div>
       <div class="muted" style="margin-top:8px">Бали • Работаем по всему миру</div>
-      
+
       <div class="footer-contacts">
         <a class="footer-contact" href="https://t.me/avtohtonny" target="_blank">Telegram</a>
         <a class="footer-contact" href="https://wa.me/66836840045" target="_blank">WhatsApp</a>
@@ -574,7 +577,7 @@
           responsive: true,
           maintainAspectRatio: true,
           plugins: {
-            legend: { 
+            legend: {
               labels: { color: '#9FB0C6', font: { size: 16, weight: 'bold' } },
               position: 'top'
             },
@@ -587,13 +590,13 @@
             }
           },
           scales: {
-            x: { 
-              ticks: { color:'#9FB0C6', font: { size: 14, weight: 'bold' } }, 
+            x: {
+              ticks: { color:'#9FB0C6', font: { size: 14, weight: 'bold' } },
               grid: { display: false },
               border: { display: false }
             },
-            y: { 
-              ticks: { display: false }, 
+            y: {
+              ticks: { display: false },
               grid: { display: false },
               border: { display: false }
             }
