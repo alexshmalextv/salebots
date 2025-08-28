@@ -3,22 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SalesBots — Автоматизация продаж в WhatsApp/Telegram за 14 дней</title>
-  <meta name="description" content="Перестаньте терять клиентов: умные боты для WhatsApp/Telegram, +30% конверсии, экономия 15+ часов в неделю. Запуск за 14 дней. Бесплатный аудит." />
+  <title>Salebots — Автоматизация продаж в WhatsApp и Telegram за 7 дней</title>
+  <meta name="description" content="Перестаньте терять клиентов: умные боты для WhatsApp и Telegram, +30% конверсии, экономия 15+ часов в неделю. Запуск за 7 дней. Бесплатный аудит." />
 
-  <!-- FAVICON (минимальный, чтобы не париться) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%236FD2FF'/%3E%3Cstop offset='1' stop-color='%237CF5C6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%230A0C10'/%3E%3Ccircle cx='32' cy='32' r='20' fill='url(%23g)'/%3E%3Ctext x='32' y='38' font-size='18' text-anchor='middle' fill='%23071018' font-family='Inter,Arial,sans-serif' font-weight='800'%3ESB%3C/text%3E%3C/svg%3E" />
 
-  <!-- Open Graph / Social -->
-  <meta property="og:title" content="SalesBots — Автоматизация продаж в WhatsApp/Telegram за 14 дней" />
+  <meta property="og:title" content="Salebots — Автоматизация продаж в WhatsApp и Telegram за 7 дней" />
   <meta property="og:description" content="Мгновенные ответы 24/7, +30% конверсии, экономия 15+ часов в неделю. Бесплатный аудит." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://salebots.org/" />
-  <!-- OG изображение: заменишь на свой файл 1200x630, пока — градиентный placeholder -->
   <meta property="og:image" content="https://salebots.org/assets/img/og-default.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -57,90 +53,105 @@
     .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px;
       border-radius:12px; font-weight:600; border:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.02); transition:.25s ease; cursor:pointer}
-    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.06)}
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.12); color:var(--text)}
     .btn-primary{background:linear-gradient(135deg,#6FD2FF,#7CF5C6); color:#071018; border:none; box-shadow:0 12px 30px rgba(111,210,255,.35)}
-    .btn-primary:hover{filter:saturate(1.05); transform:translateY(-2px)}
+    .btn-primary:hover{filter:brightness(1.1) drop-shadow(0 0 8px rgba(124,245,198,.6)); transform:translateY(-2px)}
 
     .hero{position:relative; padding:80px 0 40px}
-    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:42px; align-items:center}
+    .hero-grid{display:flex; flex-direction:column; gap:32px; align-items:center}
     .eyebrow{display:inline-flex; align-items:center; gap:10px; font-size:12px; letter-spacing:.6px; color:var(--muted); text-transform:uppercase; padding:8px 12px; border:1px solid rgba(255,255,255,.08); border-radius:999px; background:var(--glass)}
-    .hero h1{font-size: clamp(32px, 4.5vw, 56px); line-height:1.05; margin:18px 0}
-    .lead{font-size: clamp(16px, 1.7vw, 20px); color:var(--muted); max-width:56ch}
+    .hero h1{font-size: clamp(28px, 6vw, 56px); line-height:1.05; margin:18px 0; text-align:center}
+    .lead{font-size: clamp(16px, 2vw, 20px); color:var(--muted); text-align:center; max-width:60ch}
 
-    .kpis{display:flex; gap:18px; margin:28px 0 14px}
-    .kpi{flex:1; background:var(--card); padding:16px; border-radius:var(--radius-sm); border:1px solid rgba(255,255,255,.06); box-shadow:var(--shadow)}
-    .kpi b{font-size:22px}
+    .kpis{display:flex; flex-direction:column; gap:12px; margin:28px 0 14px; width:100%}
+    .kpi{background:var(--card); padding:16px; border-radius:var(--radius-sm); border:1px solid rgba(255,255,255,.06); box-shadow:var(--shadow); text-align:center}
+    .kpi b{font-size:22px; display:block; margin-bottom:4px}
 
-    .hero-card{position:relative; background:var(--card); padding:22px; border-radius:var(--radius-lg); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow); overflow:hidden}
+    .hero-card{position:relative; background:var(--card); padding:22px; border-radius:var(--radius-lg); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow); overflow:hidden; margin-top:20px}
     .glow{position:absolute; inset:-20%; background:
       radial-gradient(500px 300px at 20% 10%, rgba(111,210,255,.14), transparent),
       radial-gradient(400px 250px at 80% 10%, rgba(124,245,198,.12), transparent)}
     .screen{position:relative; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.08)}
     .screen::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,.05), transparent 40%); pointer-events:none}
 
-    .badges{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap}
+    .badges{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap; justify-content:center}
     .badge{font-size:12px; color:#0b1520; background:linear-gradient(135deg,#6FD2FF,#7CF5C6); padding:8px 10px; border-radius:999px; font-weight:700}
 
     .section{padding:70px 0}
-    .section h2{font-size: clamp(26px, 3.2vw, 38px); margin:0 0 18px}
+    .section h2{font-size: clamp(24px, 4vw, 38px); margin:0 0 18px; text-align:center}
     .muted{color:var(--muted)}
 
-    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .grid-3{display:flex; flex-direction:column; gap:18px}
     .card{background:var(--card); padding:22px; border-radius:var(--radius); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow)}
     .card h3{margin:0 0 8px}
     .list{display:grid; gap:8px; margin:12px 0 0; padding:0}
     .list li{list-style:none; display:flex; gap:10px; align-items:flex-start}
     .li-dot{width:8px;height:8px;border-radius:50%; margin-top:8px; background:linear-gradient(135deg,#6FD2FF,#7CF5C6)}
 
-    .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .steps{display:flex; flex-direction:column; gap:18px}
     .step{position:relative; padding:24px; background:var(--soft); border-radius:var(--radius); border:1px solid rgba(255,255,255,.08)}
     .step-number{position:absolute; top:12px; right:12px; font-weight:800; color:rgba(255,255,255,.2); font-size:28px}
 
-    .showcase{display:grid; grid-template-columns: 1.2fr .8fr; gap:18px}
+    .showcase{display:flex; flex-direction:column; gap:18px}
     .showcase .big{border-radius:16px; overflow:hidden; border:1px solid rgba(255,255,255,.08)}
-    .showcase .stack{display:grid; gap:18px}
+    .showcase .stack{display:flex; flex-direction:column; gap:18px}
 
-    .offer{display:grid; grid-template-columns:1.1fr .9fr; gap:18px; align-items:stretch}
+    .case-card{background:var(--card); padding:20px; border-radius:var(--radius); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow); position:relative}
+    .case-icon{width:48px; height:48px; border-radius:12px; margin-bottom:12px; display:flex; align-items:center; justify-content:center; font-size:24px}
+    .case-metric{font-size:28px; font-weight:800; color:var(--brand); margin:8px 0 4px}
+
+    .offer{display:flex; flex-direction:column; gap:18px; align-items:stretch}
     .price-card{background:linear-gradient(180deg, rgba(111,210,255,.10), rgba(124,245,198,.08)); border:1px solid rgba(255,255,255,.12); padding:26px; border-radius:20px; box-shadow:var(--shadow)}
     .price{font-size:34px; font-weight:800}
     .strike{opacity:.6; text-decoration:line-through; margin-right:8px}
 
-    details{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:16px 18px}
-    details + details{margin-top:10px}
-    summary{cursor:pointer; font-weight:600}
+    .guarantee-block{background:rgba(255,139,110,.08); border:1px solid rgba(255,139,110,.2); border-radius:14px; padding:18px; margin:16px 0; text-align:center}
+    .guarantee-block strong{color:var(--danger)}
+
+    .faq-item{background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:18px; margin-bottom:12px}
+    .faq-question{font-weight:600; margin-bottom:8px; color:var(--text)}
+    .faq-answer{color:var(--muted); line-height:1.5}
 
     .cta{position:relative; background:linear-gradient(135deg, rgba(111,210,255,.14), rgba(124,245,198,.10)); border:1px solid rgba(255,255,255,.10); border-radius:22px; padding:28px; box-shadow:var(--shadow)}
-    .cta-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:18px; align-items:center}
+    .cta-grid{display:flex; flex-direction:column; gap:18px; align-items:center; text-align:center}
 
     .footer{padding:28px 0 60px; color:var(--muted); font-size:14px}
 
-    /* Animations */
     .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease}
     .reveal.show{opacity:1; transform:none}
     .float{animation:float 6s ease-in-out infinite}
     @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
 
-    /* Mobile tweaks */
-    @media (max-width: 900px){
-      .hero-grid,.showcase,.offer,.cta-grid{grid-template-columns:1fr}
-      .grid-3,.steps{grid-template-columns:1fr}
-      .nav-inner{padding:14px 0}
-      .kpis{flex-direction:column}
+    @media (min-width: 768px){
+      .hero-grid{flex-direction:row; align-items:center}
+      .hero h1{text-align:left}
+      .lead{text-align:left}
+      .kpis{flex-direction:row}
+      .kpi{flex:1; text-align:left}
+      .kpi b{display:inline; margin-bottom:0; margin-right:8px}
+      .badges{justify-content:flex-start}
+      .grid-3{display:grid; grid-template-columns:repeat(3,1fr)}
+      .steps{display:grid; grid-template-columns:repeat(3,1fr)}
+      .showcase{display:grid; grid-template-columns: 1.2fr .8fr}
+      .showcase .stack{display:grid}
+      .offer{display:grid; grid-template-columns:1.1fr .9fr}
+      .cta-grid{display:grid; grid-template-columns:1.2fr .8fr; text-align:left}
     }
+
     @media (max-width: 420px){
       .btn{padding:12px 14px}
       .hero{padding-top:64px}
+      .nav-cta{flex-direction:column; gap:8px}
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
   <nav class="nav">
     <div class="container nav-inner">
       <div class="logo">
         <div class="logo-badge"></div>
-        <span>SalesBots</span>
+        <span>Salebots</span>
       </div>
       <div class="nav-cta">
         <a class="btn" href="#cases">Кейсы</a>
@@ -149,19 +160,18 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="hero">
     <div class="container hero-grid">
       <div class="reveal">
-        <span class="eyebrow">Автоматизация продаж • WhatsApp/Telegram</span>
+        <span class="eyebrow">Автоматизация продаж • WhatsApp и Telegram</span>
         <h1>Перестаньте терять клиентов в мессенджерах</h1>
-        <p class="lead">Настраиваем умных Sales-ботов за 14 дней. Мгновенные ответы 24/7, +30% конверсии, экономия 15+ часов в неделю. Работает на базе ваших сценариев и данных.</p>
+        <p class="lead">Настраиваем умных Sales-ботов за 7 дней. Мгновенные ответы 24/7, +30% конверсии, экономия 15+ часов в неделю. Работает на базе ваших сценариев и данных.</p>
         <div class="kpis">
-          <div class="kpi"><b>+30–60%</b><br/><span class="muted">конверсия из заявок в продажи</span></div>
-          <div class="kpi"><b>≤14 дней</b><br/><span class="muted">от анализа до запуска</span></div>
-          <div class="kpi"><b>80%</b><br/><span class="muted">FAQ закрывает бот</span></div>
+          <div class="kpi"><b>+30–60%</b><span class="muted">конверсия из заявок в продажи</span></div>
+          <div class="kpi"><b>≤7 дней</b><span class="muted">от анализа до запуска</span></div>
+          <div class="kpi"><b>80%</b><span class="muted">FAQ закрывает бот</span></div>
         </div>
-        <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap">
+        <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; justify-content:center">
           <a class="btn btn-primary" href="https://t.me/avtohtonny" target="_blank">Получить аудит за 15 минут</a>
           <a class="btn" href="#how">Как это работает</a>
         </div>
@@ -174,14 +184,12 @@
 
       <div class="hero-card reveal float">
         <div class="glow"></div>
-        <!-- IMG HERE: скриншот из WhatsApp/Telegram с ботом (замажь персональные данные). -->
         <div class="screen" id="chat-mock">
-          <!-- Если нет картинки, отрисуем псевдо-мокап чата CSS'ом -->
           <div style="background:#0d141a; padding:14px; min-height:280px;">
             <div style="width:36px;height:6px;border-radius:3px;background:#2a3b4b;margin:0 auto 12px;"></div>
             <div style="display:grid; gap:8px;">
               <div style="justify-self:flex-start; max-width:80%; background:#13202b; color:#cfe7ff; padding:10px 12px; border-radius:12px 12px 12px 6px;">Здравствуйте! Интересует бот для WhatsApp.</div>
-              <div style="justify-self:flex-end; max-width:80%; background:#1a3b2f; color:#c9ffe7; padding:10px 12px; border-radius:12px 12px 6px 12px;">Привет! Сделаем за 14 дней. Соберём сценарии, подключим CRM и календарь.</div>
+              <div style="justify-self:flex-end; max-width:80%; background:#1a3b2f; color:#c9ffe7; padding:10px 12px; border-radius:12px 12px 6px 12px;">Привет! Сделаем за 7 дней. Соберём сценарии, подключим CRM и календарь.</div>
               <div style="justify-self:flex-start; max-width:70%; background:#13202b; color:#cfe7ff; padding:10px 12px; border-radius:12px 12px 12px 6px;">Сколько это стоит?</div>
               <div style="justify-self:flex-end; max-width:70%; background:#1a3b2f; color:#c9ffe7; padding:10px 12px; border-radius:12px 12px 6px 12px;">От $1,200. Окупается за 2–4 недели.</div>
             </div>
@@ -201,7 +209,6 @@
     </div>
   </header>
 
-  <!-- PROBLEMS -->
   <section class="section">
     <div class="container grid-3 reveal">
       <div class="card">
@@ -231,11 +238,10 @@
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
   <section id="how" class="section">
     <div class="container">
       <h2 class="reveal">Как работают наши Sales‑боты</h2>
-      <p class="muted reveal">Три шага к контролю и росту. Без боли и бесконечных интеграций.</p>
+      <p class="muted reveal" style="text-align:center">Три шага к контролю и росту. Без боли и бесконечных интеграций.</p>
       <div class="steps" style="margin-top:16px">
         <div class="step reveal">
           <div class="step-number">01</div>
@@ -243,21 +249,21 @@
           <p class="muted">Разбираем путь клиента, собираем FAQ, определяем точки потерь.</p>
           <ul class="list">
             <li><span class="li-dot"></span><span>Согласуем сценарии</span></li>
-            <li><span class="li-dot"></span><span>План интеграции с CRM/календарём</span></li>
+            <li><span class="li-dot"></span><span>План интеграции с CRM и календарём</span></li>
           </ul>
         </div>
         <div class="step reveal">
           <div class="step-number">02</div>
-          <h3>Сборка (7 дней)</h3>
+          <h3>Сборка (3 дня)</h3>
           <p class="muted">Настраиваем бота, базы ответов, логики квалификации.</p>
           <ul class="list">
-            <li><span class="li-dot"></span><span>Подключение WhatsApp/Telegram</span></li>
+            <li><span class="li-dot"></span><span>Подключение WhatsApp и Telegram</span></li>
             <li><span class="li-dot"></span><span>Тестирование на реальных диалогах</span></li>
           </ul>
         </div>
         <div class="step reveal">
           <div class="step-number">03</div>
-          <h3>Запуск (5 дней)</h3>
+          <h3>Запуск (2 дня)</h3>
           <p class="muted">Пилот, обучение команды, финишная оптимизация конверсий.</p>
           <ul class="list">
             <li><span class="li-dot"></span><span>Отчёт по метрикам и SLA ответов</span></li>
@@ -268,56 +274,64 @@
     </div>
   </section>
 
-  <!-- SHOWCASE / CASES -->
   <section id="cases" class="section">
     <div class="container">
       <h2 class="reveal">Результаты клиентов</h2>
-      <p class="muted reveal">Кейсы из разных ниш — те же механики, другие продукты.</p>
+      <p class="muted reveal" style="text-align:center">Кейсы из разных ниш — те же механики, другие продукты.</p>
 
       <div class="showcase" style="margin-top:16px">
         <div class="big reveal screen">
-          <!-- График генерируем кодом через Chart.js -->
           <canvas id="convChart" width="1200" height="630" style="background:linear-gradient(180deg, rgba(255,255,255,.03), transparent);"></canvas>
         </div>
         <div class="stack">
-          <div class="card reveal">
+          <div class="case-card reveal">
+            <div class="case-icon" style="background:linear-gradient(135deg, #FF9A8B, #FECFEF);">🧘</div>
             <h3>Ретрит-центр на Бали</h3>
-            <p class="muted">+45% бронирований, время ответа с 4ч до 30с. Бот собирает пожелания, предлагает даты, бронирует слот.</p>
+            <div class="case-metric">+45%</div>
+            <p class="muted">бронирований, время ответа с 4ч до 30с. Бот собирает пожелания, предлагает даты, бронирует слот.</p>
           </div>
-          <div class="card reveal">
+          <div class="case-card reveal">
+            <div class="case-icon" style="background:linear-gradient(135deg, #A8E6CF, #88D8C0);">🎓</div>
             <h3>Онлайн‑школа</h3>
-            <p class="muted">+60% конверсия на прогреве, рассылки в Telegram, автоматические ответы на FAQ и запись на вебинары.</p>
+            <div class="case-metric">+60%</div>
+            <p class="muted">конверсия на прогреве, рассылки в Telegram, автоматические ответы на FAQ и запись на вебинары.</p>
           </div>
-          <div class="card reveal">
+          <div class="case-card reveal">
+            <div class="case-icon" style="background:linear-gradient(135deg, #FFD93D, #FF6B6B);">🏢</div>
             <h3>Агентство услуг</h3>
-            <p class="muted">+35% лидов, CRM-связка и авто‑назначение менеджеру по очереди. 90% повторных вопросов закрывает бот.</p>
+            <div class="case-metric">+35%</div>
+            <p class="muted">лидов, CRM-связка и авто‑назначение менеджеру по очереди. 90% повторных вопросов закрывает бот.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- OFFER -->
   <section class="section">
     <div class="container offer">
       <div class="price-card reveal">
-        <h2>Пакет “Умный Sales‑бот”</h2>
+        <h2>Пакет "Умный Sales‑бот"</h2>
         <ul class="list" style="margin-top:10px">
           <li><span class="li-dot"></span><span>Диагностика, сценарии, база ответов</span></li>
-          <li><span class="li-dot"></span><span>WhatsApp/Telegram подключение</span></li>
+          <li><span class="li-dot"></span><span>WhatsApp и Telegram подключение</span></li>
           <li><span class="li-dot"></span><span>Интеграция с CRM и календарём</span></li>
           <li><span class="li-dot"></span><span>Обучение команды, 30 дней поддержки</span></li>
         </ul>
         <div style="margin:16px 0">
           <span class="strike">$2,000</span><span class="price">$1,200</span> <span class="muted">до конца месяца</span>
         </div>
-        <div style="display:flex; gap:10px; flex-wrap:wrap">
-          <a class="btn btn-primary" href="https://wa.me/66836840045?text=Хочу%20аудит%20по%20SalesBots" target="_blank">Забронировать слот</a>
+        
+        <div class="guarantee-block">
+          <strong>⚡ Гарантия сроков:</strong> компенсация $200 за каждый день просрочки
+        </div>
+        
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center">
+          <a class="btn btn-primary" href="https://wa.me/66836840045?text=Хочу%20аудит%20по%20Salebots" target="_blank">Забронировать слот</a>
           <a class="btn" href="#faq">Вопросы</a>
         </div>
-        <div class="badges" style="margin-top:14px">
+        <div class="badges" style="margin-top:14px; justify-content:center">
           <span class="badge">Гарантия +20% конверсии</span>
-          <span class="badge">Срок — 14 дней</span>
+          <span class="badge">Срок — 7 дней</span>
         </div>
       </div>
 
@@ -327,9 +341,8 @@
           <li><span class="li-dot"></span><span>Ответы 24/7 и нулевая потеря лидов</span></li>
           <li><span class="li-dot"></span><span>Чёткие метрики: конверсия, SLA, источники</span></li>
           <li><span class="li-dot"></span><span>Автоматический прогрев, напоминания, доп. продажи</span></li>
-          <li><span class="li-dot"></span><span>Освобождено 15+ часов/неделю руководителя/менеджеров</span></li>
+          <li><span class="li-dot"></span><span>Освобождено 15+ часов в неделю руководителя и менеджеров</span></li>
         </ul>
-        <!-- SVG схема вместо картинки -->
         <div class="screen" style="margin-top:14px; background:rgba(255,255,255,.02);">
           <svg viewBox="0 0 800 360" width="100%" height="auto">
             <defs>
@@ -353,7 +366,6 @@
             <rect x="300" y="200" width="200" height="120" rx="14" fill="#0f1620" stroke="url(#g1)"/>
             <text x="400" y="265" fill="#9FB0C6" font-family="Inter" font-size="16" text-anchor="middle">Менеджер</text>
 
-            <!-- arrows -->
             <g stroke="url(#g1)" stroke-width="2.5" marker-end="url(#arrow)">
               <defs>
                 <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
@@ -372,77 +384,94 @@
     </div>
   </section>
 
-  <!-- FAQ -->
   <section id="faq" class="section">
     <div class="container">
       <h2 class="reveal">Частые вопросы</h2>
-      <details class="reveal"><summary>А если бот ответит неправильно?</summary><p class="muted">Обучаем бота на ваших сценариях, добавляем эскалацию: сложный вопрос уходит менеджеру. Плюс мониторинг качества в первые 30 дней.</p></details>
-      <details class="reveal"><summary>Как быстро окупится?</summary><p class="muted">В среднем 2–4 недели: рост конверсии + экономия времени = быстрый ROI.</p></details>
-      <details class="reveal"><summary>Можно ли без CRM?</summary><p class="muted">Да. Начинаем с бота и таблиц. Когда увидите результат — подключим CRM без боли.</p></details>
-      <details class="reveal"><summary>Сколько проектов берёте?</summary><p class="muted">Не более 3 в месяц — чтобы держать качество и скорость.</p></details>
+      
+      <div class="faq-item reveal">
+        <div class="faq-question">А если бот ответит неправильно?</div>
+        <div class="faq-answer">Обучаем бота на ваших сценариях, добавляем эскалацию: сложный вопрос уходит менеджеру. Плюс мониторинг качества в первые 30 дней.</div>
+      </div>
+      
+      <div class="faq-item reveal">
+        <div class="faq-question">Как быстро окупится?</div>
+        <div class="faq-answer">В среднем 2–4 недели: рост конверсии + экономия времени = быстрый ROI. Большинство клиентов видят результат уже в первую неделю работы.</div>
+      </div>
+      
+      <div class="faq-item reveal">
+        <div class="faq-question">Можно ли без CRM?</div>
+        <div class="faq-answer">Да. Начинаем с бота и таблиц. Когда увидите результат — подключим CRM без боли. Интеграция с популярными системами занимает 1-2 дня.</div>
+      </div>
+      
+      <div class="faq-item reveal">
+        <div class="faq-question">Работаете ли с моей нишей?</div>
+        <div class="faq-answer">Работаем с любыми B2B и B2C услугами: от ретритов до IT-консалтинга. Главное — есть повторяющиеся вопросы и процесс продаж через мессенджеры.</div>
+      </div>
+      
+      <div class="faq-item reveal">
+        <div class="faq-question">Как защищены данные клиентов?</div>
+        <div class="faq-answer">Используем только официальные API WhatsApp и Telegram. Данные хранятся в зашифрованном виде, доступ только у вас и назначенных сотрудников.</div>
+      </div>
+      
+      <div class="faq-item reveal">
+        <div class="faq-question">Что если продажи не вырастут?</div>
+        <div class="faq-answer">Гарантируем рост конверсии минимум на 20% или возвращаем деньги. Плюс бесплатная доработка до достижения результата.</div>
+      </div>
+      
+      <div class="faq-item reveal">
+        <div class="faq-question">Сколько стоит поддержка после 30 дней?</div>
+        <div class="faq-answer">$200/месяц за техподдержку и мелкие правки. Крупные доработки и новые сценарии — от $300 за задачу.</div>
+      </div>
+      
+      <div class="faq-item reveal">
+        <div class="faq-question">Можно ли оплатить частями?</div>
+        <div class="faq-answer">Да: 50% предоплата, 50% после запуска и первых результатов. Принимаем карты, криптовалюту, банковские переводы.</div>
+      </div>
     </div>
   </section>
 
-  <!-- CTA -->
   <section id="cta" class="section">
     <div class="container cta reveal">
       <div class="cta-grid">
         <div>
           <h2>Готовы перестать терять клиентов?</h2>
           <p class="muted">Аудит за 15 минут: найдём точки роста и покажем, как бот окупится за 2–4 недели.</p>
-          <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap">
+          <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap; justify-content:center">
             <a class="btn btn-primary" href="https://t.me/avtohtonny" target="_blank">Написать в Telegram</a>
-            <a class="btn" href="https://wa.me/66836840045?text=Хочу%20аудит%20по%20SalesBots" target="_blank">Написать в WhatsApp</a>
+            <a class="btn" href="https://wa.me/66836840045?text=Хочу%20аудит%20по%20Salebots" target="_blank">Написать в WhatsApp</a>
             <a class="btn" href="mailto:hello@salebots.org">hello@salebots.org</a>
           </div>
         </div>
         <div class="screen">
-          <!-- Placeholder телефона: можно заменить на картинку assets/img/cta-phone.png -->
           <div style="background:#0d141a; padding:18px">
             <div style="width:220px; margin:0 auto; border:1px solid rgba(255,255,255,.08); border-radius:22px; overflow:hidden">
-              <div style="background:#0f1a22; padding:12px; color:#9FB0C6; text-align:center">SalesBots</div>
+              <div style="background:#0f1a22; padding:12px; color:#9FB0C6; text-align:center">Salebots</div>
               <div style="background:#0b1218; padding:14px; min-height:260px; display:grid; gap:8px">
                 <div style="justify-self:flex-start; max-width:80%; background:#13202b; color:#cfe7ff; padding:8px 10px; border-radius:12px 12px 12px 6px;">Готовы начать?</div>
                 <div style="justify-self:flex-end; max-width:80%; background:#1a3b2f; color:#c9ffe7; padding:8px 10px; border-radius:12px 12px 6px 12px;">Напишите мне в Telegram — отвечу в течение 2 часов.</div>
               </div>
             </div>
           </div>
-          <!-- Заменить на <img src="assets/img/cta-phone.png" alt="Чат с ботом" /> при наличии -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container" style="display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap">
       <div style="display:flex; align-items:center; gap:10px">
         <div class="logo-badge" style="width:28px;height:28px"></div>
-        <div>© <span id="y"></span> SalesBots</div>
+        <div>© <span id="y"></span> Salebots</div>
       </div>
       <div class="muted">Бали • Работаем по всему миру</div>
     </div>
   </footer>
 
-  <!-- Cloudflare Web Analytics (бесплатно, просто вставь) -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "REPLACE_WITH_YOUR_CLOUDFLARE_ANALYTICS_TOKEN"}'></script>
-  <!-- GA4 (по желанию: создай ресурс в GA4 и вставь ID) -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script> -->
-
-  <!-- Chart.js для графика кейса -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
   <script>
-    // Год в футере
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Плавное появление блоков при скролле
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
@@ -450,7 +479,6 @@
     }, {threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // Генерация графика конверсий
     const ctx = document.getElementById('convChart')?.getContext('2d');
     if(ctx){
       const gradient = ctx.createLinearGradient(0,0,0,400);
@@ -482,7 +510,7 @@
           responsive: true,
           maintainAspectRatio: true,
           plugins: {
-            legend: { labels: { color: '#9FB0C6' } },
+            legend: { display: false },
             tooltip: {
               backgroundColor: 'rgba(10,12,16,.9)',
               borderColor: 'rgba(255,255,255,.08)',
@@ -492,8 +520,18 @@
             }
           },
           scales: {
-            x: { ticks: { color:'#9FB0C6' }, grid: { color:'rgba(255,255,255,.06)'} },
-            y: { ticks: { color:'#9FB0C6' }, grid: { color:'rgba(255,255,255,.06)'}, suggestedMin:6, suggestedMax:15 }
+            x: { 
+              ticks: { display: false }, 
+              grid: { display: false },
+              border: { display: false }
+            },
+            y: { 
+              ticks: { display: false }, 
+              grid: { display: false },
+              border: { display: false },
+              suggestedMin:6, 
+              suggestedMax:15 
+            }
           }
         }
       });
