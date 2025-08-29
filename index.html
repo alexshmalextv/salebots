@@ -211,7 +211,7 @@
         </div>
         <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap">
           <a class="btn btn-primary" href="#lead-form">Получить аудит за 15 минут</a>
-          <a class="btn" href="#how">Как это работает</a>
+          <a class="btn" href="#bots">Что умеют боты</a>
         </div>
         <div class="badges">
           <span class="badge">Только 3 слота в месяц</span>
@@ -247,6 +247,7 @@
     </div>
   </header>
 
+  <!-- ATTENTION: Проблемы бизнеса -->
   <section class="section">
     <div class="container grid-3 reveal">
       <div class="card">
@@ -276,9 +277,82 @@
     </div>
   </section>
 
+  <!-- INTEREST: Решение и возможности -->
+  <section id="bots" class="section">
+    <div class="container">
+      <h2 class="reveal">Что могут наши боты</h2>
+      <p class="muted reveal" style="text-align:center">Цифровые ассистенты, которые работают за вас</p>
+      <div class="grid-3" style="margin-top:24px">
+        <div class="card reveal">
+          <h3>🚀 Мгновенные ответы 24/7</h3>
+          <p class="muted">Квалифицируют лиды, собирают заявки, передают "горячих" клиентов менеджеру. Ни одна заявка не потеряется.</p>
+        </div>
+        <div class="card reveal">
+          <h3>📋 Автоматизация процессов</h3>
+          <p class="muted">Отправляют прайсы, презентации, назначают встречи, интегрируются с календарём и CRM системами.</p>
+        </div>
+        <div class="card reveal">
+          <h3>🎯 Маркетинговые активности</h3>
+          <p class="muted">Проводят розыгрыши, рассылки, опросы, управляют подписками и собирают обратную связь.</p>
+        </div>
+        <div class="card reveal">
+          <h3>🧠 Персонализация</h3>
+          <p class="muted">Помнят историю клиента, учитывают потребности, обеспечивают прозрачность процессов.</p>
+        </div>
+        <div class="card reveal">
+          <h3>📊 Аналитика и метрики</h3>
+          <p class="muted">Интегрируются с CRM и Google Sheets, собирают данные о конверсии и источниках лидов.</p>
+        </div>
+        <div class="card reveal">
+          <h3>🔒 Безопасность данных</h3>
+          <p class="muted">Клиент всегда знает статус заявки, данные защищены, никакого спама и навязчивости.</p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:32px">
+        <p class="muted">В результате вы экономите время, не теряете лидов, повышаете конверсию и лояльность клиентов.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIRE: Доказательства и результаты -->
+  <section id="cases" class="section">
+    <div class="container">
+      <h2 class="reveal">Результаты клиентов</h2>
+      <p class="muted reveal" style="text-align:center">Работаем с любыми нишами</p>
+
+      <div class="showcase" style="margin-top:24px">
+        <div class="chart-container reveal">
+          <canvas id="resultsChart" width="1200" height="400"></canvas>
+        </div>
+
+        <div class="cases-grid" style="margin-top:24px">
+          <div class="case-card reveal">
+            <div class="case-icon" style="background:linear-gradient(135deg, #FFD93D, #FF6B6B);">💱</div>
+            <h3>Обменный пункт "MoneyX"</h3>
+            <div class="case-metric">+38%</div>
+            <p class="muted">рост конверсии, 2,5x ускорение обработки заявок. Бот интегрирован с курсами валют, оформляет заявки, отправляет реквизиты. Время обработки сократилось с 12 до 4 минут.</p>
+          </div>
+          <div class="case-card reveal">
+            <div class="case-icon" style="background:linear-gradient(135deg, #A8E6CF, #88D8C0);">🏠</div>
+            <h3>Агентство недвижимости "Nura Realty"</h3>
+            <div class="case-metric">+52%</div>
+            <p class="muted">рост числа встреч, -60% потерянных лидов. Бот консультирует по объектам, отправляет презентации, назначает показы. Встреч стало 38 вместо 25 в месяц.</p>
+          </div>
+          <div class="case-card reveal">
+            <div class="case-icon" style="background:linear-gradient(135deg, #FF9A8B, #FECFEF);">📋</div>
+            <h3>Визовое агентство "VisaPro"</h3>
+            <div class="case-metric">+44%</div>
+            <p class="muted">рост заявок, 90% типовых вопросов закрывает бот. Отвечает на вопросы, собирает документы, информирует о статусе. Новых заявок — 72 вместо 50 в месяц.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIRE: Как это работает -->
   <section id="how" class="section">
     <div class="container">
-      <h2 class="reveal">Как работают наши Sales‑боты</h2>
+      <h2 class="reveal">Как мы работаем</h2>
       <p class="muted reveal" style="text-align:center">Всего три шага к контролю и росту</p>
       <div class="steps" style="margin-top:16px">
         <div class="step reveal">
@@ -307,40 +381,6 @@
             <li><span class="li-dot"></span><span>Отчёт по метрикам и SLA ответов</span></li>
             <li><span class="li-dot"></span><span>Бесплатная поддержка 30 дней</span></li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="cases" class="section">
-    <div class="container">
-      <h2 class="reveal">Результаты клиентов</h2>
-      <p class="muted reveal" style="text-align:center">Работаем с любыми нишами</p>
-
-      <div class="showcase" style="margin-top:24px">
-        <div class="chart-container reveal">
-          <canvas id="resultsChart" width="1200" height="400"></canvas>
-        </div>
-
-        <div class="cases-grid" style="margin-top:24px">
-          <div class="case-card reveal">
-            <div class="case-icon" style="background:linear-gradient(135deg, #FF9A8B, #FECFEF);">🧘</div>
-            <h3>Ретрит-центр на Бали</h3>
-            <div class="case-metric">+45%</div>
-            <p class="muted">бронирований, время ответа снизилось с 4ч до 30с. Бот собирает пожелания, предлагает даты, бронирует слот.</p>
-          </div>
-          <div class="case-card reveal">
-            <div class="case-icon" style="background:linear-gradient(135deg, #A8E6CF, #88D8C0);">🎓</div>
-            <h3>Онлайн‑школа</h3>
-            <div class="case-metric">+60%</div>
-            <p class="muted">конверсия на прогреве, рассылки в Telegram, автоматические ответы на FAQ и запись на вебинары.</p>
-          </div>
-          <div class="case-card reveal">
-            <div class="case-icon" style="background:linear-gradient(135deg, #FFD93D, #FF6B6B);">🏢</div>
-            <h3>Маркетинговое агентство</h3>
-            <div class="case-metric">+35%</div>
-            <p class="muted">лидов, CRM-связка и авто‑назначение менеджеру по очереди. 90% повторных вопросов закрывает бот.</p>
-          </div>
         </div>
       </div>
     </div>
