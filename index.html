@@ -536,7 +536,7 @@
             <li><span class="li-dot"></span><span>7 дней поддержки после запуска</span></li>
           </ul>
           <div class="package-cta">
-            <button class="btn btn-primary" onclick="selectPackage('starter')">Забронировать слот</button>
+            <button class="btn btn-primary" onclick="selectPackage(event, 'starter')">Забронировать слот</button>
           </div>
         </div>
 
@@ -546,7 +546,7 @@
           <div class="package-price">
             <span class="strike">$2,000</span>$1,199
           </div>
-          <p class="package-subtitle">Для SMB, магазинов, агентств с регулярным потоком лидов</p>
+          <p class="package-subtitle">Для малого и среднего бизнеса, магазинов, агентств с регулярным потоком лидов</p>
           <ul class="package-features list">
             <li><span class="li-dot"></span><span>Полный 7‑дневный цикл: диагностика → настройка → запуск</span></li>
             <li><span class="li-dot"></span><span>10+ сценариев (квалификация, воронки, напоминания)</span></li>
@@ -558,7 +558,7 @@
             <strong>Гарантия:</strong> рост конверсии +20% или доработка бесплатно
           </div>
           <div class="package-cta">
-            <button class="btn btn-primary btn-pulse" onclick="selectPackage('growth')">Получить аудит</button>
+            <button class="btn btn-primary btn-pulse" onclick="selectPackage(event, 'growth')">Получить аудит</button>
           </div>
         </div>
 
@@ -577,7 +577,7 @@
             <strong>Гарантия:</strong> SLA по срокам, компенсация $200 за каждый день просрочки
           </div>
           <div class="package-cta">
-            <button class="btn btn-primary" onclick="selectPackage('maximum')">Запросить КП</button>
+            <button class="btn btn-primary" onclick="selectPackage(event, 'maximum')">Запросить КП</button>
           </div>
         </div>
       </div>
@@ -586,19 +586,19 @@
         <h3>Дополнительные услуги</h3>
         <div class="value-items">
           <div class="value-item">
-            <span>Шаблон диалога + настройка (1 сценарий)</span>
-            <span class="value-item-price">$99</span>
+            <span>Создание email-кампаний (Apollo)</span>
+            <span class="value-item-price">$499</span>
           </div>
           <div class="value-item">
-            <span>Быстрая CRM‑связка (Webhook → Google Sheets)</span>
-            <span class="value-item-price">$129</span>
+            <span>LinkedIn автоматизация (сообщения + коннекты, Apollo)</span>
+            <span class="value-item-price">$499</span>
           </div>
           <div class="value-item">
-            <span>Дополнительный язык / перевод диалогов</span>
-            <span class="value-item-price">$149</span>
+            <span>Персональный аудит и редизайн процесса продаж (RevOps)</span>
+            <span class="value-item-price">$1499</span>
           </div>
           <div class="value-item">
-            <span>Подключение второго канала (для Starter)</span>
+            <span>Подключение дополнительного канала, в том числе Почта (для пакета Starter)</span>
             <span class="value-item-price">$199</span>
           </div>
         </div>
@@ -924,7 +924,7 @@
     });
 
     // Функция выбора пакета
-    function selectPackage(packageName) {
+    function selectPackage(e, packageName) {
       document.getElementById('package').value = packageName;
       document.getElementById('lead-form').scrollIntoView({ behavior: 'smooth' });
       
@@ -934,7 +934,7 @@
         card.style.boxShadow = 'var(--shadow)';
       });
       
-      const selectedCard = event.target.closest('.package-card');
+      const selectedCard = e.target.closest('.package-card');
       if (selectedCard) {
         selectedCard.style.transform = 'scale(1.02)';
         selectedCard.style.boxShadow = '0 25px 70px rgba(111,210,255,.4), inset 0 1px 0 rgba(255,255,255,.08)';
