@@ -1058,12 +1058,15 @@
       });
     }
 
-    // 2. Отслеживание кликов по кнопкам с текстом "Free audit" или "Получить аудит"
+    // 2. Отслеживание кликов по кнопкам "аудита" (и EN, и RU)
     const auditButtons = document.querySelectorAll('a.btn, button');
     auditButtons.forEach(function(btn) {
       btn.addEventListener('click', function() {
         const text = (btn.innerText || btn.value || '').trim().toLowerCase();
-        if (text.includes('audit')) {
+        if (
+          text.includes('audit') ||     // англ. кнопки
+          text.includes('аудит')        // рус. кнопки
+        ) {
           gtag('event', 'click_audit_button', {
             event_category: 'CTA',
             event_label: text
