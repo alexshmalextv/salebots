@@ -1051,5 +1051,49 @@
     });
   </script>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1. Отслеживание отправки формы (lead-form)
+    const leadForm = document.querySelector('#lead-form form');
+    if (leadForm) {
+      leadForm.addEventListener('submit', function() {
+        gtag('event', 'lead_form_submit', {
+          event_category: 'Lead',
+          event_label: 'Free Audit Form'
+        });
+      });
+    }
+
+    // 2. Отслеживание кликов по кнопкам с текстом "Free audit" или "Получить аудит"
+    const auditButtons = document.querySelectorAll('a.btn, button');
+    auditButtons.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const text = (btn.innerText || btn.value || '').trim().toLowerCase();
+        if (text.includes('audit')) {
+          gtag('event', 'click_audit_button', {
+            event_category: 'CTA',
+            event_label: text
+          });
+        }
+      });
+    });
+
+    // 3. Отслеживание переходов в мессенджеры (Telegram, WhatsApp)
+    const messengerLinks = document.querySelectorAll('a[href*="t.me"], a[href*="wa.me"]');
+    messengerLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        const href = link.getAttribute('href');
+        let label = 'Messenger';
+        if (href.includes('t.me')) label = 'Telegram';
+        if (href.includes('wa.me')) label = 'WhatsApp';
+        gtag('event', 'click_messenger', {
+          event_category: 'CTA',
+          event_label: label
+        });
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
