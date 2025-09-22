@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Скрытые утечки в продажах — Salebots</title>
+  <style>
+    body {margin:0;font-family:Inter,Arial,sans-serif;background:#0d1117;color:#fff;}
+    .section{padding:80px 20px;border-top:1px solid rgba(255,255,255,.1);}
+    .container{max-width:1100px;margin:0 auto;}
+    h1{font-size:56px;margin:0;background:linear-gradient(90deg,#6FD2FF,#7CF5C6);-webkit-background-clip:text;color:transparent;}
+    h2{font-size:34px;margin:0 0 20px;}
+    .subtitle{color:#aaa;font-size:20px;}
+    .kpi-row{display:flex;gap:16px;margin-top:20px;flex-wrap:wrap;}
+    .kpi-card{background:#161b22;padding:12px 20px;border-radius:12px;box-shadow:0 0 20px rgba(0,0,0,.4);}
+    .case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
+    .case-card{background:#161b22;padding:20px;border-radius:16px;box-shadow:0 0 20px rgba(0,0,0,.4);}
+    .li-dot{list-style:disc inside;color:#ccc;padding:0;margin:0;}
+    .package-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
+    .package-card{background:#161b22;padding:20px;border-radius:20px;box-shadow:0 0 30px rgba(0,0,0,.5);}
+    .package-badge{background:#6FD2FF;color:#000;display:inline-block;padding:4px 10px;border-radius:999px;font-weight:700;font-size:12px;margin-bottom:10px;}
+    .package-price{font-size:28px;font-weight:800;margin-bottom:10px;}
+    .guarantee-block{margin-top:16px;padding:12px;border:1px solid rgba(255,255,255,.2);border-radius:12px;}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-top:20px;}
+    .step{background:#161b22;padding:20px;border-radius:16px;}
+    .button{display:inline-block;margin-top:20px;background:linear-gradient(90deg,#6FD2FF,#7CF5C6);color:#000;padding:14px 24px;border-radius:12px;text-decoration:none;font-weight:700;}
+    .contacts{margin-top:20px;color:#aaa;}
+    canvas{max-width:100%;}
+    input{display:block;margin:6px 0;padding:8px;border-radius:8px;border:1px solid #333;background:#0d1117;color:#fff;width:100%;}
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <h1>Скрытые утечки в продажах</h1>
+      <p class="subtitle">Почему компании теряют потенциальных клиентов, даже не подозревая об этом</p>
+      <div class="kpi-row">
+        <div class="kpi-card">Ответ 24/7</div>
+        <div class="kpi-card">Запуск за 7 дней</div>
+        <div class="kpi-card">+20–60% к конверсии</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Процесс продаж кажется отлаженным</h2>
+      <div class="case-grid">
+        <ul class="li-dot">
+          <li>Клиенты пишут круглосуточно, а отвечаете только в рабочие часы</li>
+          <li>Время первой реакции измеряется часами, а не минутами</li>
+          <li>Каждый менеджер отвечает по‑своему, без единых стандартов</li>
+          <li>Тёплые лиды остывают за выходные и праздники</li>
+          <li>Рутинные вопросы отнимают время у продаж</li>
+        </ul>
+        <div class="case-card">
+          <h3>Результат</h3>
+          <p>Значительная часть клиентов уходит к конкурентам</p>
+          <canvas id="hiddenLossesChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Стоимость медленной реакции</h2>
+      <div class="case-grid">
+        <ul class="li-dot">
+          <li>Снижение конверсии при задержке ответа</li>
+          <li>Переход клиентов к конкурентам</li>
+          <li>Рост затрат на привлечение лидов</li>
+          <li>Потеря репутации из‑за слабого сервиса</li>
+        </ul>
+        <div class="case-card">
+          <canvas id="responseChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Результаты клиентов</h2>
+      <div class="case-grid">
+        <div class="case-card"><h3>Обменник валют</h3><ul class="li-dot"><li>Время реакции: 12 мин → 30 сек</li><li>+38% конверсии</li><li>Круглосуточная обработка</li></ul></div>
+        <div class="case-card"><h3>Визовые услуги</h3><ul class="li-dot"><li>Рост заявок: 50 → 72</li><li>90% FAQ решает бот</li><li>Автосбор документов</li></ul></div>
+        <div class="case-card"><h3>Недвижимость</h3><ul class="li-dot"><li>+52% встреч</li><li>−60% потерянных лидов</li><li>Автоматическая запись</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Инвестиции и возврат</h2>
+      <div class="package-grid">
+        <div class="package-card">
+          <div class="package-badge">Starter</div>
+          <div class="package-price">$399</div>
+          <ul class="li-dot"><li>3 базовых сценария</li><li>1 канал</li><li>Интеграция с Google Sheets</li><li>7 дней поддержки</li></ul>
+        </div>
+        <div class="package-card">
+          <div class="package-badge">Growth</div>
+          <div class="package-price">$1,199</div>
+          <ul class="li-dot"><li>7‑дневный цикл</li><li>До 10 сценариев</li><li>2 канала</li><li>CRM и календарь</li><li>30 дней поддержки</li><li>Гарантия: +20% конверсии</li></ul>
+          <div class="guarantee-block" id="roiBox">
+            <h4>Расчёт окупаемости</h4>
+            <input id="leads" type="number" value="200" />
+            <input id="conv" type="number" value="5" />
+            <input id="margin" type="number" value="150" />
+            <input id="uplift" type="number" value="20" />
+            <div id="roiOut"></div>
+          </div>
+        </div>
+        <div class="package-card">
+          <div class="package-badge">Maximum</div>
+          <div class="package-price">$3,900 – $7,500</div>
+          <ul class="li-dot"><li>3 канала</li><li>Продвинутые интеграции</li><li>A/B‑тесты</li><li>60 дней поддержки</li><li>SLA: $200/день</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Запуск за 7 дней</h2>
+      <div class="steps">
+        <div class="step">Этап 1 (2 дня): аудит процессов</div>
+        <div class="step">Этап 2 (3 дня): разработка сценариев</div>
+        <div class="step">Этап 3 (2 дня): интеграция и запуск</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2>Мы отвечаем за эффект</h2>
+      <div class="case-grid">
+        <div class="case-card">+20% к конверсии или доработка бесплатно</div>
+        <div class="case-card">Соблюдение сроков внедрения</div>
+        <div class="case-card">30 дней бесплатной поддержки</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container" style="text-align:center;">
+      <h2>Следующие шаги</h2>
+      <p class="subtitle">Бесплатный анализ (15 минут) → Персональный план → Расчёт эффекта → Пилот</p>
+      <a href="#" class="button">Забронировать аудит</a>
+      <p class="contacts">Telegram: @avtohtonny · WhatsApp: +66 836 840 045 · hello@salebots.org</p>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    new Chart(document.getElementById('hiddenLossesChart'),{type:'doughnut',data:{labels:['Видимые','Скрытые'],datasets:[{data:[15,85],backgroundColor:['#6FD2FF','#7CF5C6']}]} });
+    new Chart(document.getElementById('responseChart'),{type:'bar',data:{labels:['Было 12 мин','Стало 0:30'],datasets:[{data:[100,6],backgroundColor:['#FF8B6E','#76E39E']}]} });
+    const $=id=>document.getElementById(id);
+    function calc(){const L=+$("leads").value||0;const c0=(+$("conv").value||0)/100;const m=+$("margin").value||0;const up=(+$("uplift").value||0)/100;const deals0=L*c0;const deals1=L*c0*(1+up);const delta=Math.max(0,deals1-deals0);const gain=delta*m;const price=1199;const weeks=gain>0?(price/(gain/4)):Infinity;const ok=gain>=price;$("roiOut").innerHTML=`Доп. сделки: ${delta.toFixed(1)} · Доход/мес: $${gain.toFixed(0)}<br>Окупаемость: <b style='color:${ok?'#7CF5C6':'#FF8B6E'}'>${ok?weeks.toFixed(1)+' нед.':'>12 нед.'}</b>`;}
+    ["leads","conv","margin","uplift"].forEach(id=>$(id).addEventListener('input',calc));calc();
+  </script>
+</body>
+</html>
