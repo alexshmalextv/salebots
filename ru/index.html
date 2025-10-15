@@ -379,15 +379,16 @@
       <div class="hero-card reveal float">
         <div class="glow"></div>
         <div class="screen" id="chat-mock">
-          <div style="background:#0d141a; padding:14px; min-height:280px;">
+          <div style="background:#0d141a; padding:14px; min-height:280px; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.08); position:relative;">
             <div style="width:36px;height:6px;border-radius:3px;background:#2a3b4b;margin:0 auto 12px;" role="img" aria-label="Индикатор мобильного устройства"></div>
             <div style="display:grid; gap:8px;">
-              <div style="justify-self:flex-start; max-width:80%; background:#13202b; color:#cfe7ff; padding:10px 12px; border-radius:12px 12px 12px 6px;">Привет! Интересует бот для автоматизации продаж в Telegram.</div>
-              <div style="justify-self:flex-end; max-width:80%; background:#1a3b2f; color:#c9ffe7; padding:10px 12px; border-radius:12px 12px 6px 12px;">Здравствуйте! Создаём чат-ботов за 7 дней. Соберём сценарии, подключим CRM и календарь для записи клиентов.</div>
-              <div style="justify-self:flex-start; max-width:70%; background:#13202b; color:#cfe7ff; padding:10px 12px; border-radius:12px 12px 12px 6px;">Сколько стоит разработка бота?</div>
-              <div style="justify-self:flex-end; max-width:70%; background:#1a3b2f; color:#c9ffe7; padding:10px 12px; border-radius:12px 12px 6px 12px;">От $399 за полную настройку. Окупается за 2–4 недели благодаря росту конверсии.</div>
+              <div style="justify-self:flex-start; max-width:80%; background:rgba(19,32,43,.9); color:#cfe7ff; padding:10px 12px; border-radius:12px 12px 12px 6px;">Привет! Интересует бот для автоматизации продаж в Telegram.</div>
+              <div style="justify-self:flex-end; max-width:80%; background:rgba(26,59,47,.9); color:#c9ffe7; padding:10px 12px; border-radius:12px 12px 6px 12px;">Здравствуйте! Создаём чат-ботов за 7 дней. Соберём сценарии, подключим CRM и календарь для записи клиентов.</div>
+              <div style="justify-self:flex-start; max-width:70%; background:rgba(19,32,43,.9); color:#cfe7ff; padding:10px 12px; border-radius:12px 12px 12px 6px;">Сколько стоит разработка бота?</div>
+              <div style="justify-self:flex-end; max-width:70%; background:rgba(26,59,47,.9); color:#c9ffe7; padding:10px 12px; border-radius:12px 12px 6px 12px;">От $399 за полную настройку. Окупается за 2–4 недели благодаря росту конверсии.</div>
             </div>
           </div>
+          <div style="position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg, rgba(255,255,255,.05), transparent 40%); border-radius:14px;"></div>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr; gap:10px; margin-top:12px">
           <div class="card" style="padding:14px">
@@ -972,8 +973,8 @@
           data: {
             labels: ['Конверсия +30%', 'Повторные продажи +60%', 'Потерянные клиенты -90%'],
             datasets: [
-              { label: 'До', data: [30, 40, 90], backgroundColor: '#FF8B6E', borderRadius: 8, maxBarThickness: 80 },
-              { label: 'После', data: [60, 100, 10], backgroundColor: '#76E39E', borderRadius: 8, maxBarThickness: 80 }
+              { label: 'До', data: [30, 40, 90], backgroundColor: '#FF8B6E', borderRadius: 8, maxBarThickness: 80, categoryPercentage: 0.7 },
+              { label: 'После', data: [60, 100, 10], backgroundColor: '#76E39E', borderRadius: 8, maxBarThickness: 80, categoryPercentage: 0.7 }
             ]
           },
           options: {
@@ -981,13 +982,7 @@
             maintainAspectRatio: true,
             plugins: {
               legend: { labels: { color: '#9FB0C6', font: { size: 16, weight: 'bold' } }, position: 'top' },
-              tooltip: {
-                backgroundColor: 'rgba(10,12,16,.9)',
-                borderColor: 'rgba(255,255,255,.08)',
-                borderWidth: 1,
-                titleColor:'#E9EEF6',
-                bodyColor:'#9FB0C6'
-              }
+              tooltip: { enabled: false }
             },
             scales: {
               x: { ticks: { color:'#9FB0C6', font: { size: 14, weight: 'bold' } }, grid: { display: false }, border: { display: false } },
