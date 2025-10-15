@@ -81,68 +81,31 @@
     :root{
       --bg:#0A0C10; --card:#10141C; --soft:#161C25;
       --text:#E9EEF6; --muted:#9FB0C6;
-      --brand:#5BA8D0; --brand-2:#6BD9B0; --accent:#B794F6;
+      --brand:#6FD2FF; --brand-2:#7CF5C6;
       --danger:#FF8B6E; --success:#76E39E;
-      --gradient: linear-gradient(135deg, rgba(91,168,208,.2), rgba(107,217,176,.12));
-      --glass: rgba(255,255,255,.04);
-      --shadow: 
-        0 2px 4px rgba(0,0,0,.04),
-        0 8px 16px rgba(0,0,0,.08),
-        0 16px 32px rgba(0,0,0,.12),
-        0 32px 64px rgba(0,0,0,.16);
-      --shadow-hover: 
-        0 4px 8px rgba(91,168,208,.12),
-        0 12px 24px rgba(0,0,0,.16),
-        0 24px 48px rgba(0,0,0,.2);
+      --gradient: linear-gradient(135deg, rgba(111,210,255,.25), rgba(124,245,198,.15));
+      --glass: rgba(255,255,255,.06);
+      --shadow: 0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
       --radius:16px; --radius-sm:12px; --radius-lg:24px;
     }
     *{box-sizing:border-box}
-    html,body{
-      margin:0;
-      padding:0;
-      background:
-        radial-gradient(1400px 700px at 15% -15%, rgba(91,168,208,.08), transparent),
-        radial-gradient(1000px 600px at 85% -10%, rgba(107,217,176,.06), transparent),
-        radial-gradient(800px 800px at 50% 100%, rgba(183,148,246,.04), transparent),
-        var(--bg);
-      color:var(--text);
+    html,body{margin:0;padding:0;background:
+      radial-gradient(1200px 600px at 10% -10%, rgba(111,210,255,.12), transparent),
+      radial-gradient(800px 500px at 90% -20%, rgba(124,245,198,.10), transparent),
+      var(--bg); color:var(--text);
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .container{width:min(1200px, 92vw); margin:0 auto}
 
-    .nav{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter:saturate(180%) blur(20px);
-      background:linear-gradient(180deg, rgba(10,12,16,.85), rgba(10,12,16,.6));
-      border-bottom:1px solid rgba(255,255,255,.08);
-      box-shadow:0 4px 16px rgba(0,0,0,.12);
-    }
+    .nav{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(10px);
+      background:linear-gradient(180deg, rgba(10,12,16,.75), rgba(10,12,16,.35));
+      border-bottom:1px solid rgba(255,255,255,.06)}
     .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:16px 0}
     .logo{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.5px}
-    .logo-badge{
-      width:36px;
-      height:36px;
-      border-radius:12px;
-      background:linear-gradient(135deg, #5BA8D0, #6BD9B0);
-      box-shadow:
-        0 0 20px rgba(91,168,208,.3),
-        0 4px 12px rgba(0,0,0,.2),
-        inset 0 1px 1px rgba(255,255,255,.2);
-      transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-    .logo-badge:hover{
-      transform:scale(1.1) rotate(5deg);
-      box-shadow:
-        0 0 30px rgba(91,168,208,.5),
-        0 8px 20px rgba(0,0,0,.3),
-        inset 0 1px 1px rgba(255,255,255,.3);
-    }
+    .logo-badge{width:36px;height:36px;border-radius:12px;background:conic-gradient(from 140deg, #6FD2FF, #7CF5C6); box-shadow:0 10px 30px rgba(111,210,255,.35)}
 
     .nav-cta{display:flex; gap:10px; align-items:center}
 
@@ -150,103 +113,18 @@
     .lang-switch .active{font-weight:700; color:var(--text)}
     .lang-sep{opacity:.5}
 
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 20px;
-      border-radius:12px;
-      font-weight:600;
-      font-size:15px;
-      border:1px solid rgba(255,255,255,.1);
-      background:rgba(255,255,255,.03);
-      backdrop-filter:blur(10px);
-      transition:all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      cursor:pointer;
-      position:relative;
-      overflow:hidden;
-    }
-    .btn::before{
-      content:'';
-      position:absolute;
-      top:50%;
-      left:50%;
-      width:0;
-      height:0;
-      border-radius:50%;
-      background:rgba(255,255,255,.1);
-      transform:translate(-50%, -50%);
-      transition:width 0.6s, height 0.6s;
-    }
-    .btn:hover::before{
-      width:300px;
-      height:300px;
-    }
-    .btn:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,.08);
-      border-color:rgba(255,255,255,.2);
-      box-shadow:
-        0 8px 16px rgba(0,0,0,.15),
-        0 0 0 1px rgba(255,255,255,.05);
-    }
-    .btn:active{
-      transform:translateY(0);
-    }
-    
-    .btn-primary{
-      background:linear-gradient(135deg, #5BA8D0 0%, #6BD9B0 100%);
-      border:none;
-      color:#0A0C10;
-      font-weight:700;
-      box-shadow:
-        0 4px 12px rgba(91,168,208,.25),
-        0 8px 24px rgba(107,217,176,.15),
-        inset 0 1px 1px rgba(255,255,255,.3);
-      position:relative;
-      overflow:hidden;
-    }
-    .btn-primary::after{
-      content:'';
-      position:absolute;
-      top:-50%;
-      left:-50%;
-      width:200%;
-      height:200%;
-      background:linear-gradient(45deg, transparent, rgba(255,255,255,.1), transparent);
-      transform:rotate(45deg);
-      transition:all 0.6s;
-    }
-    .btn-primary:hover::after{
-      left:100%;
-    }
-    .btn-primary:hover{
-      transform:translateY(-3px);
-      box-shadow:
-        0 8px 20px rgba(91,168,208,.35),
-        0 16px 40px rgba(107,217,176,.2),
-        0 0 0 1px rgba(255,255,255,.2),
-        inset 0 1px 1px rgba(255,255,255,.4);
-    }
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 18px;
+      border-radius:12px; font-weight:600; border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.02); transition:.25s ease; cursor:pointer}
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.12); color:var(--text)}
+    .btn-primary{background:linear-gradient(135deg,#6FD2FF,#7CF5C6); color:#071018; border:none; box-shadow:0 12px 30px rgba(111,210,255,.35)}
+    .btn-primary:hover{filter:brightness(1.1) drop-shadow(0 0 8px rgba(124,245,198,.6)); transform:translateY(-2px)}
 
-    .btn-pulse {
-      animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-    }
+    .btn-pulse { animation: pulse 2s infinite; }
     @keyframes pulse {
-      0%, 100% {
-        box-shadow:
-          0 4px 12px rgba(91,168,208,.25),
-          0 8px 24px rgba(107,217,176,.15),
-          inset 0 1px 1px rgba(255,255,255,.3);
-      }
-      50% {
-        box-shadow:
-          0 8px 20px rgba(91,168,208,.4),
-          0 16px 40px rgba(107,217,176,.25),
-          0 0 40px rgba(91,168,208,.3),
-          inset 0 1px 1px rgba(255,255,255,.4);
-      }
+      0% { box-shadow: 0 12px 30px rgba(111,210,255,.35); }
+      50% { box-shadow: 0 12px 30px rgba(111,210,255,.6), 0 0 0 8px rgba(111,210,255,.2); }
+      100% { box-shadow: 0 12px 30px rgba(111,210,255,.35); }
     }
 
     .breadcrumbs{padding:12px 0; font-size:14px; color:var(--muted)}
@@ -258,118 +136,33 @@
     .hero{position:relative; padding:80px 0 40px}
     .hero-grid{display:flex; flex-direction:column; gap:32px; align-items:center}
     .eyebrow{display:inline-flex; align-items:center; gap:10px; font-size:12px; letter-spacing:.6px; color:var(--muted); text-transform:uppercase; padding:8px 12px; border:1px solid rgba(255,255,255,.08); border-radius:999px; background:var(--glass)}
-    .hero h1{
-      font-size: clamp(32px, 6vw, 58px);
-      line-height:1.05;
-      margin:20px 0;
-      text-align:center;
-      font-weight:800;
-      letter-spacing:-0.02em;
-      background:linear-gradient(135deg, #E9EEF6 0%, #9FB0C6 100%);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-    }
-    .lead{
-      font-size: clamp(16px, 2vw, 20px);
-      color:var(--muted);
-      text-align:center;
-      max-width:60ch;
-      line-height:1.6;
-      letter-spacing:-0.01em;
-    }
+    .hero h1{font-size: clamp(28px, 6vw, 56px); line-height:1.05; margin:18px 0; text-align:center}
+    .lead{font-size: clamp(16px, 2vw, 20px); color:var(--muted); text-align:center; max-width:60ch}
 
     .kpis{display:flex; flex-direction:column; gap:12px; margin:28px 0 14px; width:100%}
     .kpi{background:var(--card); padding:16px; border-radius:var(--radius-sm); border:1px solid rgba(255,255,255,.06); box-shadow:var(--shadow); text-align:center}
     .kpi b{font-size:22px; display:block; margin-bottom:4px}
 
-    .hero-card{
-      position:relative;
-      background:linear-gradient(135deg, rgba(255,255,255,.05) 0%, rgba(255,255,255,.02) 100%);
-      backdrop-filter:blur(30px) saturate(150%);
-      padding:24px;
-      border-radius:var(--radius-lg);
-      border:1px solid rgba(255,255,255,.1);
-      box-shadow:
-        0 8px 32px rgba(0,0,0,.2),
-        0 16px 64px rgba(0,0,0,.15),
-        inset 0 1px 1px rgba(255,255,255,.1);
-      overflow:hidden;
-      margin-top:20px;
-    }
-    .glow{
-      position:absolute;
-      inset:-30%;
-      background:
-        radial-gradient(600px 400px at 30% 20%, rgba(91,168,208,.12), transparent),
-        radial-gradient(500px 350px at 70% 15%, rgba(107,217,176,.08), transparent),
-        radial-gradient(400px 300px at 50% 80%, rgba(183,148,246,.06), transparent);
-      animation:glowPulse 8s ease-in-out infinite;
-      opacity:0.6;
-    }
-    @keyframes glowPulse{
-      0%, 100%{ transform:scale(1) rotate(0deg); opacity:0.6; }
-      50%{ transform:scale(1.1) rotate(5deg); opacity:0.8; }
-    }
+    .hero-card{position:relative; background:var(--card); padding:22px; border-radius:var(--radius-lg); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow); overflow:hidden; margin-top:20px}
+    .glow{position:absolute; inset:-20%; background:
+      radial-gradient(500px 300px at 20% 10%, rgba(111,210,255,.14), transparent),
+      radial-gradient(400px 250px at 80% 10%, rgba(124,245,198,.12), transparent)}
     .screen{position:relative; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.08)}
     .screen::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,.05), transparent 40%); pointer-events:none}
 
     .badges{display:flex; gap:10px; margin-top:16px; flex-wrap:wrap; justify-content:center}
-    .badge{
-      font-size:12px;
-      color:#0A0C10;
-      background:linear-gradient(135deg, #FFB347 0%, #FF8C42 100%);
-      padding:8px 14px;
-      border-radius:999px;
-      font-weight:700;
-      box-shadow:
-        0 4px 12px rgba(255,140,66,.25),
-        inset 0 1px 1px rgba(255,255,255,.3);
-      transition:all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      border:1px solid rgba(255,255,255,.2);
-    }
-    .badge:hover{
-      transform:translateY(-2px) scale(1.05);
-      box-shadow:
-        0 8px 20px rgba(255,140,66,.35),
-        inset 0 1px 1px rgba(255,255,255,.4);
-    }
+    .badge{font-size:12px; color:#071018; background:linear-gradient(135deg,#FFB347,#FF8C42); padding:8px 10px; border-radius:999px; font-weight:700}
 
     .section{padding:35px 0}
     .section h2{font-size: clamp(24px, 4vw, 38px); margin:0 0 18px; text-align:center}
     .muted{color:var(--muted)}
 
     .grid-3{display:flex; flex-direction:column; gap:18px}
-    .card{
-      background:linear-gradient(135deg, rgba(255,255,255,.04) 0%, rgba(255,255,255,.01) 100%);
-      backdrop-filter:blur(20px) saturate(150%);
-      padding:24px;
-      border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:var(--shadow);
-      transition:all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-      position:relative;
-      overflow:hidden;
-    }
-    .card::before{
-      content:'';
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      height:1px;
-      background:linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent);
-    }
-    .card:hover{
-      transform:translateY(-4px);
-      border-color:rgba(91,168,208,.3);
-      box-shadow:var(--shadow-hover);
-      background:linear-gradient(135deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,.02) 100%);
-    }
+    .card{background:var(--card); padding:22px; border-radius:var(--radius); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow)}
     .card h3{margin:0 0 8px}
     .list{display:grid; gap:8px; margin:12px 0 0; padding:0}
     .list li{list-style:none; display:flex; gap:10px; align-items:flex-start}
-    .li-dot{width:8px;height:8px;border-radius:50%; margin-top:8px; background:linear-gradient(135deg,#5BA8D0,#6BD9B0); flex-shrink:0; min-width:8px; min-height:8px}
+    .li-dot{width:8px;height:8px;border-radius:50%; margin-top:8px; background:linear-gradient(135deg,#6FD2FF,#7CF5C6); flex-shrink:0; min-width:8px; min-height:8px}
 
     .steps{display:flex; flex-direction:column; gap:18px}
     .step{position:relative; padding:24px; background:var(--soft); border-radius:var(--radius); border:1px solid rgba(255,255,255,.08)}
@@ -382,7 +175,7 @@
     .case-card{background:var(--card); padding:20px; border-radius:var(--radius); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow); position:relative}
     .case-icon{width:48px; height:48px; border-radius:12px; margin-bottom:12px; display:flex; align-items:center; justify-content:center; font-size:24px}
     .case-metric{font-size:28px; font-weight:800; color:var(--brand); margin:8px 0 4px}
-    .case-package{position:absolute; top:12px; right:12px; font-size:11px; padding:4px 8px; border-radius:6px; background:rgba(91,168,208,.15); color:var(--brand); font-weight:600}
+    .case-package{position:absolute; top:12px; right:12px; font-size:11px; padding:4px 8px; border-radius:6px; background:rgba(111,210,255,.15); color:var(--brand); font-weight:600}
 
     .packages{display:flex; flex-direction:column; gap:24px; margin-top:32px}
     .package-card{
@@ -399,15 +192,14 @@
       justify-content:center;
       min-height:500px;
     }
-    .package-card.popular{border:2px solid var(--brand); background:linear-gradient(180deg, rgba(91,168,208,.08), rgba(107,217,176,.04))}
-    .package-badge{position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,#5BA8D0,#6BD9B0); color:#0A0C10; padding:6px 16px; border-radius:999px; font-size:12px; font-weight:800}
+    .package-card.popular{border:2px solid var(--brand); background:linear-gradient(180deg, rgba(111,210,255,.08), rgba(124,245,198,.04))}
+    .package-badge{position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg,#6FD2FF,#7CF5C6); color:#071018; padding:6px 16px; border-radius:999px; font-size:12px; font-weight:800}
     .package-title{font-size:28px; font-weight:800; margin:0 0 8px}
     .package-price{font-size:42px; font-weight:800; margin:16px 0}
     .package-price .strike{opacity:.6; text-decoration:line-through; margin-right:8px; font-size:28px}
     .package-subtitle{color:var(--muted); margin-bottom:24px}
     .package-features{text-align:left; margin:24px 0; width:100%}
     .package-cta{margin-top:24px}
-    .package-note{font-size:14px; color:var(--muted); margin-top:8px}
 
     .value-menu{background:var(--soft); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:24px; margin-top:32px}
     .value-menu h3{margin:0 0 16px; text-align:center}
@@ -416,7 +208,7 @@
     .value-item-price{color:var(--brand); font-weight:700}
 
     .offer{display:flex; flex-direction:column; gap:18px; align-items:center; max-width:800px; margin:0 auto}
-    .price-card{background:linear-gradient(180deg, rgba(91,168,208,.10), rgba(107,217,176,.08)); border:1px solid rgba(255,255,255,.12); padding:32px; border-radius:20px; box-shadow:var(--shadow); text-align:center; width:100%}
+    .price-card{background:linear-gradient(180deg, rgba(111,210,255,.10), rgba(124,245,198,.08)); border:1px solid rgba(255,255,255,.12); padding:32px; border-radius:20px; box-shadow:var(--shadow); text-align:center; width:100%}
     .price{font-size:34px; font-weight:800}
     .strike{opacity:.6; text-decoration:line-through; margin-right:8px}
 
@@ -427,7 +219,7 @@
     .results-card h3{font-size:28px; margin:0 0 24px; color:var(--text)}
     .results-grid{display:grid; gap:20px; grid-template-columns:1fr}
     .result-item{display:flex; align-items:center; gap:16px; padding:16px; background:rgba(255,255,255,.02); border-radius:12px; border:1px solid rgba(255,255,255,.06)}
-    .result-icon{font-size:24px; width:48px; height:48px; display:flex; align-items:center; justify-content:center; border-radius:12px; background:linear-gradient(135deg, rgba(91,168,208,.15), rgba(107,217,176,.10))}
+    .result-icon{font-size:24px; width:48px; height:48px; display:flex; align-items:center; justify-content:center; border-radius:12px; background:linear-gradient(135deg, rgba(111,210,255,.15), rgba(124,245,198,.10))}
     .result-text{flex:1; text-align:left}
     .result-text strong{color:var(--text); font-size:18px; display:block; margin-bottom:4px}
     .result-text span{color:var(--muted); font-size:14px}
@@ -464,7 +256,7 @@
     .comparison-table .check{color:var(--success)}
     .comparison-table .cross{color:var(--danger)}
 
-    .lead-form{background:linear-gradient(135deg, rgba(91,168,208,.12), rgba(107,217,176,.08));
+    .lead-form{background:linear-gradient(135deg, rgba(111,210,255,.12), rgba(124,245,198,.08));
       border:1px solid rgba(255,255,255,.12); border-radius:20px; padding:32px;
       box-shadow:var(--shadow); max-width:600px; margin:0 auto}
     .form-grid{display:grid; gap:20px}
@@ -477,13 +269,13 @@
     .form-select option{ background:var(--card); color:var(--text); padding:8px}
     .form-input:focus, .form-select:focus, .form-textarea:focus{
       outline:none; border-color:var(--brand); background:rgba(255,255,255,.08);
-      box-shadow:0 0 0 3px rgba(91,168,208,.15)}
+      box-shadow:0 0 0 3px rgba(111,210,255,.15)}
     .form-input::placeholder, .form-textarea::placeholder{color:var(--muted)}
     .form-textarea{resize:vertical; min-height:100px}
     .form-required{color:var(--danger); margin-left:4px}
     .form-submit{width:100%; padding:16px; font-size:18px; font-weight:700; margin-top:8px}
 
-    .cta{position:relative; background:linear-gradient(135deg, rgba(91,168,208,.14), rgba(107,217,176,.10)); border:1px solid rgba(255,255,255,.10); border-radius:22px; padding:28px; box-shadow:var(--shadow)}
+    .cta{position:relative; background:linear-gradient(135deg, rgba(111,210,255,.14), rgba(124,245,198,.10)); border:1px solid rgba(255,255,255,.10); border-radius:22px; padding:28px; box-shadow:var(--shadow)}
     .cta-grid{display:flex; flex-direction:column; gap:18px; align-items:center; text-align:center}
 
     .footer{padding:28px 0 60px; color:var(--muted); font-size:14px}
@@ -570,7 +362,7 @@
         <div class="kpis">
           <div class="kpi"><b>+30..60%</b> <span class="muted">конверсия из заявок в продажи</span></div>
           <div class="kpi"><b>≤7 дней</b><span class="muted">от анализа до запуска бота</span></div>
-          <div class="kpi"><b>на 80%</b><span class="muted">вопросов отвечает бот</span></div>
+          <div class="kpi"><b>на&nbsp;80%</b><span class="muted">вопросов отвечает бот</span></div>
         </div>
         <div style="display:flex; gap:10px; margin-top:10px; flex-wrap:wrap">
           <a class="btn btn-primary" href="#lead-form">Получить аудит за 15 минут</a>
@@ -701,7 +493,7 @@
 
         <div class="cases-grid" style="margin-top:24px">
           <div class="case-card reveal">
-            <div class="case-package" style="background:linear-gradient(135deg,#5BA8D0,#6BD9B0); color:#0A0C10; font-weight:800; font-size:12px;">Пакет Starter</div>
+            <div class="case-package" style="background:linear-gradient(135deg,#6FD2FF,#7CF5C6); color:#071018; font-weight:800; font-size:12px;">Пакет Starter</div>
             <div class="case-icon" style="background:linear-gradient(135deg, #FFD93D, #FF6B6B);">💱</div>
             <h3>Обменник MoneyX</h3>
             <div class="case-metric">+38% рост конверсии заявок</div>
@@ -713,7 +505,7 @@
             </ul>
           </div>
           <div class="case-card reveal">
-            <div class="case-package" style="background:linear-gradient(135deg,#5BA8D0,#6BD9B0); color:#0A0C10; font-weight:800; font-size:12px;">Пакет Growth</div>
+            <div class="case-package" style="background:linear-gradient(135deg,#6FD2FF,#7CF5C6); color:#071018; font-weight:800; font-size:12px;">Пакет Growth</div>
             <div class="case-icon" style="background:linear-gradient(135deg, #FF9A8B, #FECFEF);">📋</div>
             <h3>Визовое агентство VisaPro</h3>
             <div class="case-metric">+44% рост заявок на визы</div>
@@ -725,7 +517,7 @@
             </ul>
           </div>
           <div class="case-card reveal">
-            <div class="case-package" style="background:linear-gradient(135deg,#5BA8D0,#6BD9B0); color:#0A0C10; font-weight:800; font-size:12px;">Пакет Maximum</div>
+            <div class="case-package" style="background:linear-gradient(135deg,#6FD2FF,#7CF5C6); color:#071018; font-weight:800; font-size:12px;">Пакет Maximum</div>
             <div class="case-icon" style="background:linear-gradient(135deg, #A8E6CF, #88D8C0);">🏠</div>
             <h3>Агентство недвижимости Nura Realty</h3>
             <div class="case-metric">+52% рост встреч с клиентами</div>
@@ -945,7 +737,7 @@
       <div class="steps" style="margin-top:16px">
         <div class="step reveal">
           <div class="step-number">01</div>
-          <h3>Диагностика и планирование (2 дня)</h3>
+          <h3>Диагностика и планирование (2&nbsp;дня)</h3>
           <p class="muted">Анализируем путь клиента, собираем FAQ, определяем точки потерь в воронке продаж.</p>
           <ul class="list">
             <li><span class="li-dot"></span><span>Согласуем сценарии диалогов</span></li>
@@ -954,7 +746,7 @@
         </div>
         <div class="step reveal">
           <div class="step-number">02</div>
-          <h3>Разработка и настройка (3 дня)</h3>
+          <h3>Разработка и настройка (3&nbsp;дня)</h3>
           <p class="muted">Настраиваем чат-бота, создаём базы ответов, логики квалификации клиентов.</p>
           <ul class="list">
             <li><span class="li-dot"></span><span>Подключаем к Telegram/Instagram/Gmail</span></li>
@@ -963,7 +755,7 @@
         </div>
         <div class="step reveal">
           <div class="step-number">03</div>
-          <h3>Запуск и оптимизация (2 дня)</h3>
+          <h3>Запуск и оптимизация (2&nbsp;дня)</h3>
           <p class="muted">Пилотный запуск, обучение команды работе с ботом, финишная оптимизация конверсий.</p>
           <ul class="list">
             <li><span class="li-dot"></span><span>Отчёт по метрикам и SLA ответов</span></li>
@@ -1167,7 +959,7 @@
       const selectedCard = e.target.closest('.package-card');
       if (selectedCard) {
         selectedCard.style.transform = 'scale(1.02)';
-        selectedCard.style.boxShadow = '0 25px 70px rgba(91,168,208,.4), inset 0 1px 0 rgba(255,255,255,.08)';
+        selectedCard.style.boxShadow = '0 25px 70px rgba(111,210,255,.4), inset 0 1px 0 rgba(255,255,255,.08)';
       }
     }
 
@@ -1180,93 +972,26 @@
           data: {
             labels: ['Конверсия +30%', 'Повторные продажи +60%', 'Потерянные клиенты -90%'],
             datasets: [
-              {
-                label: 'До',
-                data: [30, 40, 90],
-                backgroundColor: function(context) {
-                  const chart = context.chart;
-                  const {ctx, chartArea} = chart;
-                  if (!chartArea) return '#FF8B6E';
-                  const gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
-                  gradient.addColorStop(0, 'rgba(255,139,110,0.5)');
-                  gradient.addColorStop(1, 'rgba(255,139,110,0.9)');
-                  return gradient;
-                },
-                borderRadius: 12,
-                maxBarThickness: 80,
-                borderWidth: 2,
-                borderColor: 'rgba(255,139,110,0.3)'
-              },
-              {
-                label: 'После',
-                data: [60, 100, 10],
-                backgroundColor: function(context) {
-                  const chart = context.chart;
-                  const {ctx, chartArea} = chart;
-                  if (!chartArea) return '#76E39E';
-                  const gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top);
-                  gradient.addColorStop(0, 'rgba(107,217,176,0.5)');
-                  gradient.addColorStop(1, 'rgba(107,217,176,0.9)');
-                  return gradient;
-                },
-                borderRadius: 12,
-                maxBarThickness: 80,
-                borderWidth: 2,
-                borderColor: 'rgba(107,217,176,0.3)'
-              }
+              { label: 'До', data: [30, 40, 90], backgroundColor: '#FF8B6E', borderRadius: 8, maxBarThickness: 80 },
+              { label: 'После', data: [60, 100, 10], backgroundColor: '#76E39E', borderRadius: 8, maxBarThickness: 80 }
             ]
           },
           options: {
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
-              legend: {
-                labels: {
-                  color: '#E9EEF6',
-                  font: { size: 16, weight: '600', family: 'Inter' },
-                  padding: 20,
-                  usePointStyle: true,
-                  pointStyle: 'circle'
-                },
-                position: 'top'
-              },
+              legend: { labels: { color: '#9FB0C6', font: { size: 16, weight: 'bold' } }, position: 'top' },
               tooltip: {
-                backgroundColor: 'rgba(16,20,28,0.95)',
-                backdropFilter: 'blur(10px)',
-                borderColor: 'rgba(91,168,208,0.3)',
+                backgroundColor: 'rgba(10,12,16,.9)',
+                borderColor: 'rgba(255,255,255,.08)',
                 borderWidth: 1,
                 titleColor:'#E9EEF6',
-                bodyColor:'#9FB0C6',
-                padding: 16,
-                cornerRadius: 12,
-                titleFont: { size: 14, weight: '600' },
-                bodyFont: { size: 13 },
-                boxPadding: 6,
-                usePointStyle: true
+                bodyColor:'#9FB0C6'
               }
             },
             scales: {
-              x: {
-                ticks: {
-                  color:'#9FB0C6',
-                  font: { size: 13, weight: '500', family: 'Inter' },
-                  padding: 8
-                },
-                grid: { display: false },
-                border: { display: false }
-              },
-              y: {
-                ticks: { display: false },
-                grid: {
-                  color: 'rgba(255,255,255,0.03)',
-                  drawTicks: false
-                },
-                border: { display: false }
-              }
-            },
-            animation: {
-              duration: 2000,
-              easing: 'easeOutCubic'
+              x: { ticks: { color:'#9FB0C6', font: { size: 14, weight: 'bold' } }, grid: { display: false }, border: { display: false } },
+              y: { ticks: { display: false }, grid: { display: false }, border: { display: false } }
             }
           }
         });
@@ -1305,7 +1030,7 @@
               <div style="font-size:48px; margin-bottom:16px;">🎉</div>
               <h3 style="color:var(--brand); margin:0 0 12px;">Спасибо за заявку!</h3>
               <p style="color:var(--muted); margin:0 0 20px;">С вами свяжется наш лучший менеджер.</p>
-              <div style="background:rgba(91,168,208,.1); border:1px solid rgba(91,168,208,.3); border-radius:12px; padding:16px; margin-top:20px;">
+              <div style="background:rgba(111,210,255,.1); border:1px solid rgba(111,210,255,.3); border-radius:12px; padding:16px; margin-top:20px;">
                 <strong style="color:var(--brand);">Что дальше?</strong><br>
                 <span style="color:var(--muted); font-size:14px;">Наш эксперт проведёт бесплатный аудит, изучит особенности вашего бизнеса и подготовит персональные рекомендации по автоматизации продаж</span>
               </div>
