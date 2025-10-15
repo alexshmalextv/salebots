@@ -144,9 +144,32 @@
     .kpi b{font-size:22px; display:block; margin-bottom:4px}
 
     .hero-card{position:relative; background:var(--card); padding:22px; border-radius:var(--radius-lg); border:1px solid rgba(255,255,255,.08); box-shadow:var(--shadow); overflow:hidden; margin-top:20px}
-    .glow{position:absolute; inset:-20%; background:
-      radial-gradient(500px 300px at 20% 10%, rgba(111,210,255,.14), transparent),
-      radial-gradient(400px 250px at 80% 10%, rgba(124,245,198,.12), transparent)}
+    /* GLOW LAYER */
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:-30%;
+      background:
+        radial-gradient(600px 400px at 30% 10%, rgba(111,210,255,.15), transparent),
+        radial-gradient(500px 300px at 70% 0%, rgba(124,245,198,.12), transparent);
+      filter:blur(40px);
+      opacity:.8;
+      pointer-events:none;
+      z-index:0;
+    }
+    .hero-card > *{position:relative; z-index:1}
+
+    .glow{
+      position:absolute;
+      inset:-20%;
+      background:
+        radial-gradient(500px 300px at 20% 10%, rgba(111,210,255,.25), transparent),
+        radial-gradient(400px 250px at 80% 10%, rgba(124,245,198,.20), transparent);
+      filter:blur(40px);
+      opacity:.6;
+      pointer-events:none;
+      z-index:0;
+    }
     .screen{position:relative; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.08)}
     .screen::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,.05), transparent 40%); pointer-events:none}
 
@@ -967,26 +990,59 @@
     // Диаграмма результатов
     document.addEventListener('DOMContentLoaded', function() {
       const ctx = document.getElementById('resultsChart')?.getContext('2d');
-      if(ctx){
+      if (ctx) {
         new Chart(ctx, {
           type: 'bar',
           data: {
             labels: ['Конверсия +30%', 'Повторные продажи +60%', 'Потерянные клиенты -90%'],
             datasets: [
-              { label: 'До', data: [30, 40, 90], backgroundColor: '#FF8B6E', borderRadius: 8, maxBarThickness: 80, categoryPercentage: 0.7 },
-              { label: 'После', data: [60, 100, 10], backgroundColor: '#76E39E', borderRadius: 8, maxBarThickness: 80, categoryPercentage: 0.7 }
+              {
+                label: 'До',
+                data: [30, 40, 90],
+                backgroundColor: '#FF8B6E',
+                borderRadius: 8,
+                maxBarThickness: 80,
+                barPercentage: 1.0,
+                categoryPercentage: 0.7
+              },
+              {
+                label: 'После',
+                data: [60, 100, 10],
+                backgroundColor: '#76E39E',
+                borderRadius: 8,
+                maxBarThickness: 80,
+                barPercentage: 1.0,
+                categoryPercentage: 0.7
+              }
             ]
           },
           options: {
             responsive: true,
             maintainAspectRatio: true,
             plugins: {
-              legend: { labels: { color: '#9FB0C6', font: { size: 16, weight: 'bold' } }, position: 'top' },
+              legend: {
+                labels: {
+                  color: '#9FB0C6',
+                  font: { size: 16, weight: 'bold' }
+                },
+                position: 'top'
+              },
               tooltip: { enabled: false }
             },
             scales: {
-              x: { ticks: { color:'#9FB0C6', font: { size: 14, weight: 'bold' } }, grid: { display: false }, border: { display: false } },
-              y: { ticks: { display: false }, grid: { display: false }, border: { display: false } }
+              x: {
+                ticks: {
+                  color: '#9FB0C6',
+                  font: { size: 14, weight: 'bold' }
+                },
+                grid: { display: false },
+                border: { display: false }
+              },
+              y: {
+                ticks: { display: false },
+                grid: { display: false },
+                border: { display: false }
+              }
             }
           }
         });
@@ -1069,8 +1125,8 @@
       btn.addEventListener('click', function() {
         const text = (btn.innerText || btn.value || '').trim().toLowerCase();
         if (
-          text.includes('audit') ||     // англ. кнопки
-          text.includes('аудит')        // рус. кнопки
+          text.includes('audit') ||     
+          text.includes('аудит')        
         ) {
           gtag('event', 'click_audit_button', {
             event_category: 'CTA',
