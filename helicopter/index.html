@@ -12,10 +12,10 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>How to Sell a Helicopter — high-ticket sales playbook</title>
-  <meta name="description" content="A practical playbook on selling anything that hurts to say out loud: helicopters, real estate, yachts, industrial equipment, investment assets, complex services. High-ticket sales without sleaze or pressure." />
+  <title>How to Sell a Helicopter — High-ticket sales playbook by Robert Knox</title>
+  <meta name="description" content="A practical playbook on selling anything that hurts to say out loud: helicopters, real estate, yachts, investment assets, complex services. High-ticket deals without pressure, sleaze, or guru clichés." />
 
-  <!-- Canonical -->
+  <!-- Canonical URL -->
   <link rel="canonical" href="https://salebots.org/helicopter/" />
 
   <!-- Favicon -->
@@ -25,18 +25,17 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="How to Sell a Helicopter — high-ticket sales playbook" />
-  <meta property="og:description" content="A system for high-ticket deals: helicopters, aircraft, real estate, yachts, investment assets, complex services." />
-  <meta property="og:type" content="product" />
+  <meta property="og:title" content="How to Sell a Helicopter — High-ticket sales playbook" />
+  <meta property="og:description" content="A system for high-ticket deals, not a motivation book. Frameworks, questions and structures for negotiations where an extra zero appears in the price." />
+  <meta property="og:type" content="website" />
   <meta property="og:url" content="https://salebots.org/helicopter/" />
   <meta property="og:image" content="https://salebots.org/assets/img/helicopter-cover.png" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Hreflang -->
   <link rel="alternate" hreflang="en" href="https://salebots.org/helicopter/" />
-  <link rel="alternate" hreflang="ru" href="https://salebots.org/ru/helicopter/" />
+  <link rel="alternate" hreflang="ru" href="https://salebots.org/ru/" />
   <link rel="alternate" hreflang="x-default" href="https://salebots.org/helicopter/" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -49,6 +48,7 @@
       --text:#E9EEF6; --muted:#9FB0C6;
       --brand:#6FD2FF; --brand-2:#7CF5C6;
       --danger:#FF8B6E; --success:#76E39E;
+      --gradient:linear-gradient(135deg,rgba(111,210,255,.25),rgba(124,245,198,.15));
       --glass:rgba(255,255,255,.06);
       --shadow:0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
       --radius:16px; --radius-sm:12px; --radius-lg:24px;
@@ -67,13 +67,13 @@
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    .container{width:min(1080px,92vw);margin:0 auto}
+    .container{width:min(1200px,92vw);margin:0 auto}
 
     /* NAV */
     .nav{
       position:sticky;top:0;z-index:50;
       backdrop-filter:saturate(140%) blur(10px);
-      background:linear-gradient(180deg,rgba(10,12,16,.85),rgba(10,12,16,.4));
+      background:linear-gradient(180deg,rgba(10,12,16,.75),rgba(10,12,16,.35));
       border-bottom:1px solid rgba(255,255,255,.06);
     }
     .nav-inner{
@@ -91,10 +91,11 @@
       letter-spacing:.5px;
     }
     .logo-badge{
-      width:32px;height:32px;border-radius:10px;
+      width:36px;height:36px;border-radius:12px;
       background:conic-gradient(from 140deg,#6FD2FF,#7CF5C6);
       box-shadow:0 10px 30px rgba(111,210,255,.35);
     }
+
     .nav-toggle{
       display:inline-flex;
       flex-direction:column;
@@ -118,6 +119,7 @@
     .nav-toggle.open span:nth-child(2){
       transform:translateY(-4px) rotate(-45deg);
     }
+
     .nav-menu{
       position:absolute;
       top:100%;
@@ -131,6 +133,7 @@
       border-bottom:1px solid rgba(255,255,255,.06);
     }
     .nav-menu.open{display:flex}
+
     .nav-links{
       display:flex;
       flex-direction:column;
@@ -155,6 +158,7 @@
     .nav-links a:hover::after{width:100%}
     .nav-links a.active{color:#fff}
     .nav-links a.active::after{width:100%}
+
     .nav-cta{
       display:flex;
       flex-direction:column;
@@ -164,19 +168,12 @@
     }
 
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 18px;
-      border-radius:12px;
-      font-weight:600;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 18px;border-radius:12px;font-weight:600;
       border:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.02);
-      transition:.25s ease;
-      cursor:pointer;
+      transition:.25s ease;cursor:pointer;
       font-size:15px;
-      white-space:nowrap;
     }
     .btn:hover{
       transform:translateY(-1px);
@@ -185,17 +182,18 @@
     }
     .btn-primary{
       background:linear-gradient(135deg,#6FD2FF,#7CF5C6);
-      color:#071018;
-      border:none;
+      color:#071018;border:none;
       box-shadow:0 12px 30px rgba(111,210,255,.35);
     }
     .btn-primary:hover{
-      filter:brightness(1.07) drop-shadow(0 0 8px rgba(124,245,198,.6));
+      filter:brightness(1.1) drop-shadow(0 0 8px rgba(124,245,198,.6));
       transform:translateY(-2px);
     }
-    .btn-outline{
-      background:rgba(255,255,255,.02);
+
+    .btn-secondary{
+      background:rgba(255,255,255,.04);
     }
+
     .btn-pulse{animation:pulse 2s infinite}
     @keyframes pulse{
       0%{box-shadow:0 12px 30px rgba(111,210,255,.35)}
@@ -203,43 +201,48 @@
       100%{box-shadow:0 12px 30px rgba(111,210,255,.35)}
     }
 
-    .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      padding:8px 14px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.08);
-      background:var(--soft);
-      font-size:11px;
-      letter-spacing:.15em;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
-
-    .breadcrumbs{
-      padding:10px 0 0;
-      font-size:13px;
-      color:var(--muted);
-    }
-    .breadcrumbs ol{
-      display:flex;
-      gap:8px;
-      margin:0;
-      padding:0;
-      list-style:none;
-      align-items:center;
-      flex-wrap:wrap;
-    }
-    .breadcrumbs li:not(:last-child)::after{
-      content:"›";
-      margin-left:8px;
-      opacity:.6;
-    }
+    .breadcrumbs{padding:12px 0;font-size:14px;color:var(--muted)}
+    .breadcrumbs ol{display:flex;gap:8px;margin:0;padding:0;list-style:none}
+    .breadcrumbs li:not(:last-child)::after{content:" › ";margin-left:8px;opacity:.6}
     .breadcrumbs a{color:var(--brand)}
     .breadcrumbs a:hover{text-decoration:underline}
 
-    .hero-book{
-      padding:40px 0 32px;
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:12px;
+      letter-spacing:.6px;
+      color:var(--muted);
+      text-transform:uppercase;
+      padding:8px 14px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:999px;
+      background:var(--glass);
+    }
+
+    .badge{
+      font-size:12px;
+      color:#071018;
+      background:linear-gradient(135deg,#FFB347,#FF8C42);
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .section{padding:40px 0}
+    .section h2{
+      font-size:clamp(26px,4vw,40px);
+      margin:0 0 10px;
+      text-align:center;
+    }
+    .muted{color:var(--muted)}
+
+    /* HERO */
+    .hero{
+      position:relative;
+      padding:70px 0 40px;
     }
     .hero-layout{
       display:flex;
@@ -247,225 +250,165 @@
       gap:28px;
       align-items:flex-start;
     }
-    .hero-main{
-      max-width:640px;
-    }
-    .hero-title{
-      font-size:clamp(34px,6vw,60px);
-      line-height:1.02;
-      margin:18px 0 12px;
-    }
-    .hero-lead{
-      font-size:clamp(16px,2.2vw,20px);
-      color:var(--muted);
-      margin:0 0 20px;
-      max-width:56ch;
-    }
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-bottom:16px;
-    }
-    .hero-meta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:6px;
-    }
-    .meta-tag{
-      font-size:12px;
-      padding:6px 12px;
-      border-radius:999px;
-      background:linear-gradient(135deg,#FFB347,#FF8C42);
-      color:#071018;
-      font-weight:600;
-    }
-
-    .book-card{
+    .book-cover-card{
       background:var(--card);
       border-radius:var(--radius-lg);
       border:1px solid rgba(255,255,255,.08);
       box-shadow:var(--shadow);
       padding:18px;
       display:flex;
-      gap:18px;
-      align-items:flex-start;
+      justify-content:center;
     }
-    .book-cover{
-      flex:0 0 150px;
-      max-width:150px;
+    .book-cover-card img{
+      max-width:220px;
       border-radius:12px;
-      overflow:hidden;
-      box-shadow:0 18px 40px rgba(0,0,0,.65);
     }
-    .book-copy{
-      font-size:14px;
-      color:var(--muted);
+    .hero-copy h1{
+      font-size:clamp(32px,6vw,58px);
+      line-height:1.05;
+      margin:18px 0 12px;
+    }
+    .hero-lead{
+      font-size:18px;
       line-height:1.5;
-    }
-    .book-copy p{
-      margin:0 0 6px;
-    }
-    .book-copy b{color:var(--text)}
-
-    .section{
-      padding:32px 0;
-    }
-    .section h2{
-      font-size:clamp(24px,4vw,34px);
-      margin:0 0 12px;
-      text-align:left;
-    }
-    .section-intro{
       color:var(--muted);
-      max-width:60ch;
-      margin:0 0 24px;
+      max-width:44rem;
+      margin:0 0 20px;
+    }
+    .hero-cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:4px;
+    }
+    .meta-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+    }
+    .meta-badges .badge{
+      font-size:11px;
+      padding:6px 10px;
     }
 
-    .muted{color:var(--muted)}
-
-    .benefits{
+    /* BOOK GRID */
+    .book-grid{
       display:grid;
-      grid-template-columns:1fr;
       gap:18px;
+      margin-top:24px;
     }
-    .benefit-card{
+    .book-card{
       background:var(--card);
       border-radius:var(--radius);
       border:1px solid rgba(255,255,255,.08);
-      padding:20px 20px 18px;
       box-shadow:var(--shadow);
+      padding:22px 20px;
     }
-    .benefit-card h3{
+    .book-card h3{
       margin:0 0 10px;
       font-size:18px;
     }
-    .benefit-card ul{
+    .book-card ul{
       margin:0;
       padding-left:18px;
       color:var(--muted);
       font-size:14px;
-      line-height:1.5;
-    }
-    .benefit-card li{margin-bottom:6px}
-
-    .contents-section h2{
-      text-align:center;
-      margin-bottom:8px;
-    }
-    .contents-section p.section-intro{
-      text-align:center;
-      margin-left:auto;
-      margin-right:auto;
-    }
-    .contents-table{
-      margin-top:22px;
-      background:var(--card);
-      border-radius:20px;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .contents-table table{
-      width:100%;
-      border-collapse:collapse;
-      font-size:14px;
-    }
-    .contents-table th,
-    .contents-table td{
-      padding:14px 18px;
-      border-bottom:1px solid rgba(255,255,255,.06);
-      vertical-align:top;
-    }
-    .contents-table tr:last-child th,
-    .contents-table tr:last-child td{
-      border-bottom:none;
-    }
-    .contents-table th{
-      width:32%;
-      font-weight:600;
-      color:var(--text);
-    }
-    .contents-table td{
-      color:var(--muted);
-    }
-
-    .note-strip{
-      margin-top:26px;
-      background:linear-gradient(135deg,rgba(111,210,255,.15),rgba(124,245,198,.10));
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      padding:14px 18px;
-      font-size:14px;
-      color:var(--muted);
-    }
-    .note-strip strong{color:var(--text)}
-
-    .author-section{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:18px;
-      margin-top:10px;
-    }
-    .author-card,
-    .positioning-card{
-      background:var(--card);
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.08);
-      padding:20px 22px;
-      box-shadow:var(--shadow);
-      font-size:14px;
-      color:var(--muted);
       line-height:1.6;
     }
-    .author-card h3,
-    .positioning-card h3{
-      margin:0 0 10px;
-      font-size:18px;
-      color:var(--text);
-    }
 
-    .cta-section{
-      padding:36px 0 48px;
-    }
-    .cta-card{
-      background:linear-gradient(135deg,rgba(111,210,255,.18),rgba(124,245,198,.12));
-      border-radius:22px;
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow:var(--shadow);
-      padding:26px 24px 24px;
+    /* INSIDE TABLE */
+    .inside-intro{
       text-align:center;
-    }
-    .cta-card h2{
-      margin:0 0 10px;
-      text-align:center;
-    }
-    .cta-card p{
-      margin:0 0 18px;
+      max-width:560px;
+      margin:0 auto 24px;
       color:var(--muted);
       font-size:15px;
     }
-
-    .footer{
-      padding:26px 0 48px;
+    .toc{
+      background:var(--card);
+      border-radius:var(--radius-lg);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      padding:18px 18px 8px;
+      overflow-x:auto;
+    }
+    .toc-table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:640px;
+    }
+    .toc-table th,
+    .toc-table td{
+      padding:10px 6px;
+      font-size:14px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+      vertical-align:top;
+    }
+    .toc-table th{
+      text-align:left;
       color:var(--muted);
+      font-weight:600;
       font-size:13px;
-      text-align:center;
+    }
+    .toc-table td:nth-child(1){
+      width:32%;
+      font-weight:600;
+    }
+    .toc-table td:nth-child(2){
+      color:var(--muted);
+    }
+
+    /* AUTHOR */
+    .author-grid{
+      display:grid;
+      gap:18px;
+      margin-top:20px;
+    }
+    .author-card{
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      padding:22px 20px;
+      font-size:14px;
+      line-height:1.7;
+      color:var(--muted);
+    }
+
+    /* FOOTER */
+    .footer{
+      padding:28px 0 60px;
+      color:var(--muted);
+      font-size:14px;
     }
     .footer-contacts{
       display:flex;
       gap:16px;
       flex-wrap:wrap;
       justify-content:center;
-      margin-top:14px;
+      margin-top:16px;
     }
     .footer-contact{
+      font-size:13px;
       opacity:.7;
       transition:.25s ease;
     }
     .footer-contact:hover{opacity:1;color:var(--text)}
 
+    .reveal{
+      opacity:0;transform:translateY(18px);
+      transition:opacity .7s ease,transform .7s ease;
+    }
+    .reveal.show{opacity:1;transform:none}
+
+    @keyframes float{
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-6px)}
+      100%{transform:translateY(0)}
+    }
+
+    /* RESPONSIVE */
     @media (min-width:768px){
       .nav-toggle{display:none}
       .nav-menu{
@@ -488,30 +431,34 @@
         margin-top:0;
       }
 
-      .hero-book{padding:52px 0 40px}
       .hero-layout{
         flex-direction:row;
         align-items:flex-start;
-        gap:40px;
       }
-      .book-card{
-        padding:20px 22px;
+      .book-cover-card{
+        flex:0 0 260px;
       }
-      .book-cover{
-        flex-basis:180px;
-        max-width:180px;
+      .hero-copy{
+        flex:1;
+        padding-left:24px;
       }
-      .benefits{
-        grid-template-columns:repeat(3,1fr);
+
+      .book-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
       }
-      .author-section{
-        grid-template-columns:2fr 3fr;
+
+      .author-grid{
+        grid-template-columns:2fr 1.5fr;
       }
     }
 
-    @media (max-width:420px){
-      .btn{padding:11px 14px;font-size:14px}
-      .hero-book{padding-top:32px}
+    @media (max-width:480px){
+      .hero{
+        padding-top:60px;
+      }
+      .book-cover-card img{
+        max-width:180px;
+      }
     }
   </style>
 </head>
@@ -531,59 +478,60 @@
 
       <div class="nav-menu">
         <div class="nav-links">
-          <a href="/">Automation</a>
+          <a href="/" >Automation</a>
           <a href="/helicopter/" class="active">How to Sell a Helicopter</a>
           <a href="/consulting/">Consulting</a>
           <a href="/blog/">Blog</a>
         </div>
+
         <div class="nav-cta">
-          <a class="btn btn-outline" href="/#cases">Automation cases</a>
-          <a class="btn btn-primary" href="/#lead-form">Free audit</a>
+          <a class="btn" href="https://t.me/avtohtonny" target="_blank" rel="noopener">Telegram</a>
+          <a class="btn btn-primary" href="/#lead-form">Free automation audit</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <div class="breadcrumbs" aria-label="breadcrumb">
+  <nav class="breadcrumbs" aria-label="breadcrumb">
     <div class="container">
       <ol>
         <li><a href="/">Home</a></li>
         <li>How to Sell a Helicopter</li>
       </ol>
     </div>
-  </div>
+  </nav>
 
-  <header class="hero-book">
+  <header class="hero">
     <div class="container hero-layout">
-      <div class="hero-main">
-        <span class="eyebrow">HIGH-TICKET SALES • PLAYBOOK</span>
-        <h1 class="hero-title">How to Sell a Helicopter</h1>
-        <p class="hero-lead">
-          A practical playbook on selling anything that <strong>hurts to say out loud</strong>:
-          helicopters, real estate, yachts, industrial equipment, investment assets, complex services.
-          No pressure tactics, no “guru” clichés — just structure, psychology, and conversations that move big deals forward.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary btn-pulse" href="https://robertknox.gumroad.com/l/howtosellahelicopter" target="_blank" rel="noopener">
-            Buy on Gumroad
-          </a>
-          <a class="btn" href="#inside">See what’s inside</a>
-        </div>
-        <div class="hero-meta">
-          <span class="meta-tag">Format: PDF</span>
-          <span class="meta-tag">Language: English</span>
-          <span class="meta-tag">Focus: B2B &amp; high-ticket deals</span>
-        </div>
+      <div class="book-cover-card reveal">
+        <img src="/assets/img/helicopter-cover.png"
+             alt="How to Sell a Helicopter — cover" loading="lazy">
       </div>
 
-      <div class="book-card">
-        <div class="book-cover">
-          <img src="/assets/img/helicopter-cover.png" alt="How to Sell a Helicopter — book cover">
+      <div class="hero-copy reveal">
+        <span class="eyebrow">High-ticket sales • Playbook</span>
+        <h1>How to Sell a Helicopter</h1>
+        <p class="hero-lead">
+          A practical playbook on selling anything that hurts to say out loud:
+          helicopters, real estate, yachts, industrial equipment, investment assets,
+          consulting with six zeroes — without sleaze, pressure, or guru clichés.
+        </p>
+
+        <div class="hero-cta-row">
+          <a class="btn btn-primary btn-pulse"
+             href="https://robertknox.gumroad.com/l/howtosellahelicopter"
+             target="_blank" rel="noopener">
+            Buy on Gumroad
+          </a>
+          <a class="btn btn-secondary" href="#inside">
+            See what’s inside
+          </a>
         </div>
-        <div class="book-copy">
-          <p><b>What it is:</b> a system for high-ticket deals — not a “motivation” book.</p>
-          <p><b>Where it applies:</b> helicopters and aircraft, real estate, heavy equipment, yachts, investment stones and assets, consulting with six zeroes, complex services.</p>
-          <p><b>What you get:</b> mental models, structure of the deal, roles at the table, scripts and questions that actually move the deal forward.</p>
+
+        <div class="meta-badges">
+          <span class="badge">Format: PDF</span>
+          <span class="badge">Language: English</span>
+          <span class="badge">Focus: B2B &amp; high-ticket deals</span>
         </div>
       </div>
     </div>
@@ -591,146 +539,160 @@
 
   <section class="section">
     <div class="container">
-      <h2>Who this playbook is for</h2>
-      <p class="section-intro">
-        The book is written for people who already know how to sell — and want to turn random big wins into a repeatable system.
-      </p>
-      <div class="benefits">
-        <div class="benefit-card">
-          <h3>Who this is for</h3>
+      <div class="book-grid">
+        <div class="book-card reveal">
+          <h3>Who this book is for</h3>
           <ul>
-            <li>You sell (or want to sell) things with an extra zero: aircraft, real estate, equipment, luxury goods, investment products, complex services.</li>
-            <li>You already close deals but feel you’ve hit a ceiling on large tickets and can’t scale beyond intuition.</li>
-            <li>You coordinate several stakeholders on the buyer’s side and need a clear map of the decision process, not just “objection handling” tricks.</li>
+            <li>You sell (or want to sell) tickets with an extra zero: aircraft, real estate, heavy equipment, luxury goods, investment products, complex services.</li>
+            <li>You already close deals, but feel you hit a ceiling on deal size or rely too much on intuition.</li>
+            <li>You coordinate several stakeholders on the buyer’s side and need a clear map of the decision process, not just “objection handling”.</li>
           </ul>
         </div>
-        <div class="benefit-card">
-          <h3>What you’ll learn</h3>
+
+        <div class="book-card reveal">
+          <h3>What you will learn</h3>
           <ul>
-            <li>What really happens in the buyer’s head when an extra zero appears in the price — and what happens in yours.</li>
-            <li>How to run a deal as a route: from first touch to handover, without losing control at the “almost yes” stage.</li>
-            <li>How to work with risk, power and status in big deals without cheap manipulation, pressure or false friendliness.</li>
+            <li>What really happens in the buyer’s head when an extra zero appears in the price.</li>
+            <li>How to position yourself not as “a person with a price list” but as a coordinator of a complex decision.</li>
+            <li>How to work with risk, status, and conflict in big deals without manipulation or cheap tricks.</li>
           </ul>
         </div>
-        <div class="benefit-card">
+
+        <div class="book-card reveal">
           <h3>What you get inside</h3>
           <ul>
-            <li>Clear mental models for big deals: the Head, the People at the table, the Process, and your role as the person who runs the game.</li>
-            <li>Concrete structures: questions, frames, scripts and meeting outlines that you can copy into your CRM and calendar.</li>
-            <li>Practice blocks: drills that let you rebuild current deals and install the system into your daily work instead of “reading and forgetting”.</li>
+            <li>A complete structure of a high-ticket deal: from lead generation and first touch to handover and repeat business.</li>
+            <li>Frameworks, questions, and conversation structures for meetings, diagnostics, negotiations, and closing.</li>
+            <li>A practical drill section that lets you rebuild current deals and install the system into your own pipeline.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="inside" class="section contents-section">
+  <section id="inside" class="section">
     <div class="container">
-      <h2>What’s inside the playbook</h2>
-      <p class="section-intro">
-        The book is structured as a manual: you can read it front to back or jump straight to the parts you need — from mindset and people at the table to process, negotiations and drill.
+      <h2 class="reveal">What’s inside the playbook</h2>
+      <p class="inside-intro reveal">
+        The book is structured as a working manual: you can read it front to back or jump directly
+        into the part you need for your current deals — from mindset and people at the table
+        to process, negotiations, and drill.
       </p>
 
-      <div class="contents-table">
-        <table>
+      <div class="toc reveal">
+        <table class="toc-table">
+          <thead>
+            <tr>
+              <th>Part</th>
+              <th>What it covers</th>
+            </tr>
+          </thead>
           <tbody>
             <tr>
-              <th>Part One — The Head</th>
-              <td>What happens when an extra zero appears; how to think about big deals and your position in them.</td>
+              <td>Part One — The Head</td>
+              <td>What happens the moment an extra zero appears; how big deals are actually perceived; who sells to whom — a price-list merchant or a coordinator of a complex decision.</td>
             </tr>
             <tr>
-              <th>Part Two — People on Both Sides of the Table</th>
-              <td>The buyer’s psychology and the seller’s psychology: neither hero nor servant; how decisions are really made.</td>
+              <td>Part Two — People on Both Sides of the Table</td>
+              <td>Buyer psychology and the seller’s psychology: neither hero nor servant. How roles, fears, and incentives collide in a large transaction.</td>
             </tr>
             <tr>
-              <th>Part Three — The Process</th>
-              <td>A deal as a route, not a stroke of luck: where money comes from, how a conversation is built, where conflict starts, and how “almost” becomes “yes”.</td>
+              <td>Part Three — The Process</td>
+              <td>A deal as a route, not a stroke of luck: where people with money really come from, how a conversation is built, how “almost” becomes “yes”, and how pressure and objections show up along the way.</td>
             </tr>
             <tr>
-              <th>Part Four — Regimen</th>
-              <td>Training and routines without which the book remains just text instead of becoming a working system.</td>
+              <td>Part Four — Regimen</td>
+              <td>Training and routines without which any technique remains just text. How to keep your own head and skills in shape between big negotiations.</td>
             </tr>
             <tr>
-              <th>Part Five — The Person Who Runs the Game</th>
-              <td>Frames, positioning, and a sales structure and funnel that stop confusing luck with a system.</td>
+              <td>Part Five — The Person Who Runs the Game</td>
+              <td>Frames, positioning, and a sales structure that stops confusing luck with a system. How to see the whole table and run the process instead of reacting to it.</td>
             </tr>
             <tr>
-              <th>Part Six — Selling to Busy People</th>
-              <td>Lead generation for high-ticket deals and where money actually remains in your funnel.</td>
+              <td>Part Six — Selling to Busy People</td>
+              <td>Lead generation and where money actually remains in your funnel. How to work with people whose calendar is more expensive than your product.</td>
             </tr>
             <tr>
-              <th>Part Seven — Readiness to Pull the Trigger</th>
-              <td>Preparation, research, dossier, ICP; structure of a conversation and meeting: first touches, diagnostics, and key questions.</td>
+              <td>Part Seven — Readiness to Pull the Trigger</td>
+              <td>Preparation, research, dossier, ICP, conversation and meeting structure, diagnostics. Everything that happens before you open your mouth in a key meeting.</td>
             </tr>
             <tr>
-              <th>Parts Eight–Ten — Fine-tuning, Negotiations, Drill</th>
-              <td>Advanced salesmanship and working with weaknesses (not “pain points”), objections, closing, handover, repeat business, and practical exercises to install the system.</td>
+              <td>Part Eight — Fine-tuning</td>
+              <td>Advanced salesmanship: weaknesses instead of generic “pain points”, constructor of personalized communication, working with objections by disassembling them rather than breaking through.</td>
+            </tr>
+            <tr>
+              <td>Parts Nine–Ten — The Final Mile &amp; Practice</td>
+              <td>Negotiating and closing high-ticket deals, delivery and handover, repeat business — plus a practical training section that walks through mindset, structure, pipeline, objections, and regimen so the system stays with you.</td>
             </tr>
           </tbody>
         </table>
-      </div>
-
-      <div class="note-strip">
-        <strong>This is not a “daily motivation” book.</strong>
-        It is written to give you language, structure and tools for deals where an extra zero changes how everyone behaves — so that buying from you becomes the most rational move in the room.
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <div class="author-section">
-        <div class="author-card">
-          <h3>About the author</h3>
+      <div class="author-grid">
+        <div class="author-card reveal">
+          <h3 style="margin:0 0 10px;font-size:18px;color:var(--text);">About the author</h3>
           <p>
-            The playbook is written by a practitioner who spent years in B2B sales and complex deals:
-            from compressors and generators to real estate and investment assets. The material grew out
-            of real negotiations, failed and closed deals, not abstract “sales theory”.
+            The playbook is written by a practitioner who has spent years in B2B sales and complex deals:
+            from compressors and generators to real estate and investment assets.
           </p>
           <p>
-            The goal of the book is simple: make you dangerous in big deals — in a good way. So that you
-            understand what is really happening at the table, where the money is lost, and what exactly
-            to do next instead of improvising.
+            The material is based on real negotiations, failed and closed deals, and on what actually happens
+            in rooms where large numbers are discussed — not on abstract “sales theory”.
+          </p>
+          <p>
+            The goal of the book is simple: make you dangerous in big deals in a good way — so that you
+            understand what is really going on at the table, where the money is lost, and what exactly
+            needs to be done next.
           </p>
         </div>
 
-        <div class="positioning-card">
-          <h3>How to use it in your work</h3>
+        <div class="author-card reveal">
+          <h3 style="margin:0 0 10px;font-size:18px;color:var(--text);">How to work with it</h3>
           <p>
-            Keep the playbook next to your CRM and calendar. Use it to map the deal, prepare key meetings,
-            rewrite scripts and questions, and de-risk high numbers for the buyer. You don’t have to agree
-            with every idea — but once you start looking at large deals through the lens of roles, risks,
-            and decisions, “selling a helicopter” becomes a logical next step, not a gamble.
+            You can treat the book as a reference: read it once to map the territory, then return to
+            specific parts when you prepare for a real deal — mindset, people, process, or final mile.
+          </p>
+          <p>
+            Chapters in Parts Ten are built as drills and checklists that let you rebuild ongoing deals
+            directly from the text — without templates, scripts marketplaces, or motivational fluff.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cta-section">
+  <section class="section">
     <div class="container">
-      <div class="cta-card">
-        <h2>Ready to upgrade how you run big deals?</h2>
-        <p>
-          If you work on contracts where one extra zero changes the whole conversation, this playbook gives you
-          a clear way to think, talk and negotiate — from the first touch to handover.
+      <div class="author-card reveal" style="text-align:center">
+        <h3 style="margin:0 0 10px;font-size:20px;color:var(--text);">Ready to upgrade your next big deal?</h3>
+        <p style="margin:0 0 18px;color:var(--muted);">
+          Keep the playbook next to your pipeline and use it when a deal appears that is too big to “wing it”.
         </p>
-        <a class="btn btn-primary btn-pulse" href="https://robertknox.gumroad.com/l/howtosellahelicopter" target="_blank" rel="noopener">
-          Get the playbook on Gumroad
+        <a class="btn btn-primary btn-pulse"
+           href="https://robertknox.gumroad.com/l/howtosellahelicopter"
+           target="_blank" rel="noopener">
+          Buy “How to Sell a Helicopter” on Gumroad
         </a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      <div style="display:flex; align-items:center; gap:10px; justify-content:center; margin-bottom:6px;">
-        <div class="logo-badge" style="width:24px;height:24px" role="img" aria-label="Salebots logo"></div>
+    <div class="container" style="text-align:center">
+      <div style="display:flex; align-items:center; gap:10px; justify-content:center">
+        <div class="logo-badge" style="width:28px;height:28px" role="img" aria-label="Salebots logo"></div>
         <div>© <span id="y"></span> Salebots — sales automation &amp; playbooks</div>
       </div>
-      <div>Bali • Working worldwide</div>
 
-      <div class="footer-contacts">
+      <div class="muted" style="margin-top:8px">
+        Bali • Working worldwide • Chatbots and sales systems
+      </div>
+
+      <div class="footer-contacts" style="margin-top:16px">
         <a class="footer-contact" href="https://t.me/avtohtonny" target="_blank" rel="noopener">Telegram</a>
         <a class="footer-contact" href="https://wa.me/66836840045" target="_blank" rel="noopener">WhatsApp</a>
         <a class="footer-contact" href="mailto:hello@salebots.org">Email</a>
@@ -739,6 +701,13 @@
   </footer>
 
   <script>
+    // reveal on scroll
+    const observerOptions = { threshold:0.1, rootMargin:'0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{ if(entry.isIntersecting) entry.target.classList.add('show'); });
+    }, observerOptions);
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
     // footer year
     document.getElementById('y').textContent = new Date().getFullYear();
 
@@ -746,7 +715,7 @@
     document.addEventListener('DOMContentLoaded', function(){
       var toggle = document.querySelector('.nav-toggle');
       var menu = document.querySelector('.nav-menu');
-      if (!toggle || !menu) return;
+      if(!toggle || !menu) return;
 
       toggle.addEventListener('click', function(){
         toggle.classList.toggle('open');
@@ -761,5 +730,6 @@
       });
     });
   </script>
+
 </body>
 </html>
