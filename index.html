@@ -1203,13 +1203,15 @@
     document.addEventListener('DOMContentLoaded', function() {
       const ctx = document.getElementById('resultsChart')?.getContext('2d');
       if(ctx){
+
         const gradientBefore = ctx.createLinearGradient(0, 0, 0, 400);
         gradientBefore.addColorStop(0, '#FF8B6E'); 
-        gradientBefore.addColorStop(1, '#D96A50'); 
+        gradientBefore.addColorStop(1, '#D96A50');
 
         const gradientAfter = ctx.createLinearGradient(0, 0, 0, 400);
         gradientAfter.addColorStop(0, '#7CF5C6'); 
-        gradientAfter.addColorStop(1, '#56CCF2'); 
+        gradientAfter.addColorStop(1, '#56CCF2');
+
         new Chart(ctx, {
           type: 'bar',
           data: {
@@ -1222,7 +1224,9 @@
                 hoverBackgroundColor: gradientBefore,
                 borderRadius: 12,
                 borderSkipped: false,
-                maxBarThickness: 60
+                maxBarThickness: 60,
+                barPercentage: 0.95,
+                categoryPercentage: 0.7
               },
               { 
                 label: 'After',  
@@ -1231,7 +1235,9 @@
                 hoverBackgroundColor: gradientAfter,
                 borderRadius: 12,
                 borderSkipped: false,
-                maxBarThickness: 60
+                maxBarThickness: 60,
+                barPercentage: 0.95,
+                categoryPercentage: 0.7
               }
             ]
           },
@@ -1250,7 +1256,7 @@
                 labels: { 
                   color: '#9FB0C6', 
                   font: { family: 'Inter', size: 14, weight: '600' },
-                  usePointStyle: true,
+                  usePointStyle: true, 
                   pointStyle: 'circle',
                   padding: 24
                 }, 
@@ -1265,7 +1271,7 @@
               x: { 
                 ticks: { 
                   color:'#E9EEF6', 
-                  font: { family: 'Inter', size: 14, weight: '500' },
+                  font: { family: 'Inter', size: 14, weight: '600' },
                   padding: 12
                 }, 
                 grid: { display: false }, 
@@ -1274,7 +1280,7 @@
               y: { 
                 display: false,
                 min: 0,
-                max: 110
+                max: 110 
               }
             }
           }
