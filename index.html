@@ -125,6 +125,37 @@
       0% { box-shadow: 0 12px 30px rgba(111,210,255,.35); }
       50% { box-shadow: 0 12px 30px rgba(111,210,255,.6), 0 0 0 8px rgba(111,210,255,.2); }
       100% { box-shadow: 0 12px 30px rgba(111,210,255,.35); }
+
+    .nav-links{
+  display:flex;
+  gap:18px;
+  font-size:14px;
+  color:var(--muted);
+}
+.nav-links a{
+  padding:4px 0;
+  position:relative;
+}
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-4px;
+  width:0;
+  height:2px;
+  background:linear-gradient(90deg, var(--brand), var(--brand-2));
+  transition:width .2s ease;
+}
+.nav-links a:hover::after{
+  width:100%;
+}
+.nav-links a.active{
+  color:#fff;
+}
+.nav-links a.active::after{
+  width:100%;
+}
+
     }
 
     .breadcrumbs{padding:12px 0; font-size:14px; color:var(--muted)}
@@ -336,9 +367,19 @@
         <div class="logo-badge" role="img" aria-label="Salebots logo — sales automation"></div>
         <span>Salebots</span>
       </div>
-      <div class="nav-cta">
-        <a class="btn" href="#cases">Cases</a>
-        <a class="btn btn-primary" href="#lead-form">Free audit</a>
+
+      <div style="display:flex; gap:24px; align-items:center;">
+        <div class="nav-links">
+          <a href="/" class="active">Automation</a>
+          <a href="/helicopter/">Sell a Helicopter</a>
+          <a href="/consulting/">Consulting</a>
+          <a href="/blog/">Blog</a>
+        </div>
+
+        <div class="nav-cta">
+          <a class="btn" href="#cases">Cases</a>
+          <a class="btn btn-primary" href="#lead-form">Free audit</a>
+        </div>
       </div>
     </div>
   </nav>
