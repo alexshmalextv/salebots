@@ -1203,31 +1203,79 @@
     document.addEventListener('DOMContentLoaded', function() {
       const ctx = document.getElementById('resultsChart')?.getContext('2d');
       if(ctx){
+        const gradientBefore = ctx.createLinearGradient(0, 0, 0, 400);
+        gradientBefore.addColorStop(0, '#FF8B6E'); 
+        gradientBefore.addColorStop(1, '#D96A50'); 
+
+        const gradientAfter = ctx.createLinearGradient(0, 0, 0, 400);
+        gradientAfter.addColorStop(0, '#7CF5C6'); 
+        gradientAfter.addColorStop(1, '#56CCF2'); 
         new Chart(ctx, {
           type: 'bar',
           data: {
             labels: ['Conversion +30%', 'Repeat sales +60%', 'Lost clients -90%'],
             datasets: [
-              { label: 'Before', data: [30, 40, 90], backgroundColor: '#FF8B6E', borderRadius: 8, maxBarThickness: 80 },
-              { label: 'After',  data: [60, 100, 10], backgroundColor: '#76E39E', borderRadius: 8, maxBarThickness: 80 }
+              { 
+                label: 'Before', 
+                data: [30, 40, 90], 
+                backgroundColor: gradientBefore,
+                hoverBackgroundColor: gradientBefore,
+                borderRadius: 12,
+                borderSkipped: false,
+                maxBarThickness: 60
+              },
+              { 
+                label: 'After',  
+                data: [60, 100, 10], 
+                backgroundColor: gradientAfter,
+                hoverBackgroundColor: gradientAfter,
+                borderRadius: 12,
+                borderSkipped: false,
+                maxBarThickness: 60
+              }
             ]
           },
           options: {
             responsive: true,
             maintainAspectRatio: true,
+            animation: {
+              duration: 2000,
+              easing: 'easeOutQuart'
+            },
+            interaction: {
+              mode: null
+            },
             plugins: {
-              legend: { labels: { color: '#9FB0C6', font: { size: 16, weight: 'bold' } }, position: 'top' },
+              legend: { 
+                labels: { 
+                  color: '#9FB0C6', 
+                  font: { family: 'Inter', size: 14, weight: '600' },
+                  usePointStyle: true,
+                  pointStyle: 'circle',
+                  padding: 24
+                }, 
+                position: 'top',
+                align: 'center'
+              },
               tooltip: {
-                backgroundColor: 'rgba(10,12,16,.9)',
-                borderColor: 'rgba(255,255,255,.08)',
-                borderWidth: 1,
-                titleColor:'#E9EEF6',
-                bodyColor:'#9FB0C6'
+                enabled: false 
               }
             },
             scales: {
-              x: { ticks: { color:'#9FB0C6', font: { size: 14, weight: 'bold' } }, grid: { display: false }, border: { display: false } },
-              y: { ticks: { display: false }, grid: { display: false }, border: { display: false } }
+              x: { 
+                ticks: { 
+                  color:'#E9EEF6', 
+                  font: { family: 'Inter', size: 14, weight: '500' },
+                  padding: 12
+                }, 
+                grid: { display: false }, 
+                border: { display: false } 
+              },
+              y: { 
+                display: false,
+                min: 0,
+                max: 110
+              }
             }
           }
         });
