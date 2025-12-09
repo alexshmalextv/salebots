@@ -12,8 +12,8 @@
   
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Negotiation Consulting — Co-authoring high-ticket deals</title>
-  <meta name="description" content="Don't negotiate alone. Targeted deal reviews, guided negotiation series, and personal training for high-ticket sales. A co-pilot for your most critical conversations." />
+  <title>B2B Sales Consulting — Close High-Ticket Deals</title>
+  <meta name="description" content="Expert negotiation consulting for B2B founders. We help you unblock stuck deals, fix your sales pipeline, and close high-ticket contracts without discounting." />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://salebots.org/consulting/" />
@@ -25,8 +25,8 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Negotiation Consulting — Salebots" />
-  <meta property="og:description" content="A co-author in negotiations is not a trainer. It is someone who steps inside your deals and helps you see what you cannot spot alone." />
+  <meta property="og:title" content="B2B Sales Consulting — Salebots" />
+  <meta property="og:description" content="Stop losing high-ticket deals. Negotiation support and pipeline audits for B2B companies." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://salebots.org/consulting/" />
   <meta property="og:image" content="https://salebots.org/assets/img/helicopter-cover.png" />
@@ -224,14 +224,15 @@
     .grid-3{display:flex;flex-direction:column;gap:18px}
     .card{
       background:var(--card);padding:24px;border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)
+      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);
+      display:flex; flex-direction:column;
     }
     .card-icon{
       font-size:32px; margin-bottom:16px; display:inline-block;
       filter: drop-shadow(0 0 12px rgba(111,210,255,.25));
     }
     .card h3{margin:0 0 12px; font-size:18px}
-    .list{display:grid;gap:10px;margin:12px 0 0;padding:0}
+    .list{display:grid;gap:10px;margin:12px 0 24px;padding:0; flex-grow:1;}
     .list li{list-style:none;display:flex;gap:10px;align-items:flex-start; color:var(--muted); font-size:15px; line-height:1.5}
     .li-dot{
       width:8px;height:8px;border-radius:50%;margin-top:7px;
@@ -239,25 +240,36 @@
       flex-shrink:0;min-width:8px;min-height:8px
     }
 
-    /* CTA Section & Form */
-    .cta{
-      position:relative;background:linear-gradient(135deg,rgba(111,210,255,.14),rgba(124,245,198,.10));
-      border:1px solid rgba(255,255,255,.10);border-radius:22px;
-      padding:32px;box-shadow:var(--shadow)
+    /* Lead Form (Matching Index.html) */
+    .lead-form{
+      background:linear-gradient(135deg,rgba(111,210,255,.12),rgba(124,245,198,.08));
+      border:1px solid rgba(255,255,255,.12);border-radius:20px;
+      padding:32px;box-shadow:var(--shadow);max-width:600px;margin:0 auto
     }
-    
-    .form-grid{display:flex;flex-direction:column;gap:16px; margin-top:24px; text-align:left;}
-    .form-group{display:flex;flex-direction:column;gap:6px}
-    .form-label{font-size:13px;font-weight:600;color:var(--text);margin-left:4px}
-    .form-input{
-      width:100%;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);
-      border-radius:12px;padding:12px 16px;font-size:15px;color:var(--text);
-      font-family:inherit;transition:.2s ease;outline:none
+    .form-grid{display:grid;gap:20px}
+    .form-group{display:flex;flex-direction:column;gap:8px}
+    .form-label{font-weight:600;color:var(--text);font-size:14px}
+    .form-input,.form-select,.form-textarea{
+      padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.04);color:var(--text);font-size:16px;
+      transition:.25s ease;font-family:inherit; width: 100%;
     }
-    .form-input:focus{
-      border-color:var(--brand);box-shadow:0 0 0 4px rgba(111,210,255,.1)
+    .form-select option{background:var(--card);color:var(--text);padding:8px}
+    .form-input:focus,.form-select:focus,.form-textarea:focus{
+      outline:none;border-color:var(--brand);background:rgba(255,255,255,.08);
+      box-shadow:0 0 0 3px rgba(111,210,255,.15)
     }
-    textarea.form-input{resize:vertical;min-height:100px}
+    .form-input::placeholder,.form-textarea::placeholder{color:var(--muted)}
+    .form-textarea{resize:vertical;min-height:100px}
+    .form-required{color:var(--danger);margin-left:4px}
+    .form-submit{width:100%;padding:16px;font-size:16px;font-weight:700;margin-top:8px}
+
+    /* Cross-sell block */
+    .cross-block{
+      background:var(--soft); border-radius:16px; padding:24px; border:1px solid rgba(255,255,255,.08);
+      display:flex; gap:24px; align-items:center;
+    }
+    .cross-img{width:80px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.3);}
 
     /* Footer */
     .footer{
@@ -293,11 +305,15 @@
       .nav-cta{flex-direction:row;align-items:center;margin-top:0;}
       
       .grid-3{display:grid;grid-template-columns:repeat(3,1fr)}
+      .form-grid{grid-template-columns:1fr 1fr;gap:20px}
+      .form-group.full-width{grid-column:1 / -1}
     }
     
     @media (max-width:420px){
       .btn{padding:12px 14px}
       .hero{padding-top:64px}
+      .cross-block{flex-direction:column; text-align:center;}
+      .lead-form{padding:24px}
     }
   </style>
     
@@ -325,8 +341,8 @@
         </div>
 
         <div class="nav-cta">
-          <a class="btn" href="#formats">View Formats</a>
-          <a class="btn btn-primary" href="#contact">Send Brief</a>
+          <a class="btn" href="#services">Services</a>
+          <a class="btn btn-primary" href="#contact">Book audit</a>
         </div>
       </div>
     </div>
@@ -344,99 +360,150 @@
 
   <header class="hero">
     <div class="container hero-inner reveal">
-      <span class="eyebrow">High-stakes negotiations</span>
-      <h1>Don’t Negotiate Alone</h1>
+      <span class="eyebrow">B2B Sales Negotiation</span>
+      <h1>Close High-Ticket Deals on Your Terms</h1>
       <p class="lead">
-        You can finish the book, nod, and put it on a shelf. Or you can bring a co-author into your actual deals.
-        A co-author is not a cheerleader. It is someone who steps inside your deals, watches the instruments, 
-        and helps you see what you cannot spot alone.
+        Strategic consulting for founders and sales leaders. We help you navigate complex B2B deals, 
+        avoid price wars, and sign contracts without leaving money on the table.
       </p>
       
       <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap; justify-content:center;">
-        <a class="btn btn-primary btn-pulse" href="#contact">Send brief</a>
-        <a class="btn" href="#formats">How it works</a>
+        <a class="btn btn-primary btn-pulse" href="#contact">Book a free discovery</a>
+        <a class="btn" href="#services">See services</a>
       </div>
     </div>
   </header>
 
-  <section id="formats" class="section">
+  <section class="section">
+    <div class="container grid-3 reveal">
+      <div class="card">
+        <h3>Deals Get Stuck</h3>
+        <p class="muted">You have leads, but they stall at the "decision" stage for months. We unblock them by finding the real decision-maker and changing the frame.</p>
+      </div>
+      <div class="card">
+        <h3>Price Pressure</h3>
+        <p class="muted">Procurement demands a discount. We give you the scripts and structure to defend your margin and trade variables instead of price.</p>
+      </div>
+      <div class="card">
+        <h3>Leaky Pipeline</h3>
+        <p class="muted">Your team is busy but revenue isn't growing. We audit your process to stop you from chasing bad deals and focus on the winners.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
     <div class="container">
-      <h2 class="reveal">Three ways to work together</h2>
+      <h2 class="reveal">How we can help</h2>
       <p class="muted reveal" style="text-align:center; max-width: 600px; margin: 0 auto 32px;">
-        Work formats that naturally grow out of the book. From a single emergency review to full piloting.
+        Flexible formats depending on your situation: from emergency help with one deal to building a scalable sales system.
       </p>
 
       <div class="grid-3 reveal">
         <!-- Card 1 -->
         <div class="card">
-          <div class="card-icon">🎯</div>
-          <h3>Targeted Deal Review</h3>
+          <div class="card-icon">🚑</div>
+          <h3>Emergency Deal Review</h3>
           <p class="muted" style="margin-bottom:16px; font-size:15px; line-height:1.5;">
-            There is one deal you cannot stop thinking about. You act on inertia, but the stakes are too high. We unpack it layer by layer.
+            One critical deal is stuck or heating up. The stakes are high. We dive in to save it.
           </p>
           <ul class="list">
-            <li><span class="li-dot"></span><span>We analyze correspondence, call notes, and stakeholders to see where you lost initiative.</span></li>
-            <li><span class="li-dot"></span><span>Rebuild your opening, frames, and questions to stop justifying yourself.</span></li>
-            <li><span class="li-dot"></span><span>Result: You walk into negotiations with a clear picture, not a lump in your throat.</span></li>
+            <li><span class="li-dot"></span><span>Analysis of stakeholders and correspondence</span></li>
+            <li><span class="li-dot"></span><span>Strategy for the next meeting</span></li>
+            <li><span class="li-dot"></span><span>Specific scripts and questions to ask</span></li>
           </ul>
+          <button class="btn" style="width:100%; justify-content:center;" onclick="selectService('review')">Book Review</button>
         </div>
 
         <!-- Card 2 -->
         <div class="card">
-          <div class="card-icon">🧭</div>
-          <h3>Guided Series</h3>
+          <div class="card-icon">🏗️</div>
+          <h3>Pipeline & Process Audit</h3>
           <p class="muted" style="margin-bottom:16px; font-size:15px; line-height:1.5;">
-            You are fundraising, entering a new market, or facing months of heavy conversations. I act as your second pilot.
+            You want to scale, but the process is chaotic. We fix the system.
           </p>
           <ul class="list">
-            <li><span class="li-dot"></span><span>Pre-flight preparation before every important meeting.</span></li>
-            <li><span class="li-dot"></span><span>Brutal post-flight review: what really happened and what must be changed immediately.</span></li>
-            <li><span class="li-dot"></span><span>I watch the instruments and the broader flight picture while you fly the plane.</span></li>
+            <li><span class="li-dot"></span><span>Audit of your CRM and sales stages</span></li>
+            <li><span class="li-dot"></span><span>Identifying bottlenecks and conversion drops</span></li>
+            <li><span class="li-dot"></span><span>Action plan to increase throughput</span></li>
           </ul>
+          <button class="btn" style="width:100%; justify-content:center;" onclick="selectService('audit')">Request Audit</button>
         </div>
 
         <!-- Card 3 -->
         <div class="card">
-          <div class="card-icon">⚡</div>
-          <h3>Personal Training</h3>
+          <div class="card-icon">🤝</div>
+          <h3>Shadow Negotiation</h3>
           <p class="muted" style="margin-bottom:16px; font-size:15px; line-height:1.5;">
-            The problem is not the deal, but the pattern. You enter from below, fear price talks, or scatter yourself.
+            Ongoing support for a series of high-stakes negotiations (e.g. enterprise sales, M&A).
           </p>
           <ul class="list">
-            <li><span class="li-dot"></span><span>We use your real emails and call recordings to diagnose your default settings.</span></li>
-            <li><span class="li-dot"></span><span>Build a new configuration: different openings, diagnostic questions, and closures.</span></li>
-            <li><span class="li-dot"></span><span>Aim: After a few weeks, you enter the same situations but exit as a different person.</span></li>
+            <li><span class="li-dot"></span><span>Pre-flight prep before every call</span></li>
+            <li><span class="li-dot"></span><span>Debriefing and course correction</span></li>
+            <li><span class="li-dot"></span><span>We act as your behind-the-scenes partner</span></li>
           </ul>
+          <button class="btn" style="width:100%; justify-content:center;" onclick="selectService('shadow')">Apply Now</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
-    <div class="container cta reveal">
-      <div style="max-width:600px; margin:0 auto">
-        <h2 style="text-align:center">Ready to pull the trigger?</h2>
-        <p class="muted" style="text-align:center">
-          If you need someone to sit next to you for a couple of deals, describe your situation briefly below.
-          Write a few paragraphs about what you do and which deals you are handling now.
-        </p>
-        
-        <form action="https://formspree.io/f/mqardokd" method="POST" class="form-grid">
-           <div class="form-group">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" name="name" id="name" class="form-input" placeholder="Your name" required>
-           </div>
-           <div class="form-group">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" name="email" id="email" class="form-input" placeholder="name@company.com" required>
-           </div>
-           <div class="form-group">
-              <label for="message" class="form-label">Context & Deal</label>
-              <textarea name="message" id="message" rows="4" class="form-input" placeholder="What are you selling, to whom, and what is the current bottleneck?" required></textarea>
-           </div>
-           <button type="submit" class="btn btn-primary btn-pulse" style="width:100%; justify-content:center; margin-top:8px;">Send Brief</button>
-        </form>
+  <section class="section">
+    <div class="container reveal">
+      <div class="cross-block">
+        <img src="/assets/img/helicopter-cover.png" alt="Book cover" class="cross-img">
+        <div style="flex:1">
+          <h3 style="margin:0 0 8px; font-size:18px;">Our Methodology</h3>
+          <p class="muted" style="margin:0; font-size:14px; line-height:1.5;">
+            Our consulting approach is based on the "How to Sell a Helicopter" playbook. 
+            It avoids manipulation and "sales tricks", focusing instead on deal mechanics, risk management, and status alignment.
+          </p>
+        </div>
+        <a href="/helicopter/" class="btn" style="flex-shrink:0;">Read the Book</a>
       </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container reveal">
+      <h2 style="text-align:center; margin-bottom:12px;">Discuss your situation</h2>
+      <p class="muted" style="text-align:center; margin-bottom:32px; max-width:600px; margin-left:auto; margin-right:auto;">
+        Fill out the form below. We will review your case and suggest the best format to move forward.
+      </p>
+
+      <form class="lead-form" action="https://formspree.io/f/mqardokd" method="POST">
+        <input type="hidden" id="service" name="service" value="">
+      
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="name">Name <span class="form-required">*</span></label>
+            <input class="form-input" type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="contact">Email or Telegram <span class="form-required">*</span></label>
+            <input class="form-input" type="text" id="contact" name="contact" required placeholder="@username or email">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="service-select">Interested in</label>
+            <select class="form-select" id="service-select" name="service-visible" onchange="document.getElementById('service').value=this.value">
+              <option value="review">Emergency Deal Review</option>
+              <option value="audit">Pipeline Audit</option>
+              <option value="shadow">Shadow Negotiation</option>
+              <option value="other">Other / Not sure</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label class="form-label" for="comment">Context</label>
+            <textarea class="form-textarea" id="comment" name="comment" placeholder="Briefly describe what you are selling and the current challenge..." required></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <button class="btn btn-primary form-submit btn-pulse" type="submit">Submit Request</button>
+          </div>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -495,6 +562,46 @@
           toggle.classList.remove('open');
           menu.classList.remove('open');
         });
+      });
+    });
+
+    // Service selection handler
+    function selectService(val) {
+      document.getElementById('service').value = val;
+      document.getElementById('service-select').value = val;
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Lead form submit via fetch
+    document.querySelector('.lead-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const submitBtn = this.querySelector('.form-submit');
+      const formData = new FormData(this);
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.disabled = true;
+
+      fetch('https://formspree.io/f/mqardokd', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          this.innerHTML = `
+            <div style="text-align:center; padding:40px 20px;">
+              <div style="font-size:48px; margin-bottom:16px;">🎉</div>
+              <h3 style="color:var(--brand); margin:0 0 12px;">Request Received!</h3>
+              <p style="color:var(--muted); margin:0;">We will analyze your case and reach out shortly.</p>
+            </div>
+          `;
+        } else {
+          throw new Error('Submit error');
+        }
+      })
+      .catch(() => {
+        submitBtn.textContent = 'Try again';
+        submitBtn.disabled = false;
+        alert('An error occurred. Please try again or contact us via Telegram.');
       });
     });
   </script>
