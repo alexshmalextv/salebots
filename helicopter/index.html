@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SK0ZK3C8SY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SK0ZK3C8SY');
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>How to Sell a Helicopter — High-Ticket Sales Playbook by Robert Knox</title>
+  <meta name="description" content="A practical playbook on closing six-figure and seven-figure deals: helicopters, yachts, real estate, industrial equipment, investment assets. Mental models, scripts, and step-by-step structure." />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://salebots.org/helicopter/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="120x120" href="/assets/img/favicon-120.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="How to Sell a Helicopter — High-Ticket Sales Playbook" />
+  <meta property="og:description" content="Learn how to sell high-ticket items — helicopters, real estate, yachts, industrial assets — using a structured, no-bullshit approach." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://salebots.org/helicopter/" />
+  <meta property="og:image" content="https://salebots.org/assets/img/helicopter-cover.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en" href="https://salebots.org/helicopter/" />
+  <link rel="alternate" hreflang="x-default" href="https://salebots.org/helicopter/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0A0C10; --card:#10141C; --soft:#161C25;
+      --text:#E9EEF6; --muted:#9FB0C6;
+      --brand:#6FD2FF; --brand-2:#7CF5C6;
+      --danger:#FF8B6E; --success:#76E39E;
+      --gradient: linear-gradient(135deg, rgba(111,210,255,.25), rgba(124,245,198,.15));
+      --glass: rgba(255,255,255,.06);
+      --shadow: 0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
+      --radius:16px; --radius-sm:12px; --radius-lg:24px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(111,210,255,.12), transparent),
+        radial-gradient(800px 500px at 90% -20%, rgba(124,245,198,.10), transparent),
+        var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1200px,92vw);margin:0 auto}
+
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background:linear-gradient(180deg,rgba(10,12,16,.75),rgba(10,12,16,.35));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:16px 0;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      letter-spacing:.5px;
+    }
+    .logo-badge{
+      width:36px;height:36px;border-radius:12px;
+      background:conic-gradient(from 140deg,#6FD2FF,#7CF5C6);
+      box-shadow:0 10px 30px rgba(111,210,255,.35);
+    }
+
+    .nav-toggle{
+      display:inline-flex;
+      flex-direction:column;
+      gap:4px;
+      padding:8px;
+      margin-left:auto;
+      background:transparent;
+      border:0;
+      cursor:pointer;
+    }
+    .nav-toggle span{
+      width:20px;
+      height:2px;
+      border-radius:999px;
+      background:#ffffff;
+      transition:.2s;
+    }
+    .nav-toggle.open span:nth-child(1){
+      transform:translateY(4px) rotate(45deg);
+    }
+    .nav-toggle.open span:nth-child(2){
+      transform:translateY(-4px) rotate(-45deg);
+    }
+
+    .nav-menu{
+      position:absolute;
+      top:100%;
+      right:0;
+      left:0;
+      display:none;
+      flex-direction:column;
+      gap:16px;
+      padding:12px 16px 16px;
+      background:linear-gradient(180deg,rgba(10,12,16,.98),rgba(10,12,16,.94));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav-menu.open{
+      display:flex;
+    }
+
+    .nav-links{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .nav-links a{
+      padding:4px 0;
+      position:relative;
+    }
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-4px;
+      width:0;
+      height:2px;
+      background:linear-gradient(90deg,var(--brand),var(--brand-2));
+      transition:width .2s ease;
+    }
+    .nav-links a:hover::after{width:100%}
+    .nav-links a.active{color:#fff}
+    .nav-links a.active::after{width:100%}
+
+    .nav-cta{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      align-items:flex-start;
+      margin-top:8px;
+    }
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 18px;border-radius:12px;font-weight:600;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.02);
+      transition:.25s ease;cursor:pointer
+    }
+    .btn:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.12);
+      color:var(--text)
+    }
+    .btn-primary{
+      background:linear-gradient(135deg,#6FD2FF,#7CF5C6);
+      color:#071018;border:none;
+      box-shadow:0 12px 30px rgba(111,210,255,.35)
+    }
+    .btn-primary:hover{
+      filter:brightness(1.1) drop-shadow(0 0 8px rgba(124,245,198,.6));
+      transform:translateY(-2px)
+    }
+    .btn-pulse{animation:pulse 2s infinite}
+    @keyframes pulse{
+      0%{box-shadow:0 12px 30px rgba(111,210,255,.35)}
+      50%{box-shadow:0 12px 30px rgba(111,210,255,.6),0 0 0 8px rgba(111,210,255,.2)}
+      100%{box-shadow:0 12px 30px rgba(111,210,255,.35)}
+    }
+
+    .breadcrumbs{padding:12px 0;font-size:14px;color:var(--muted)}
+    .breadcrumbs ol{display:flex;gap:8px;margin:0;padding:0;list-style:none}
+    .breadcrumbs li:not(:last-child)::after{content:" › ";margin-left:8px;opacity:.6}
+    .breadcrumbs a{color:var(--brand)}
+    .breadcrumbs a:hover{text-decoration:underline}
+
+    .hero{position:relative;padding:80px 0 40px}
+    .hero-grid{display:flex;flex-direction:column;gap:32px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      font-size:12px;letter-spacing:.6px;color:var(--muted);
+      text-transform:uppercase;padding:8px 12px;
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:999px;background:var(--glass)
+    }
+    .hero h1{font-size:clamp(28px,6vw,56px);line-height:1.05;margin:18px 0;text-align:center}
+    .lead{font-size:clamp(16px,2vw,20px);color:var(--muted);text-align:center;max-width:60ch}
+
+    .hero-cta{
+      display:flex;
+      gap:10px;
+      margin-top:16px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+      font-size:13px;
+      color:var(--muted);
+      justify-content:center;
+    }
+    .hero-meta span{
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.06);
+    }
+
+    .hero-card{
+      position:relative;background:var(--card);padding:22px;border-radius:var(--radius-lg);
+      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);overflow:hidden;margin-top:20px
+    }
+    .hero-layout{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+    .book-cover-wrap{
+      border-radius:20px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.1);
+      background:radial-gradient(circle at 0 0,rgba(111,210,255,.18),transparent 50%),
+                 radial-gradient(circle at 100% 100%,rgba(124,245,198,.16),transparent 55%);
+      padding:14px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .book-cover{
+      border-radius:14px;
+      overflow:hidden;
+      max-width:260px;
+      width:100%;
+      box-shadow:0 18px 40px rgba(0,0,0,.6);
+    }
+    .book-notes{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      font-size:14px;
+      color:var(--muted);
+    }
+    .book-notes b{color:var(--text)}
+
+    .section{padding:35px 0}
+    .section h2{font-size:clamp(24px,4vw,38px);margin:0 0 18px;text-align:center}
+    .muted{color:var(--muted)}
+
+    .grid-2{
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .card{
+      background:var(--card);padding:22px;border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)
+    }
+    .card h3{margin:0 0 8px}
+    .list{display:grid;gap:8px;margin:12px 0 0;padding:0}
+    .list li{list-style:none;display:flex;gap:10px;align-items:flex-start}
+    .li-dot{
+      width:8px;height:8px;border-radius:50%;margin-top:8px;
+      background:linear-gradient(135deg,#6FD2FF,#7CF5C6);
+      flex-shrink:0;min-width:8px;min-height:8px
+    }
+
+    .toc-list{
+      display:grid;
+      gap:10px;
+      margin:16px 0 0;
+      padding:0;
+    }
+    .toc-item{
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      font-size:14px;
+      color:var(--muted);
+      border-bottom:1px solid rgba(255,255,255,.03);
+      padding-bottom:8px;
+    }
+    .toc-item span:first-child{color:var(--text);font-weight:500}
+
+    .quote-card{
+      background:linear-gradient(135deg,rgba(111,210,255,.16),rgba(124,245,198,.10));
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,.12);
+      padding:22px;
+      box-shadow:var(--shadow);
+      font-size:14px;
+      color:var(--muted);
+    }
+    .quote-card strong{color:var(--text)}
+
+    .faq-item{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;margin-bottom:12px;overflow:hidden
+    }
+    .faq-item details{padding:18px}
+    .faq-item summary{
+      font-weight:600;color:var(--text);cursor:pointer;
+      list-style:none;outline:none;position:relative;padding-right:30px
+    }
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{
+      content:'+';position:absolute;right:0;top:0;
+      font-size:20px;font-weight:bold;color:var(--brand);
+      transition:transform .3s ease
+    }
+    .faq-item details[open] summary::after{transform:rotate(45deg)}
+    .faq-answer{
+      color:var(--muted);line-height:1.5;margin-top:12px;
+      padding-top:12px;border-top:1px solid rgba(255,255,255,.06)
+    }
+
+    .cta{
+      position:relative;background:linear-gradient(135deg,rgba(111,210,255,.14),rgba(124,245,198,.10));
+      border:1px solid rgba(255,255,255,.10);border-radius:22px;
+      padding:28px;box-shadow:var(--shadow)
+    }
+
+    .footer{
+      padding:28px 0 60px;color:var(--muted);font-size:14px
+    }
+    .footer-contacts{
+      display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:16px
+    }
+    .footer-contact{font-size:13px;opacity:.7;transition:.25s ease}
+    .footer-contact:hover{opacity:1;color:var(--text)}
+
+    .reveal{
+      opacity:0;transform:translateY(18px);
+      transition:opacity .7s ease,transform .7s ease
+    }
+    .reveal.show{opacity:1;transform:none}
+    .float{animation:float 6s ease-in-out infinite}
+    @keyframes float{
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-6px)}
+      100%{transform:translateY(0)}
+    }
+
+    @media (min-width:768px){
+      .nav-toggle{display:none}
+      .nav-menu{
+        position:static;
+        display:flex;
+        flex-direction:row;
+        align-items:center;
+        gap:24px;
+        padding:0;
+        background:none;
+        border-bottom:0;
+      }
+      .nav-links{
+        flex-direction:row;
+        gap:18px;
+      }
+      .nav-cta{
+        flex-direction:row;
+        align-items:center;
+        margin-top:0;
+      }
+
+      .hero-grid{flex-direction:row;align-items:center}
+      .hero h1{text-align:left}
+      .lead{text-align:left}
+      .hero-cta{justify-content:flex-start}
+      .hero-meta{justify-content:flex-start}
+      .hero-card{margin-top:0}
+      .hero-layout{
+        flex-direction:row;
+      }
+      .book-cover-wrap{
+        max-width:320px;
+      }
+
+      .grid-2{
+        display:grid;
+        grid-template-columns:1.1fr .9fr;
+      }
+    }
+
+    @media (max-width:420px){
+      .btn{padding:12px 14px}
+      .hero{padding-top:64px}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="logo">
+        <div class="logo-badge" role="img" aria-label="Salebots logo — sales automation"></div>
+        <span>Salebots</span>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu">
+        <div class="nav-links">
+          <a href="/">Automation</a>
+          <a href="/helicopter/" class="active">How to Sell a Helicopter</a>
+          <a href="/consulting/">Consulting</a>
+          <a href="/blog/">Blog</a>
+        </div>
+
+        <div class="nav-cta">
+          <a class="btn" href="/#cases">Cases</a>
+          <a class="btn btn-primary" href="/#lead-form">Free audit</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="breadcrumbs" aria-label="breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li>How to Sell a Helicopter</li>
+      </ol>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">High-ticket sales • Playbook</span>
+        <h1>How to Sell a Helicopter</h1>
+        <p class="lead">
+          A practical playbook on selling anything that “hurts to say out loud”:
+          helicopters, real estate, yachts, industrial equipment, investment stones,
+          consulting with six zeroes — without sleaze, pressure, or guru clichés.
+        </p>
+
+        <div class="hero-cta">
+          <a
+            class="btn btn-primary btn-pulse"
+            href="https://robertknox.gumroad.com/l/howtosellahelicopter"
+            target="_blank"
+            rel="noopener"
+          >
+            Buy on Gumroad
+          </a>
+          <a href="#toc" class="btn">See what’s inside</a>
+        </div>
+
+        <div class="hero-meta">
+          <span>Format: PDF</span>
+          <span>Language: English</span>
+          <span>Focus: B2B & high-ticket</span>
+        </div>
+      </div>
+
+      <div class="hero-card reveal float">
+        <div class="hero-layout">
+          <div class="book-cover-wrap">
+            <img
+              src="/assets/img/helicopter-cover.png"
+              alt="How to Sell a Helicopter — book cover"
+              class="book-cover"
+            />
+          </div>
+          <div class="book-notes">
+            <div><b>What it is:</b> a system for high-ticket deals, not a “motivation” book.</div>
+            <div><b>Where it applies:</b> helicopters, aircraft, real estate, heavy equipment, yachts, investment assets, complex services.</div>
+            <div><b>What you get:</b> mental models, structure of the deal, roles at the table, scripts and questions that actually move the deal forward.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div class="card reveal">
+        <h3>Who this book is for</h3>
+        <ul class="list">
+          <li>
+            <span class="li-dot"></span>
+            <span>You sell (or want to sell) tickets with an extra zero: aircraft, real estate, equipment, luxury goods, investment products, complex services.</span>
+          </li>
+          <li>
+            <span class="li-dot"></span>
+            <span>You already know how to talk to clients, but feel you “hit a ceiling” on large deals and can’t scale beyond intuition.</span>
+          </li>
+          <li>
+            <span class="li-dot"></span>
+            <span>You coordinate multiple stakeholders on the buyer’s side and need a clear map of the decision process, not just “objection handling” tricks.</span>
+          </li>
+          <li>
+            <span class="li-dot"></span>
+            <span>You want a structured way to de-risk big numbers for the client — so a helicopter or a $1M contract becomes a logical step, not a gamble.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <h3>What you will learn</h3>
+        <ul class="list">
+          <li>
+            <span class="li-dot"></span>
+            <span>What really happens in the buyer’s head when an extra zero appears in the price.</span>
+          </li>
+          <li>
+            <span class="li-dot"></span>
+            <span>How to position yourself not as “a person with a price list” but as a coordinator of a complex decision.</span>
+          </li>
+          <li>
+            <span class="li-dot"></span>
+            <span>How to work with power, risk, and status in big deals without manipulation or cheap tricks.</span>
+          </li>
+          <li>
+            <span class="li-dot"></span>
+            <span>How to structure the deal, the timeline, and communication so that a large purchase becomes inevitable.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="toc" class="section">
+    <div class="container">
+      <h2 class="reveal">What’s inside the playbook</h2>
+      <p class="muted reveal" style="text-align:center;max-width:640px;margin:0 auto 16px;">
+        The book is structured as a manual: you can read it front to back or jump directly into the parts you need now.
+      </p>
+
+      <div class="card reveal">
+        <h3>Chapters</h3>
+        <ul class="toc-list">
+          <li class="toc-item">
+            <span>Intro. What people really pay for in big deals</span>
+            <span>Context</span>
+          </li>
+          <li class="toc-item">
+            <span>Part I. The Head: what happens when an extra zero appears</span>
+            <span>Mindset</span>
+          </li>
+          <li class="toc-item">
+            <span>Part II. People on both sides of the table</span>
+            <span>Stakeholders</span>
+          </li>
+          <li class="toc-item">
+            <span>Part III. Anatomy of a high-ticket deal</span>
+            <span>Process</span>
+          </li>
+          <li class="toc-item">
+            <span>Part IV. Tools: questions, frames, scripts</span>
+            <span>Practice</span>
+          </li>
+          <li class="toc-item">
+            <span>Part V. Risk, politics, and power games</span>
+            <span>Reality</span>
+          </li>
+          <li class="toc-item">
+            <span>Part VI. Scaling: from one big deal to a system</span>
+            <span>Scale</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="quote-card reveal" style="margin-top:20px;">
+        <strong>This is not a “daily motivation” book.</strong><br />
+        It is written for people who already know how to sell and want to move from random wins to a repeatable system for big deals. You will not find “101 closing techniques”; you will find a way to think, structure, and run conversations so that buying from you becomes the most rational move in the room.
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <div class="card reveal">
+        <h3>How to use the book</h3>
+        <ul class="list">
+          <li>
+            <span class="li-dot"></span>
+            <span>Read once quickly to map the territory.</span>
+          </li>
+          <li>
+            <span class="li-dot"></span>
+            <span>Then go back and rebuild 1–2 current deals using the frameworks.</span>
+          </li>
+          <li>
+            <span class="li-dot"></span>
+            <span>Rewrite your pipeline view: not as “leads and stages” but as decisions and risks for the buyer.</span>
+          </li>
+          <li>
+            <span class="li-dot"></span>
+            <span>Use the questions and structures to prepare for each key meeting instead of improvising on the fly.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card reveal">
+        <h3>About the author</h3>
+        <p class="muted">
+          The playbook is written by a practitioner who spent years in B2B sales and complex deals:
+          from compressors and generators to real estate and investment assets. The material is based on
+          real negotiations, failed and closed deals, not on abstract “sales theory”.
+        </p>
+        <p class="muted" style="margin-top:8px;">
+          The goal of the book is simple: make you dangerous in big deals — in a good way. So that you
+          understand what is really going on at the table, where the money is lost, and what exactly to do next.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="container">
+      <h2 class="reveal">FAQ about the book</h2>
+
+      <div class="faq-item reveal">
+        <details>
+          <summary>Is this book for beginners in sales?</summary>
+          <div class="faq-answer">
+            If you have never sold anything in your life, it may be heavy. The book assumes you already
+            understand basic sales dynamics and want to move into bigger, more complex deals.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item reveal">
+        <details>
+          <summary>Does it only apply to helicopters and aircraft?</summary>
+          <div class="faq-answer">
+            No. “Helicopter” here is a metaphor for any high-ticket purchase: real estate, yachts, industrial
+            equipment, investment products, large consulting projects. The mechanics of risk, status, and decision
+            are similar.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item reveal">
+        <details>
+          <summary>Is this about manipulation and hard closing?</summary>
+          <div class="faq-answer">
+            No. The book is built around coordination of complex decisions, not tricks. You will not find “pressure
+            closes” here. The goal is to make the right decision easier and safer for the buyer.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item reveal">
+        <details>
+          <summary>In what format do I get the book?</summary>
+          <div class="faq-answer">
+            You get a PDF file via Gumroad, with lifetime access to updates via the same platform.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item reveal">
+        <details>
+          <summary>Can I use the material with my team?</summary>
+          <div class="faq-answer">
+            You can use the ideas and frameworks internally with your team. Resale and public redistribution of the
+            file are not allowed.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta reveal" style="text-align:center">
+      <h2>Ready to upgrade how you sell big deals?</h2>
+      <p class="muted" style="max-width:520px;margin:8px auto 18px;">
+        Get the playbook, read it once, and rebuild one current deal using the frameworks. That alone is usually enough to pay for the book.
+      </p>
+      <a
+        class="btn btn-primary btn-pulse"
+        href="https://robertknox.gumroad.com/l/howtosellahelicopter"
+        target="_blank"
+        rel="noopener"
+      >
+        Buy “How to Sell a Helicopter” on Gumroad
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container" style="text-align:center">
+      <div style="display:flex; align-items:center; gap:10px; justify-content:center">
+        <div class="logo-badge" style="width:28px;height:28px" role="img" aria-label="Salebots logo"></div>
+        <div>© <span id="y"></span> Salebots — sales & automation</div>
+      </div>
+
+      <div class="muted" style="margin-top:8px">
+        Bali • Working worldwide • High-ticket sales & chatbots
+      </div>
+
+      <div class="footer-contacts" style="margin-top:16px">
+        <a class="footer-contact" href="https://t.me/avtohtonny" target="_blank" rel="noopener">Telegram</a>
+        <a class="footer-contact" href="https://wa.me/66836840045" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="footer-contact" href="mailto:hello@salebots.org">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal on scroll
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+    }, observerOptions);
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Mobile nav toggle
+    document.addEventListener('DOMContentLoaded', function(){
+      var toggle = document.querySelector('.nav-toggle');
+      var menu = document.querySelector('.nav-menu');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', function(){
+        toggle.classList.toggle('open');
+        menu.classList.toggle('open');
+      });
+
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          toggle.classList.remove('open');
+          menu.classList.remove('open');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
