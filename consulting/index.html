@@ -173,6 +173,7 @@
       background:rgba(255,255,255,.02);
       transition:.25s ease;cursor:pointer;
       font-size:15px;
+      color:var(--text);
     }
     .btn:hover{
       transform:translateY(-1px);
@@ -186,7 +187,8 @@
     }
     .btn-primary:hover{
       filter:brightness(1.1) drop-shadow(0 0 8px rgba(124,245,198,.6));
-      transform:translateY(-2px)
+      transform:translateY(-2px);
+      color:#071018;
     }
     .btn-pulse{animation:pulse 2s infinite}
 
@@ -411,7 +413,7 @@
             <li><span class="li-dot"></span><span>Strategy for the next meeting</span></li>
             <li><span class="li-dot"></span><span>Specific scripts and questions to ask</span></li>
           </ul>
-          <button class="btn" style="width:100%; justify-content:center;" onclick="selectService('review')">Book Review</button>
+          <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="selectService('review')">Book Review</button>
         </div>
 
         <!-- Card 2 -->
@@ -426,7 +428,7 @@
             <li><span class="li-dot"></span><span>Identifying bottlenecks and conversion drops</span></li>
             <li><span class="li-dot"></span><span>Action plan to increase throughput</span></li>
           </ul>
-          <button class="btn" style="width:100%; justify-content:center;" onclick="selectService('audit')">Request Audit</button>
+          <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="selectService('audit')">Request Audit</button>
         </div>
 
         <!-- Card 3 -->
@@ -441,7 +443,7 @@
             <li><span class="li-dot"></span><span>Debriefing and course correction</span></li>
             <li><span class="li-dot"></span><span>We act as your behind-the-scenes partner</span></li>
           </ul>
-          <button class="btn" style="width:100%; justify-content:center;" onclick="selectService('shadow')">Apply Now</button>
+          <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="selectService('shadow')">Apply Now</button>
         </div>
       </div>
     </div>
