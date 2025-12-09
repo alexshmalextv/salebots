@@ -239,12 +239,25 @@
       flex-shrink:0;min-width:8px;min-height:8px
     }
 
-    /* CTA Section */
+    /* CTA Section & Form */
     .cta{
       position:relative;background:linear-gradient(135deg,rgba(111,210,255,.14),rgba(124,245,198,.10));
       border:1px solid rgba(255,255,255,.10);border-radius:22px;
       padding:32px;box-shadow:var(--shadow)
     }
+    
+    .form-grid{display:flex;flex-direction:column;gap:16px; margin-top:24px; text-align:left;}
+    .form-group{display:flex;flex-direction:column;gap:6px}
+    .form-label{font-size:13px;font-weight:600;color:var(--text);margin-left:4px}
+    .form-input{
+      width:100%;background:rgba(0,0,0,.2);border:1px solid rgba(255,255,255,.1);
+      border-radius:12px;padding:12px 16px;font-size:15px;color:var(--text);
+      font-family:inherit;transition:.2s ease;outline:none
+    }
+    .form-input:focus{
+      border-color:var(--brand);box-shadow:0 0 0 4px rgba(111,210,255,.1)
+    }
+    textarea.form-input{resize:vertical;min-height:100px}
 
     /* Footer */
     .footer{
@@ -313,7 +326,7 @@
 
         <div class="nav-cta">
           <a class="btn" href="#formats">View Formats</a>
-          <a class="btn btn-primary" href="mailto:helicopter@salebots.org">Email Case</a>
+          <a class="btn btn-primary" href="#contact">Send Brief</a>
         </div>
       </div>
     </div>
@@ -340,7 +353,7 @@
       </p>
       
       <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap; justify-content:center;">
-        <a class="btn btn-primary btn-pulse" href="mailto:helicopter@salebots.org">Send brief</a>
+        <a class="btn btn-primary btn-pulse" href="#contact">Send brief</a>
         <a class="btn" href="#formats">How it works</a>
       </div>
     </div>
@@ -399,17 +412,30 @@
     </div>
   </section>
 
-  <section class="section">
+  <section id="contact" class="section">
     <div class="container cta reveal">
-      <div style="text-align:center">
-        <h2>Ready to pull the trigger?</h2>
-        <p class="muted" style="max-width:600px; margin: 12px auto;">
-          If you need someone to sit next to you for a couple of deals and help you navigate them carefully, that possibility exists.
+      <div style="max-width:600px; margin:0 auto">
+        <h2 style="text-align:center">Ready to pull the trigger?</h2>
+        <p class="muted" style="text-align:center">
+          If you need someone to sit next to you for a couple of deals, describe your situation briefly below.
           Write a few paragraphs about what you do and which deals you are handling now.
         </p>
-        <div style="margin-top:24px">
-          <a class="btn btn-primary btn-pulse" href="mailto:helicopter@salebots.org">Email: helicopter@salebots.org</a>
-        </div>
+        
+        <form action="https://formspree.io/f/mqardokd" method="POST" class="form-grid">
+           <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" name="name" id="name" class="form-input" placeholder="Your name" required>
+           </div>
+           <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" name="email" id="email" class="form-input" placeholder="name@company.com" required>
+           </div>
+           <div class="form-group">
+              <label for="message" class="form-label">Context & Deal</label>
+              <textarea name="message" id="message" rows="4" class="form-input" placeholder="What are you selling, to whom, and what is the current bottleneck?" required></textarea>
+           </div>
+           <button type="submit" class="btn btn-primary btn-pulse" style="width:100%; justify-content:center; margin-top:8px;">Send Brief</button>
+        </form>
       </div>
     </div>
   </section>
