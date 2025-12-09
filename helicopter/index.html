@@ -238,13 +238,6 @@
       border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);
       margin-top:20px; display:flex; justify-content:center;
     }
-    .glow{
-      position:absolute;inset:-20%;
-      background:
-        radial-gradient(500px 300px at 20% 10%, rgba(111,210,255,.14), transparent),
-        radial-gradient(400px 250px at 80% 10%, rgba(124,245,198,.12), transparent);
-      z-index: 0;
-    }
     .book-cover{
       position:relative; z-index:1; border-radius:12px; 
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -258,6 +251,9 @@
       background:var(--card);padding:22px;border-radius:var(--radius);
       border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)
     }
+    .card-icon{
+      font-size:32px; margin-bottom:12px; display:inline-block;
+    }
     .card h3{margin:0 0 8px; font-size:18px}
     .list{display:grid;gap:8px;margin:12px 0 0;padding:0}
     .list li{list-style:none;display:flex;gap:10px;align-items:flex-start; color:var(--muted); font-size:15px; line-height:1.5}
@@ -266,6 +262,11 @@
       background:linear-gradient(135deg,#6FD2FF,#7CF5C6);
       flex-shrink:0;min-width:8px;min-height:8px
     }
+
+    /* Author Card */
+    .author-layout { display:flex; gap:24px; align-items:flex-start; }
+    .author-photo { width:120px; height:120px; border-radius:120px; object-fit:cover; flex-shrink:0; border:2px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .author-bio { color:var(--muted); line-height:1.6; font-size:15px; display:flex; flex-direction:column; gap:12px; }
 
     /* Table */
     .table-container{
@@ -344,6 +345,7 @@
       .hero-grid div:first-child .lead{text-align:center}
       .hero-grid div:first-child div[style*="display:flex"]{justify-content:center}
       .book-cover{max-width: 180px;}
+      .author-layout{ flex-direction:column; align-items:center; text-align:center; }
     }
     
     @media (max-width:420px){
@@ -417,7 +419,6 @@
       </div>
 
       <div class="hero-card reveal float">
-        <div class="glow"></div>
         <img src="/assets/img/helicopter-cover.png" alt="How to Sell a Helicopter — cover" class="book-cover" loading="lazy">
       </div>
     </div>
@@ -426,6 +427,7 @@
   <section class="section">
     <div class="container grid-3 reveal">
       <div class="card">
+        <div class="card-icon">🎯</div>
         <h3>Who this book is for</h3>
         <ul class="list">
           <li><span class="li-dot"></span><span>You sell (or want to sell) tickets with an extra zero: aircraft, real estate, heavy equipment, luxury goods, investment products.</span></li>
@@ -434,6 +436,7 @@
         </ul>
       </div>
       <div class="card">
+        <div class="card-icon">🧠</div>
         <h3>What you will learn</h3>
         <ul class="list">
           <li><span class="li-dot"></span><span>What really happens in the buyer’s head when an extra zero appears in the price.</span></li>
@@ -442,6 +445,7 @@
         </ul>
       </div>
       <div class="card">
+        <div class="card-icon">🧰</div>
         <h3>What you get inside</h3>
         <ul class="list">
           <li><span class="li-dot"></span><span>A complete structure of a high-ticket deal: from lead generation and first touch to handover and repeat business.</span></li>
@@ -512,20 +516,18 @@
   </section>
 
   <section class="section">
-    <div class="container grid-2 reveal">
+    <div class="container reveal">
       <div class="card">
-        <h3>About the author</h3>
-        <div style="color:var(--muted); line-height:1.6; font-size:15px; display:flex; flex-direction:column; gap:12px;">
-          <p>The playbook is written by a practitioner who has spent years in B2B sales and complex deals: from compressors and generators to real estate and investment assets.</p>
-          <p>The material is based on real negotiations, failed and closed deals, and on what actually happens in rooms where large numbers are discussed — not on abstract “sales theory”.</p>
-          <p>The goal is simple: make you dangerous in big deals in a good way — so that you understand what is really going on at the table.</p>
-        </div>
-      </div>
-      <div class="card">
-        <h3>How to work with it</h3>
-        <div style="color:var(--muted); line-height:1.6; font-size:15px; display:flex; flex-direction:column; gap:12px;">
-          <p>You can treat the book as a reference: read it once to map the territory, then return to specific parts when you prepare for a real deal — mindset, people, process, or final mile.</p>
-          <p>Chapters in Parts Ten are built as drills and checklists that let you rebuild ongoing deals directly from the text — without templates, scripts marketplaces, or motivational fluff.</p>
+        <div class="author-layout">
+           <img src="/assets/img/photo.png" alt="Robert Knox" class="author-photo">
+           <div>
+             <h3>About the author</h3>
+             <div class="author-bio">
+                <p>The playbook is written by a practitioner who has spent years in B2B sales and complex deals: from compressors and generators to real estate and investment assets.</p>
+                <p>The material is based on real negotiations, failed and closed deals, and on what actually happens in rooms where large numbers are discussed — not on abstract “sales theory”.</p>
+                <p>The goal is simple: make you dangerous in big deals in a good way — so that you understand what is really going on at the table.</p>
+             </div>
+           </div>
         </div>
       </div>
     </div>
