@@ -1,8 +1,16 @@
 [
   {
+    "slug": "they-suddenly-put-me-in-charge",
+    "title": "“They suddenly put me in charge of all sales. What now??”",
+    "date": "2025-12-10",
+    "tags": ["Leadership", "Career", "Sales Management"],
+    "excerpt": "What actually happens when you’re promoted into sales leadership before you’re ready, and why real authority starts with being seen learning in public.",
+    "file": "posts/they-suddenly-put-me-in-charge.md"
+  },
+  {
     "slug": "why-smart-buyers-go-quiet",
     "title": "Why smart buyers go quiet after “send me a proposal”",
-    "date": "2025-12-10",
+    "date": "2025-12-01",
     "tags": ["High-Ticket", "Negotiation", "Qualification"],
     "excerpt": "What “send me a proposal” really means in high-ticket deals, why inbox silence isn’t a mystery, and how to tell if the deal was never real in the first place.",
     "file": "posts/why-smart-buyers-go-quiet.md"
@@ -10,7 +18,7 @@
   {
     "slug": "why-most-b2b-pipelines-look-full",
     "title": "Why most B2B pipelines look full and close nothing",
-    "date": "2025-12-10",
+    "date": "2025-12-07",
     "tags": ["Pipeline", "RevOps", "Forecasting"],
     "excerpt": "How emotional pipeline inflation keeps dead deals alive in the CRM, and why forcing brutal clarity on next steps can transform close rates and forecast accuracy.",
     "file": "posts/why-most-b2b-pipelines-look-full.md"
@@ -18,7 +26,7 @@
   {
     "slug": "what-good-discovery-looks-like",
     "title": "What good discovery looks like in a six-figure deal (and why almost nobody does it)",
-    "date": "2025-12-10",
+    "date": "2025-11-20",
     "tags": ["Discovery", "Enterprise", "High-Ticket"],
     "excerpt": "Discovery in six-figure deals isn’t a neat questionnaire; it’s walking through the burned-out building of a buyer’s reality until fear, risk, and politics are on the table.",
     "file": "posts/what-good-discovery-looks-like.md"
@@ -26,7 +34,7 @@
   {
     "slug": "talking-to-ctos-and-engineers",
     "title": "Talking to CTOs and engineers when you’re a salesperson who isn’t technical",
-    "date": "2025-12-10",
+    "date": "2025-11-15",
     "tags": ["Technical Sales", "Engineering", "Enterprise"],
     "excerpt": "Why engineers don’t need you to be technical, just honest about consequences, and how dropping the performance act turns you into a low-risk partner instead of noise.",
     "file": "posts/talking-to-ctos-and-engineers.md"
@@ -34,17 +42,9 @@
   {
     "slug": "how-to-sell-a-helicopter-metaphor",
     "title": "How to Sell a Helicopter: a metaphor for any deal that can go wrong in twenty different ways",
-    "date": "2025-12-10",
+    "date": "2025-10-29",
     "tags": ["High-Ticket", "Risk", "Enterprise"],
     "excerpt": "Big-ticket deals are helicopters: buyers aren’t choosing features, they’re choosing which failure modes they can survive if everything goes sideways.",
     "file": "posts/how-to-sell-a-helicopter-metaphor.md"
-  },
-  {
-    "slug": "they-suddenly-put-me-in-charge",
-    "title": "“They suddenly put me in charge of all sales. What now?”",
-    "date": "2025-12-10",
-    "tags": ["Leadership", "Career", "Sales Management"],
-    "excerpt": "What actually happens when you’re promoted into sales leadership before you’re ready, and why real authority starts with being seen learning in public.",
-    "file": "posts/they-suddenly-put-me-in-charge.md"
   }
 ]
