@@ -1,6 +1,8 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SK0ZK3C8SY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -8,82 +10,431 @@
     gtag('js', new Date());
     gtag('config', 'G-SK0ZK3C8SY');
   </script>
+  
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
-  <title>What good discovery looks like in a six-figure deal — Salebots</title>
-  <meta name="description" content="Real discovery is uneven, messy, and emotional. If it feels polite, you aren't digging deep enough." />
+  <!-- META DATA -->
+  <title>What good discovery looks like in a six-figure deal (and why almost nobody does it) — Salebots Blog</title>
+  <meta name="description" content="Discovery in six-figure deals isn’t a neat questionnaire; it’s walking through the burned-out building of a buyer’s reality until fear, risk, and politics are on the table." />
   <link rel="canonical" href="https://salebots.org/blog/posts/what-good-discovery-looks-like.html" />
 
-  <meta property="og:title" content="What good discovery looks like in a six-figure deal" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="What good discovery looks like in a six-figure deal (and why almost nobody does it)" />
+  <meta property="og:description" content="Discovery in six-figure deals isn’t a neat questionnaire; it’s walking through the burned-out building of a buyer’s reality until fear, risk, and politics are on the table." />
   <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://salebots.org/blog/posts/what-good-discovery-looks-like.html" />
   <meta property="og:image" content="https://salebots.org/assets/img/og-consulting.png" />
 
+  <!-- Favicon (Absolute paths for nested folders) -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="120x120" href="/assets/img/favicon-120.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    
   <style>
-    :root{ --bg:#0A0C10; --text:#E9EEF6; --muted:#9FB0C6; --brand:#6FD2FF; }
-    body{ margin:0; background:var(--bg); color:var(--text); font-family:Inter,sans-serif; }
-    .container{ width:min(760px,92vw); margin:0 auto; }
-    a{ color:inherit; text-decoration:none; }
-    .article-header{ margin: 60px 0 40px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom:30px; }
-    .meta{ color:var(--muted); font-size:14px; margin-bottom:16px; display:flex; gap:12px; }
-    .tag{ background:rgba(255,255,255,0.1); padding:4px 10px; border-radius:99px; font-size:12px; color:#fff; }
-    h1{ font-size:clamp(32px,5vw,48px); line-height:1.1; margin:0; letter-spacing:-0.5px; }
-    .content{ font-size:18px; line-height:1.7; color:#D1D5DB; }
-    .content p{ margin-bottom:24px; }
-    .content strong{ color:#fff; font-weight:700; }
-    .content blockquote{ margin:40px 0; padding:20px 32px; border-left:4px solid var(--brand); background:rgba(255,255,255,0.02); font-style:italic; font-size:20px; color:#fff; }
-    .nav{ padding:20px 0; border-bottom:1px solid rgba(255,255,255,0.06); margin-bottom:40px; }
-    .btn{ display:inline-block; padding:12px 24px; background:linear-gradient(135deg,#6FD2FF,#7CF5C6); color:#000; font-weight:700; border-radius:12px; margin-top:20px; transition:.2s; }
-    .btn:hover{ transform:translateY(-2px); }
-    .footer-cta { text-align:center; padding:60px 0; border-top:1px solid rgba(255,255,255,0.1); margin-top:80px; }
+    /* --- Core Styles --- */
+    :root{
+      --bg:#0A0C10; --card:#10141C; --soft:#161C25;
+      --text:#E9EEF6; --muted:#9FB0C6;
+      --brand:#6FD2FF; --brand-2:#7CF5C6;
+      --danger:#FF8B6E;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(111,210,255,.12), transparent),
+        radial-gradient(800px 500px at 90% -20%, rgba(124,245,198,.10), transparent),
+        var(--bg);
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1200px,92vw);margin:0 auto}
+
+    /* Nav */
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background:linear-gradient(180deg,rgba(10,12,16,.75),rgba(10,12,16,.35));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px;}
+    .logo-badge{width:36px;height:36px;border-radius:12px;background:conic-gradient(from 140deg,#6FD2FF,#7CF5C6);box-shadow:0 10px 30px rgba(111,210,255,.35);}
+    .nav-toggle{display:inline-flex;flex-direction:column;gap:4px;padding:8px;margin-left:auto;background:transparent;border:0;cursor:pointer;}
+    .nav-toggle span{width:20px;height:2px;border-radius:999px;background:#ffffff;transition:.2s;}
+    .nav-toggle.open span:nth-child(1){transform:translateY(4px) rotate(45deg);}
+    .nav-toggle.open span:nth-child(2){transform:translateY(-4px) rotate(-45deg);}
+    .nav-menu{position:absolute;top:100%;right:0;left:0;display:none;flex-direction:column;gap:16px;padding:12px 16px 16px;background:linear-gradient(180deg,rgba(10,12,16,.98),rgba(10,12,16,.94));border-bottom:1px solid rgba(255,255,255,.06);}
+    .nav-menu.open{display:flex;}
+    .nav-links{display:flex;flex-direction:column;gap:12px;font-size:14px;color:var(--muted);}
+    .nav-links a{padding:4px 0;position:relative;}
+    .nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:linear-gradient(90deg,var(--brand),var(--brand-2));transition:width .2s ease;}
+    .nav-links a:hover::after, .nav-links a.active::after{width:100%}
+    .nav-links a.active{color:#fff}
+    .nav-cta{display:flex;flex-direction:column;gap:8px;align-items:flex-start;margin-top:8px;}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;border-radius:12px;font-weight:600;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);transition:.25s ease;cursor:pointer}
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.12);color:var(--text)}
+    .btn-primary{background:linear-gradient(135deg,#6FD2FF,#7CF5C6);color:#071018;border:none;box-shadow:0 12px 30px rgba(111,210,255,.35)}
+    .btn-primary:hover{filter:brightness(1.1) drop-shadow(0 0 8px rgba(124,245,198,.6));transform:translateY(-2px)}
+
+    /* --- Article Specific Styles --- */
+    .article-container { max-width: 760px; margin: 40px auto 100px; padding: 0 20px; }
+    
+    /* Navigation Breadcrumb/Back */
+    .back-link { 
+      display: inline-block; color: var(--muted); font-size: 14px; margin-bottom: 32px; transition: .2s; 
+    }
+    .back-link:hover { color: var(--brand); transform: translateX(-4px); }
+
+    /* Header */
+    .article-header { margin-bottom: 40px; }
+    .meta-row { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; flex-wrap: wrap; }
+    .meta-date { color: var(--muted); font-size: 14px; }
+    .meta-tag { 
+      font-size: 11px; padding: 4px 10px; border-radius: 99px; 
+      background: rgba(255,255,255,0.08); color: var(--text); 
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .article-title { 
+      font-size: clamp(32px, 5vw, 48px); line-height: 1.1; margin: 0; font-weight: 800; letter-spacing: -0.5px;
+    }
+    
+    /* Featured Image */
+    .featured-image {
+      width: 100%; height: auto; border-radius: 16px; margin-bottom: 48px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Content Typography (Journal Style) */
+    .article-content { font-size: 18px; line-height: 1.6; color: #D1D5DB; }
+    
+    .article-content h2 { 
+      font-size: 28px; color: var(--text); margin-top: 56px; margin-bottom: 20px; font-weight: 700; 
+    }
+    .article-content h3 { 
+      font-size: 22px; color: var(--text); margin-top: 40px; margin-bottom: 16px; font-weight: 600; 
+    }
+    .article-content p { margin-bottom: 24px; }
+    
+    /* Lists */
+    .article-content ul, .article-content ol { 
+      margin-bottom: 24px; padding-left: 24px; 
+    }
+    .article-content li { margin-bottom: 10px; padding-left: 8px; }
+    .article-content li::marker { color: var(--brand); }
+
+    /* Blockquote */
+    .article-content blockquote {
+      margin: 40px 0; padding: 24px 32px;
+      border-left: 4px solid var(--brand);
+      background: linear-gradient(90deg, rgba(111,210,255,0.05), transparent);
+      border-radius: 0 12px 12px 0;
+      color: var(--text); font-style: italic; font-size: 20px; font-weight: 500;
+    }
+
+    /* Inline Elements */
+    .article-content strong { color: #fff; font-weight: 700; }
+    .article-content em { color: var(--brand-2); }
+    .article-content a { 
+      color: var(--brand); text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; 
+    }
+    .article-content a:hover { text-decoration-thickness: 2px; }
+
+    /* Footer in Article */
+    .article-footer {
+      margin-top: 80px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.1);
+      text-align: center;
+    }
+    .article-footer p { color: var(--muted); margin-bottom: 24px; }
+
+    /* Main Footer */
+    .footer{padding:28px 0 60px;color:var(--muted);font-size:14px; text-align: center;}
+    .footer-contacts{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+    .footer-contact{font-size:13px;opacity:.7;transition:.25s ease}
+    .footer-contact:hover{opacity:1;color:var(--text)}
+
+    /* Animation */
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    @media (min-width:768px){
+      .nav-toggle{display:none}
+      .nav-menu{position:static;display:flex;flex-direction:row;align-items:center;gap:24px;padding:0;background:none;border-bottom:0;}
+      .nav-links{flex-direction:row;gap:18px;}
+      .nav-cta{flex-direction:row;align-items:center;margin-top:0;}
+    }
   </style>
 </head>
 <body>
-<div class="container">
-  <nav class="nav"><a href="/blog/" style="color:var(--muted);">← Back to Blog</a></nav>
-  <article>
-    <header class="article-header">
-      <div class="meta"><time>November 20, 2025</time><span class="tag">Discovery</span></div>
-      <h1>What good discovery looks like in a six-figure deal (and why almost nobody does it)</h1>
-    </header>
-    <div class="content">
-      <p>There’s this fantasy version of discovery that junior reps get taught: the calm, structured conversation where the buyer answers cleanly, the needs line up neatly, and the solution basically sells itself once you “ask the right questions”.</p>
 
-      <p>I don’t know where that version of sales exists. In the real world, discovery in a six-figure deal feels more like walking through a building after a fire and trying to figure out what burned first.</p>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="logo">
+        <!-- Path to root -->
+        <a href="/" style="display:flex; align-items:center; gap:12px;">
+          <div class="logo-badge" role="img" aria-label="Salebots logo"></div>
+          <span>Salebots</span>
+        </a>
+      </div>
 
-      <p>I remember one call. Corporate room. Muted lighting. Buyers all wearing that expression people have in meetings they didn’t choose to attend. The CTO looked exhausted. Not busy—exhausted.</p>
+      <button class="nav-toggle" type="button"><span></span><span></span></button>
 
-      <p>So I said something you’re “not supposed” to say: <em>“You look like someone who’s been firefighting longer than anyone’s admitting. Where’s the real damage?”</em></p>
-
-      <p>Silence. Three seconds. Five. Then he sighed in this way I’ve only heard from people who’ve been carrying a secret too heavy for too long.</p>
-
-      <p>He told me about outages nobody outside the team knew about. He told me the CFO thought everything was fine because the team hid the worst metrics. He told me an engineer was on the verge of quitting.</p>
-
-      <p><strong>That’s discovery.</strong></p>
-
-      <blockquote>People think discovery is asking questions. It’s really about absorbing someone else’s chaos without blinking.</blockquote>
-
-      <p>Later, they asked if our solution could “absolutely guarantee no outages”. Every cell in my body wanted to say yes. Instead I said: <em>“No. But I can tell you exactly why you’re having outages today, and which of those we remove entirely versus which stay on your side.”</em></p>
-
-      <p>The PM flinched. The CTO nodded slowly. Honesty hurts the person who wants hope, but it calms the person who carries responsibility.</p>
-
-      <p>And that’s when I realized something: good discovery isn’t about making the buyer like you — it’s about making the buyer trust you more than they trust their fear.</p>
-
-      <p>If discovery feels clean and polite, you didn’t uncover anything that matters. Six-figure problems aren’t polite. Six-figure stakes aren’t polite. Six-figure teams certainly aren’t polite.</p>
-
-      <p>Real discovery is uneven. Messy. Sometimes awkward. I’ve left discovery calls feeling like I’d just witnessed a confession. But I’ve never left feeling confused.</p>
-      
-      <p>You want the secret? Fine. <strong>If the buyer doesn’t feel lighter at the end of the call, you didn’t do discovery. You did a questionnaire.</strong></p>
+      <div class="nav-menu">
+        <div class="nav-links">
+          <a href="/">Automation</a>
+          <a href="/helicopter/">How to Sell a Helicopter</a>
+          <a href="/consulting/">Consulting</a>
+          <a href="/blog/" class="active">Blog</a>
+        </div>
+        <div class="nav-cta">
+          <a class="btn" href="/consulting/#expertise">Why us</a>
+          <a class="btn btn-primary" href="/consulting/#audit-form">Book Discovery</a>
+        </div>
+      </div>
     </div>
-    <div class="footer-cta">
-      <h3>Stop doing questionnaires. Start selling.</h3>
-      <p style="color:var(--muted);">Learn the framework for high-ticket discovery that actually converts.</p>
-      <a href="/consulting/#audit-form" class="btn">Book Discovery Call</a>
+  </nav>
+
+  <!-- ARTICLE CONTAINER -->
+  <main class="container article-container reveal">
+    
+    <a href="/blog/" class="back-link">← Back to Field Notes</a>
+
+    <article>
+      <header class="article-header">
+        <div class="meta-row">
+          <time class="meta-date">November 20, 2025</time>
+          <span class="meta-tag">Discovery</span>
+          <span class="meta-tag">Enterprise</span>
+          <span class="meta-tag">High-Ticket</span>
+        </div>
+        <h1 class="article-title">What good discovery looks like in a six-figure deal (and why almost nobody does it)</h1>
+      </header>
+
+      <!-- Featured Image (optional) -->
+      <!-- <img src="/assets/img/blog-discovery.jpg" alt="Enterprise discovery call" class="featured-image"> -->
+
+      <div class="article-content">
+        <p class="lead">
+          There’s this fantasy version of discovery that junior reps get taught: the calm, structured conversation where the buyer answers cleanly, the needs line up neatly, and the solution basically sells itself once you “ask the right questions”.
+        </p>
+
+        <p>
+          I don’t know where that version of sales exists.
+          In the real world, discovery in a six-figure deal feels more like walking through a building after a fire and trying to figure out what burned first.
+        </p>
+
+        <p>
+          Let me tell you about one call that haunts me in a good way.
+        </p>
+
+        <p>
+          It started in the most boring, forgettable way imaginable.
+          Corporate room.
+          Muted lighting.
+          Buyers all wearing that expression people have in meetings they didn’t choose to attend.
+          <em>The kind of call where you already feel the gravity pulling you toward a meaningless “circle back next quarter”.</em>
+        </p>
+
+        <p>
+          If I’d stuck to the script, that’s exactly where it would have gone.
+          “Tell me about your goals…”
+          “What challenges are you facing…”
+          You can practically feel the buyer’s soul leaving their body.
+        </p>
+
+        <p>
+          But something in the CTO’s face was off.
+          It wasn’t hostility — it was exhaustion.
+          The kind you don’t get from a busy week, but from months of holding a system together with duct tape and hope.
+        </p>
+
+        <p>
+          So I said something you’re “not supposed” to say on a first call:
+          <strong>“You look like someone who’s been firefighting longer than anyone’s admitting. Where’s the real damage?”</strong>
+        </p>
+
+        <p>
+          Silence.
+          Three seconds.
+          Five.
+          I thought I’d blown it.
+        </p>
+
+        <p>
+          Then he sighed in this way I’ve only heard from people who’ve been carrying a secret too heavy for too long.
+          And he told me two outages nobody outside the team knew about.
+          Then he told me the CFO thought everything was fine because the team hid the worst metrics to buy themselves time.
+          Then he told me one engineer was on the verge of quitting because he was tired of getting woken up at 3 a.m. for failures caused by a tool everyone agreed was “too expensive to replace”.
+        </p>
+
+        <p>
+          Within ten minutes, the conversation went somewhere no script could reach.
+        </p>
+
+        <p>
+          At one point, the senior PM leaned toward the camera and said, <em>“If we don’t fix this in the next quarter, it will break during peak season and I’m pretty sure the blame will land on me.”</em>
+        </p>
+
+        <p>
+          That’s discovery.
+          Not the sanitized version.
+          The real one.
+          The version where you talk about fear, friction, pressure, internal politics, personal risk, the weight people carry when nobody above them is paying attention.
+        </p>
+
+        <p>
+          I wish I could say I handled it gracefully, but I didn’t.
+          I stumbled.
+          I asked clumsy questions.
+          I hesitated because I wasn’t sure if I had the right to dig this deep.
+          <em>Discovery in big deals always feels like you’re trespassing a little bit — but trespassing is where the truth lives.</em>
+        </p>
+
+        <p>
+          There was a moment later in the call when they asked whether our solution could “absolutely guarantee no outages”, and I felt every cell in my body screaming to say yes.
+          Because that yes would have moved the deal forward.
+          Because they wanted the comfort more than the truth.
+        </p>
+
+        <p>
+          I didn’t say it.
+          I said, “No. But I can tell you exactly why you’re having outages today, and which of those we remove entirely versus which stay on your side.”
+        </p>
+
+        <p>
+          The PM flinched.
+          The CTO nodded slowly.
+          <strong>Honesty hurts the person who wants hope, but it calms the person who carries responsibility.</strong>
+        </p>
+
+        <p>
+          And that’s when I realized something:
+          good discovery isn’t about making the buyer like you — it’s about making the buyer trust you more than they trust their fear.
+        </p>
+
+        <p>
+          People think discovery is asking questions.
+          It’s really about absorbing someone else’s chaos without blinking.
+        </p>
+
+        <p>
+          The deal took six weeks.
+          There were internal fights on their side, panic moments, one period where procurement tried to replace us with a cheaper competitor.
+          But the thing that held it together wasn’t our product.
+          It was that call.
+          That one moment where someone told the truth out loud for the first time.
+        </p>
+
+        <blockquote>
+          If discovery feels clean and polite, you didn’t uncover anything that matters.<br>
+          Six-figure problems aren’t polite.<br>
+          Six-figure stakes aren’t polite.<br>
+          Six-figure teams certainly aren’t polite.
+        </blockquote>
+
+        <p>
+          Real discovery is uneven.
+          Messy.
+          Sometimes awkward.
+          Sometimes emotional.
+          Sometimes you get more honesty than you were ready for.
+        </p>
+
+        <p>
+          I’ve left discovery calls feeling like I’d just witnessed a confession.
+          I’ve left others feeling like I should wash my hands after touching the political mess they described.
+          I’ve left a few wanting to run in the opposite direction because the deal was cursed from the inside.
+        </p>
+
+        <p>
+          But here’s what I’ve never felt after a good discovery:
+          <strong>Confusion.</strong>
+        </p>
+
+        <p>
+          I know exactly who is suffering.
+          Exactly what breaks.
+          Exactly who blocks change.
+          Exactly what the buyer is afraid of.
+          Exactly what they hope will magically resolve if they choose nothing.
+        </p>
+
+        <p>
+          And when you see that clearly, six-figure deals stop being mysterious.
+          They become inevitable — or impossible — and either way that’s a gift.
+        </p>
+
+        <blockquote>
+          You want the secret? Fine.<br><br>
+          If the buyer doesn’t feel lighter at the end of the call, you didn’t do discovery. You did a questionnaire.
+        </blockquote>
+      </div>
+
+      <!-- Call to Action Footer -->
+      <div class="article-footer">
+        <h3>Need help turning discovery into real leverage?</h3>
+        <p>We help B2B teams run enterprise discovery that surfaces real risk, politics, and urgency instead of generic “pain points”.</p>
+        <a href="/consulting/#audit-form" class="btn btn-primary">Book a Discovery Call</a>
+        <div style="margin-top:20px;">
+          <a href="/blog/" class="back-link">Back to Blog Overview</a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="text-align:center">
+      <div style="display:flex; align-items:center; gap:10px; justify-content:center">
+        <div class="logo-badge" style="width:28px;height:28px;flex-shrink:0" role="img" aria-label="Salebots logo"></div>
+        <div>© <span id="y"></span> Salebots — Sales Consulting & Automation</div>
+      </div>
+
+      <div class="muted" style="margin-top:8px">
+        Bali • Working worldwide • B2B Sales Experts
+      </div>
+
+      <div class="footer-contacts" style="margin-top:16px">
+        <a class="footer-contact" href="https://t.me/avtohtonny" target="_blank" rel="noopener">Telegram</a>
+        <a class="footer-contact" href="https://wa.me/66836840045" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="footer-contact" href="mailto:hello@salebots.org">Email</a>
+      </div>
     </div>
-  </article>
-</div>
+  </footer>
+
+  <script>
+    // Reveal Animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Footer Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile Nav
+    document.addEventListener('DOMContentLoaded', function(){
+      var toggle = document.querySelector('.nav-toggle');
+      var menu = document.querySelector('.nav-menu');
+      if (toggle && menu) {
+        toggle.addEventListener('click', function(){
+          toggle.classList.toggle('open');
+          menu.classList.toggle('open');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
+```
