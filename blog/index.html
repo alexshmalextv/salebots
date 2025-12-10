@@ -12,11 +12,8 @@
   
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Salebots Consulting — B2B RevOps & High-Ticket Sales Strategy</title>
-  <meta name="description" content="We fix broken sales pipelines. 15+ years of experience in B2B: from heavy machinery to Fintech. RevOps methodology to align Marketing, Sales, and Success." />
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://salebots.org/consulting/" />
+  <title>Salebots Blog — Sales Strategy & RevOps Insights</title>
+  <meta name="description" content="Insights on B2B sales, high-ticket negotiations, and RevOps methodology. Practical guides and case studies." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
@@ -25,20 +22,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Salebots Consulting — B2B RevOps & Sales Strategy" />
-  <meta property="og:description" content="15 years experience closing high-ticket deals. We align your Marketing and Sales to stop revenue leaks." />
+  <meta property="og:title" content="Salebots Blog — B2B Sales Insights" />
+  <meta property="og:description" content="Practical strategies for high-ticket sales and revenue operations." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://salebots.org/consulting/" />
+  <meta property="og:url" content="https://salebots.org/blog/" />
   <meta property="og:image" content="https://salebots.org/assets/img/og-consulting.png" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     
   <style>
+    /* Reuse core styles from index.html */
     :root{
       --bg:#0A0C10; --card:#10141C; --soft:#161C25;
       --text:#E9EEF6; --muted:#9FB0C6;
@@ -59,364 +54,173 @@
       color:var(--text);
       font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
       -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
     .container{width:min(1200px,92vw);margin:0 auto}
 
-    /* Navigation */
+    /* Nav */
     .nav{
       position:sticky;top:0;z-index:50;
       backdrop-filter:saturate(140%) blur(10px);
       background:linear-gradient(180deg,rgba(10,12,16,.75),rgba(10,12,16,.35));
       border-bottom:1px solid rgba(255,255,255,.06);
     }
-    .nav-inner{
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:16px 0;
-    }
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-weight:800;
-      letter-spacing:.5px;
-    }
-    .logo-badge{
-      width:36px;height:36px;border-radius:12px;
-      background:conic-gradient(from 140deg,#6FD2FF,#7CF5C6);
-      box-shadow:0 10px 30px rgba(111,210,255,.35);
-    }
-
-    .nav-toggle{
-      display:inline-flex;
-      flex-direction:column;
-      gap:4px;
-      padding:8px;
-      margin-left:auto;
-      background:transparent;
-      border:0;
-      cursor:pointer;
-    }
-    .nav-toggle span{
-      width:20px;
-      height:2px;
-      border-radius:999px;
-      background:#ffffff;
-      transition:.2s;
-    }
-    .nav-toggle.open span:nth-child(1){
-      transform:translateY(4px) rotate(45deg);
-    }
-    .nav-toggle.open span:nth-child(2){
-      transform:translateY(-4px) rotate(-45deg);
-    }
-
-    .nav-menu{
-      position:absolute;
-      top:100%;
-      right:0;
-      left:0;
-      display:none;
-      flex-direction:column;
-      gap:16px;
-      padding:12px 16px 16px;
-      background:linear-gradient(180deg,rgba(10,12,16,.98),rgba(10,12,16,.94));
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-    .nav-menu.open{
-      display:flex;
-    }
-
-    .nav-links{
-      display:flex;
-      flex-direction:column;
-      gap:12px;
-      font-size:14px;
-      color:var(--muted);
-    }
-    .nav-links a{
-      padding:4px 0;
-      position:relative;
-    }
-    .nav-links a::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-4px;
-      width:0;
-      height:2px;
-      background:linear-gradient(90deg,var(--brand),var(--brand-2));
-      transition:width .2s ease;
-    }
-    .nav-links a:hover::after{width:100%}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px;}
+    .logo-badge{width:36px;height:36px;border-radius:12px;background:conic-gradient(from 140deg,#6FD2FF,#7CF5C6);box-shadow:0 10px 30px rgba(111,210,255,.35);}
+    .nav-toggle{display:inline-flex;flex-direction:column;gap:4px;padding:8px;margin-left:auto;background:transparent;border:0;cursor:pointer;}
+    .nav-toggle span{width:20px;height:2px;border-radius:999px;background:#ffffff;transition:.2s;}
+    .nav-toggle.open span:nth-child(1){transform:translateY(4px) rotate(45deg);}
+    .nav-toggle.open span:nth-child(2){transform:translateY(-4px) rotate(-45deg);}
+    .nav-menu{position:absolute;top:100%;right:0;left:0;display:none;flex-direction:column;gap:16px;padding:12px 16px 16px;background:linear-gradient(180deg,rgba(10,12,16,.98),rgba(10,12,16,.94));border-bottom:1px solid rgba(255,255,255,.06);}
+    .nav-menu.open{display:flex;}
+    .nav-links{display:flex;flex-direction:column;gap:12px;font-size:14px;color:var(--muted);}
+    .nav-links a{padding:4px 0;position:relative;}
+    .nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:linear-gradient(90deg,var(--brand),var(--brand-2));transition:width .2s ease;}
+    .nav-links a:hover::after, .nav-links a.active::after{width:100%}
     .nav-links a.active{color:#fff}
-    .nav-links a.active::after{width:100%}
+    .nav-cta{display:flex;flex-direction:column;gap:8px;align-items:flex-start;margin-top:8px;}
 
-    .nav-cta{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-      align-items:flex-start;
-      margin-top:8px;
-    }
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;border-radius:12px;font-weight:600;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);transition:.25s ease;cursor:pointer}
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.12);color:var(--text)}
+    .btn-primary{background:linear-gradient(135deg,#6FD2FF,#7CF5C6);color:#071018;border:none;box-shadow:0 12px 30px rgba(111,210,255,.35)}
+    .btn-primary:hover{filter:brightness(1.1) drop-shadow(0 0 8px rgba(124,245,198,.6));transform:translateY(-2px)}
 
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 18px;border-radius:12px;font-weight:600;
-      border:1px solid rgba(255,255,255,.08);
-      background:rgba(255,255,255,.02);
-      transition:.25s ease;cursor:pointer
-    }
-    .btn:hover{
-      transform:translateY(-1px);
-      background:rgba(255,255,255,.12);
-      color:var(--text)
-    }
-    .btn-primary{
-      background:linear-gradient(135deg,#6FD2FF,#7CF5C6);
-      color:#071018;border:none;
-      box-shadow:0 12px 30px rgba(111,210,255,.35)
-    }
-    .btn-primary:hover{
-      filter:brightness(1.1) drop-shadow(0 0 8px rgba(124,245,198,.6));
-      transform:translateY(-2px)
-    }
-
-    .btn-pulse{animation:pulse 2s infinite}
-
-    @keyframes pulse{
-      0%{box-shadow:0 12px 30px rgba(111,210,255,.35)}
-      50%{box-shadow:0 12px 30px rgba(111,210,255,.6),0 0 0 8px rgba(111,210,255,.2)}
-      100%{box-shadow:0 12px 30px rgba(111,210,255,.35)}
-    }
-
-    .breadcrumbs{padding:12px 0;font-size:14px;color:var(--muted)}
-    .breadcrumbs ol{display:flex;gap:8px;margin:0;padding:0;list-style:none}
-    .breadcrumbs li:not(:last-child)::after{content:" › ";margin-left:8px;opacity:.6}
-    .breadcrumbs a{color:var(--brand)}
-    .breadcrumbs a:hover{text-decoration:underline}
-
-    /* Hero */
-    .hero{position:relative;padding:80px 0 40px}
-    .hero-grid{display:flex;flex-direction:column;gap:32px;align-items:center}
-    
-    /* New Hero Styles */
-    .hero-badge-orange {
-      background: linear-gradient(135deg, #FFB347, #FF8C42);
-      color: #071018;
-      font-weight: 700;
-      padding: 8px 16px;
-      border-radius: 99px;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 24px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 8px 20px rgba(255, 140, 66, 0.3);
-    }
-    .hero h1{font-size:clamp(32px,7vw,64px);line-height:1.1;margin:18px 0;text-align:center}
-    .lead{font-size:clamp(16px,2vw,20px);color:var(--muted);text-align:center;max-width:700px; margin: 0 auto;}
-    .lead strong {color: var(--text); font-weight: 600;}
-
-    /* Pipeline / Dashboard Styles (Kept if needed for other sections, but removed from hero) */
-    .hero-card{
-      position:relative;background:var(--card);padding:22px;border-radius:var(--radius-lg);
-      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);overflow:hidden;margin-top:20px;
-      min-width: 100%;
-    }
-    
+    /* Hero & Common */
+    .hero{position:relative;padding:80px 0 40px; text-align:center;}
+    .hero h1{font-size:clamp(32px,6vw,56px);line-height:1.1;margin:18px 0;}
+    .lead{font-size:clamp(16px,2vw,18px);color:var(--muted);max-width:700px; margin: 0 auto;}
     .section{padding:35px 0}
-    .section h2{font-size:clamp(24px,4vw,38px);margin:0 0 18px;text-align:center}
-    .muted{color:var(--muted)}
-
-    .grid-3{display:flex;flex-direction:column;gap:18px}
-    .card{
-      background:var(--card);padding:22px;border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)
-    }
-    .card h3{margin:0 0 8px}
-    .list{display:grid;gap:8px;margin:12px 0 0;padding:0}
-    .list li{list-style:none;display:flex;gap:10px;align-items:flex-start}
-    .li-dot{
-      width:8px;height:8px;border-radius:50%;margin-top:8px;
-      background:linear-gradient(135deg,#6FD2FF,#7CF5C6);
-      flex-shrink:0;min-width:8px;min-height:8px
-    }
-
-    .packages{display:flex;flex-direction:column;gap:24px;margin-top:32px}
-    .package-card{
-      background:var(--card);padding:32px;border-radius:var(--radius-lg);
-      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);
-      position:relative;text-align:center;
-      display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
-      min-height:500px
-    }
-    .package-card.popular{
-      border:2px solid var(--brand);
-      background:linear-gradient(180deg,rgba(111,210,255,.08),rgba(124,245,198,.04))
-    }
-    .package-badge{
-      position:absolute;top:-12px;left:50%;transform:translateX(-50%);
-      background:linear-gradient(135deg,#6FD2FF,#7CF5C6);
-      color:#071018;padding:6px 16px;border-radius:999px;font-size:12px;font-weight:800
-    }
-    .package-title{font-size:24px;font-weight:800;margin:0 0 8px}
-    .package-price{font-size:32px;font-weight:800;margin:16px 0}
-    .package-price .sub{font-size:16px; color:var(--muted); font-weight:400;}
-    .package-subtitle{color:var(--muted);margin-bottom:24px; font-size: 14px; min-height: 40px;}
-    .package-features{text-align:left;margin:24px 0;width:100%; flex-grow: 1;}
-    .package-cta{margin-top:24px; width: 100%;}
-    .package-cta .btn {width: 100%;}
-
-    .industry-tags {
-      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px;
-    }
-    .i-tag {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
-      padding: 6px 12px; border-radius: 8px; font-size: 13px; color: var(--muted);
-    }
-
-    .lead-form{
-      background:linear-gradient(135deg,rgba(111,210,255,.12),rgba(124,245,198,.08));
-      border:1px solid rgba(255,255,255,.12);border-radius:20px;
-      padding:32px;box-shadow:var(--shadow);max-width:600px;margin:0 auto
-    }
-    .form-grid{display:grid;gap:20px}
-    .form-group{display:flex;flex-direction:column;gap:8px}
-    .form-label{font-weight:600;color:var(--text);font-size:14px}
-    .form-input,.form-select,.form-textarea{
-      padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.04);color:var(--text);font-size:16px;
-      transition:.25s ease;font-family:inherit
-    }
-    .form-select option{background:var(--card);color:var(--text);padding:8px}
-    .form-input:focus,.form-select:focus,.form-textarea:focus{
-      outline:none;border-color:var(--brand);background:rgba(255,255,255,.08);
-      box-shadow:0 0 0 3px rgba(111,210,255,.15)
-    }
-    .form-input::placeholder,.form-textarea::placeholder{color:var(--muted)}
-    .form-textarea{resize:vertical;min-height:100px}
-    .form-required{color:var(--danger);margin-left:4px}
-    .form-submit{width:100%;padding:16px;font-size:18px;font-weight:700;margin-top:8px}
-
-    .cta{
-      position:relative;background:linear-gradient(135deg,rgba(111,210,255,.14),rgba(124,245,198,.10));
-      border:1px solid rgba(255,255,255,.10);border-radius:22px;
-      padding:28px;box-shadow:var(--shadow)
+    
+    /* Blog Specific UI */
+    .controls-container {
+      max-width: 800px; margin: 40px auto 20px;
     }
     
-    .book-plug {
-      background: var(--soft);
-      border: 1px solid rgba(255,255,255,0.08);
+    .search-box {
+      position: relative;
+      margin-bottom: 24px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 16px 20px 16px 50px;
+      border-radius: 99px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-size: 16px;
+      transition: .25s ease;
+      font-family: inherit;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--brand);
+      background: rgba(255,255,255,.08);
+      box-shadow: 0 0 0 3px rgba(111,210,255,.15);
+    }
+    .search-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    .tags-filter {
+      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    }
+    .filter-tag {
+      background: rgba(255,255,255,0.05); 
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 6px 14px; 
+      border-radius: 99px; 
+      font-size: 13px; 
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-tag:hover {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+    .filter-tag.active {
+      background: var(--brand);
+      color: #071018;
+      border-color: var(--brand);
+      font-weight: 600;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .blog-card {
+      background: var(--card);
       border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: var(--shadow);
       padding: 24px;
       display: flex;
-      gap: 24px;
-      align-items: center;
-      margin-top: 40px;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .book-plug img {
-      width: 80px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-      border-radius: 4px;
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,.08);
+      border-color: rgba(255,255,255,.15);
+    }
+    .b-date { font-size: 12px; color: var(--muted); margin-bottom: 12px; display: block; }
+    .b-title { font-size: 20px; font-weight: 700; margin: 0 0 12px; line-height: 1.3; color: var(--text); }
+    .b-excerpt { font-size: 15px; color: var(--muted); margin-bottom: 20px; flex-grow: 1; line-height: 1.5; }
+    .b-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .b-tag { font-size: 11px; padding: 4px 8px; border-radius: 6px; background: rgba(255,255,255,0.06); color: var(--muted); }
+    .b-link { color: var(--brand); font-weight: 600; font-size: 14px; margin-top: auto; display: inline-flex; align-items: center; gap: 6px; }
+    .b-link:hover { text-decoration: underline; }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 40px;
+      color: var(--muted);
+      background: var(--glass);
+      border-radius: var(--radius);
     }
 
-    .footer{
-      padding:28px 0 60px;color:var(--muted);font-size:14px
-    }
-    .footer-contacts{
-      display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:16px
-    }
+    /* Footer */
+    .footer{padding:28px 0 60px;color:var(--muted);font-size:14px; text-align: center;}
+    .footer-contacts{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:16px}
     .footer-contact{font-size:13px;opacity:.7;transition:.25s ease}
     .footer-contact:hover{opacity:1;color:var(--text)}
 
-    .reveal{
-      opacity:0;transform:translateY(18px);
-      transition:opacity .7s ease,transform .7s ease
-    }
+    /* Animation */
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
     .reveal.show{opacity:1;transform:none}
-    .float{animation:float 6s ease-in-out infinite}
-    @keyframes float{
-      0%{transform:translateY(0)}
-      50%{transform:translateY(-6px)}
-      100%{transform:translateY(0)}
-    }
-
-    .faq-item{
-      background:var(--card);
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:14px;margin-bottom:12px;overflow:hidden
-    }
-    .faq-item details{padding:18px}
-    .faq-item summary{
-      font-weight:600;color:var(--text);cursor:pointer;
-      list-style:none;outline:none;position:relative;padding-right:30px
-    }
-    .faq-item summary::-webkit-details-marker{display:none}
-    .faq-item summary::after{
-      content:'+';position:absolute;right:0;top:0;
-      font-size:20px;font-weight:bold;color:var(--brand);
-      transition:transform .3s ease
-    }
-    .faq-item details[open] summary::after{transform:rotate(45deg)}
-    .faq-answer{
-      color:var(--muted);line-height:1.5;margin-top:12px;
-      padding-top:12px;border-top:1px solid rgba(255,255,255,.06)
-    }
 
     @media (min-width:768px){
       .nav-toggle{display:none}
-      .nav-menu{
-        position:static;
-        display:flex;
-        flex-direction:row;
-        align-items:center;
-        gap:24px;
-        padding:0;
-        background:none;
-        border-bottom:0;
-      }
+      .nav-menu{position:static;display:flex;flex-direction:row;align-items:center;gap:24px;padding:0;background:none;border-bottom:0;}
       .nav-links{flex-direction:row;gap:18px;}
       .nav-cta{flex-direction:row;align-items:center;margin-top:0;}
-
-      .hero-grid{flex-direction:row;align-items:center}
-      .badges{justify-content:flex-start}
-      .grid-3{display:grid;grid-template-columns:repeat(3,1fr)}
-      .form-grid{grid-template-columns:1fr 1fr;gap:20px}
-      .form-group.full-width{grid-column:1 / -1}
-      .packages{display:grid;grid-template-columns:repeat(3,1fr)}
     }
-
-    @media (max-width:420px){
-      .btn{padding:12px 14px}
-      .hero{padding-top:64px}
-      .lead-form{padding:24px}
-      .book-plug {flex-direction: column; text-align: center;}
+    @media (max-width: 900px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
-    @media (max-width:767px){
-      .hero-card{display:none}
-      .hero-grid div:first-child{text-align:center}
-      .hero-grid div:first-child .lead{text-align:center}
-      .hero-grid div:first-child div[style*="display:flex"]{justify-content:center}
-      .packages{flex-direction:column}
+    @media (max-width: 600px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 60px; }
     }
   </style>
-    
 </head>
 <body>
 
   <nav class="nav">
     <div class="container nav-inner">
       <div class="logo">
-        <div class="logo-badge" role="img" aria-label="Salebots logo — sales automation"></div>
+        <div class="logo-badge" role="img" aria-label="Salebots logo"></div>
         <span>Salebots</span>
       </div>
 
@@ -429,416 +233,184 @@
         <div class="nav-links">
           <a href="/">Automation</a>
           <a href="/helicopter/">How to Sell a Helicopter</a>
-          <a href="/consulting/" class="active">Consulting</a>
-          <a href="/blog/">Blog</a>
+          <a href="/consulting/">Consulting</a>
+          <a href="/blog/" class="active">Blog</a>
         </div>
 
         <div class="nav-cta">
-          <a class="btn" href="#expertise">Why us</a>
-          <a class="btn btn-primary" href="#audit-form">Book Discovery</a>
+          <a class="btn" href="/consulting/#expertise">Why us</a>
+          <a class="btn btn-primary" href="/consulting/#audit-form">Book Discovery</a>
         </div>
       </div>
-    </div>
-  </nav>
-
-  <!-- Breadcrumbs -->
-  <nav class="breadcrumbs" aria-label="breadcrumb">
-    <div class="container">
-      <ol>
-        <li><a href="/">Home</a></li>
-        <li>B2B Sales Consulting & RevOps</li>
-      </ol>
     </div>
   </nav>
 
   <header class="hero">
-    <div class="container">
-      <div class="reveal" style="display:flex; flex-direction:column; align-items:center; text-align:center; max-width:800px; margin:0 auto;">
-        
-        <div class="hero-badge-orange">
-          <span style="width:6px; height:6px; background:#000; border-radius:50%; opacity:0.6"></span>
-          Accepting New Clients for Q1 2026
-        </div>
-
-        <div style="font-size:20px; color:var(--muted); font-weight:600; margin-bottom:12px;">
-          15 Years of B2B Sales & RevOps
-        </div>
-        
-        <h1 style="font-size:clamp(42px, 7vw, 76px); line-height:1.05; margin:0 0 24px;">
-          Close High-Ticket Deals<br />
-          <span style="background:linear-gradient(90deg, #6FD2FF, #7CF5C6); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">On Your Terms</span>
-        </h1>
-        
-        <p class="lead" style="margin-bottom:32px;">
-          Stop losing margin to price wars. From <strong>heavy machinery</strong> and <strong>real estate</strong> to <strong>SaaS</strong> and <strong>Fintech</strong>, we use <strong>RevOps methodology</strong> to align your marketing and sales—fixing the leaks in your pipeline.
+    <div class="container reveal">
+      <div style="margin: 0 auto; max-width: 800px;">
+        <h1 style="background:linear-gradient(90deg, #6FD2FF, #7CF5C6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; display:inline-block;">Field Notes</h1>
+        <p class="lead" style="margin-top: 16px;">
+          Insights on High-Ticket Sales, Negotiation Psychology, and RevOps.
         </p>
 
-        <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center">
-          <a class="btn btn-primary" href="#audit-form">Analyze my pipeline</a>
-          <a class="btn" href="#expertise">See our experience</a>
+        <div class="controls-container">
+          <div class="search-box">
+            <svg class="search-icon" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search articles...">
+          </div>
+          
+          <div id="tagsFilter" class="tags-filter">
+            <!-- Tags will be injected here -->
+          </div>
         </div>
-
       </div>
     </div>
   </header>
 
-  <section class="section">
-    <div class="container grid-3 reveal">
-      <div class="card">
-        <h3>The Silo Trap</h3>
-        <p class="muted">Marketing generates leads, Sales complains they are "junk", and Success fights churn alone. We break these silos using RevOps methodology.</p>
-        <ul class="list">
-          <li><span class="li-dot"></span><span>Unaligned KPIs cost revenue</span></li>
-          <li><span class="li-dot"></span><span>Customer data gets lost in handoffs</span></li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Stalled High-Ticket Deals</h3>
-        <p class="muted">Your pipeline is full, but deals hang in "decision pending" for months. We provide the strategy to reach the real decision-maker.</p>
-        <ul class="list">
-          <li><span class="li-dot"></span><span>Stop chasing; start leading</span></li>
-          <li><span class="li-dot"></span><span>Disqualify bad leads faster</span></li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Discounting to Win</h3>
-        <p class="muted">When you don't control the frame, price becomes the only variable. We teach your team to trade value, not margin.</p>
-        <ul class="list">
-          <li><span class="li-dot"></span><span>Protect your profit margins</span></li>
-          <li><span class="li-dot"></span><span>Negotiate terms, not just price</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="expertise" class="section" style="background:var(--soft);">
+  <section class="section" style="padding-top: 0;">
     <div class="container">
-      <h2 class="reveal">15+ Years of Hard B2B Experience</h2>
-      <p class="muted reveal" style="text-align:center; max-width:800px; margin:0 auto;">
-        We are not theorists. We have sold everything from excavators to algorithms. Our approach works because it adapts to the complexity of your product, not the other way around.
-      </p>
-      
-      <div class="grid-3" style="margin-top:40px;">
-        <div class="card reveal">
-          <h3>Heavy Industry & Construction</h3>
-          <p class="muted">We know how to sell complex equipment, manage long tender cycles, and deal with technical procurement departments.</p>
-        </div>
-        <div class="card reveal">
-          <h3>SaaS & Fintech</h3>
-          <p class="muted">From startups to scale-ups. We understand recurring revenue models (ARR/MRR), churn reduction, and product-led growth.</p>
-        </div>
-        <div class="card reveal">
-          <h3>Luxury & Investment</h3>
-          <p class="muted">High-net-worth individuals require a different touch. We have direct experience in premium real estate, yachts, aviation, and other luxury assets.</p>
-        </div>
-      </div>
-      
-      <div class="reveal" style="text-align:center; margin-top:24px;">
-        <div class="industry-tags" style="justify-content:center;">
-          <span class="i-tag">Heavy Machinery</span>
-          <span class="i-tag">Construction Equipment</span>
-          <span class="i-tag">Fintech</span>
-          <span class="i-tag">SaaS</span>
-          <span class="i-tag">Luxury Real Estate</span>
-          <span class="i-tag">Investment Assets</span>
-          <span class="i-tag">IT Consulting</span>
-          <span class="i-tag">Logistics&Transport</span>
-        </div>
-      </div>
-      
-      <div class="book-plug reveal">
-        <img src="/assets/img/helicopter-cover.png" alt="Book Cover" style="background:#fff;">
-        <div>
-          <h3>Our Methodology: "How to Sell a Helicopter"</h3>
-          <p class="muted">
-            We literally wrote the playbook on complex B2B sales. Our consulting is based on a proven framework that prioritizes business value over sales tricks.
-          </p>
-          <a href="/helicopter/" style="color:var(--brand); font-weight:600; font-size:14px; margin-top:8px; display:inline-block;">Read more about the book ›</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="services" class="section">
-    <div class="container">
-      <h2 class="reveal">Consulting Packages</h2>
-      <p class="muted reveal" style="text-align:center">From emergency deal rescue to full-scale RevOps architecture</p>
-    
-      <div class="packages">
-        <div class="package-card reveal">
-          <h3 class="package-title">Deal Rescue</h3>
-          <div class="package-price">$900 <span class="sub">/ session</span></div>
-          <p class="package-subtitle">Emergency support for a critical negotiation</p>
-          <ul class="package-features list">
-            <li><span class="li-dot"></span><span>1.5-hour deep dive into one specific deal</span></li>
-            <li><span class="li-dot"></span><span>Stakeholder analysis & strategy map</span></li>
-            <li><span class="li-dot"></span><span>Exact scripts for the next meeting</span></li>
-            <li><span class="li-dot"></span><span>"Unstuck" strategy for stalled leads</span></li>
-          </ul>
-          <div class="package-cta">
-            <button class="btn btn-primary" onclick="selectPackage(event, 'Rescue')">Book Session</button>
-          </div>
-        </div>
-
-        <div class="package-card popular reveal">
-          <div class="package-badge">Most Popular</div>
-          <h3 class="package-title">RevOps Audit</h3>
-          <div class="package-price">$2,500 <span class="sub">/ one-time</span></div>
-          <p class="package-subtitle">Full diagnostic of your Sales & Marketing engine</p>
-          <ul class="package-features list">
-            <li><span class="li-dot"></span><span>End-to-end customer journey analysis</span></li>
-            <li><span class="li-dot"></span><span>Audit of CRM, Tools, and Automations</span></li>
-            <li><span class="li-dot"></span><span>Identification of revenue leaks</span></li>
-            <li><span class="li-dot"></span><span>Actionable Roadmap to +30% growth</span></li>
-            <li><span class="li-dot"></span><span>1 month follow-up support</span></li>
-          </ul>
-          <div class="package-cta">
-            <button class="btn btn-primary btn-pulse" onclick="selectPackage(event, 'Audit')">Get Audit</button>
-          </div>
-        </div>
-
-        <div class="package-card reveal">
-          <h3 class="package-title">Fractional VP</h3>
-          <div class="package-price">$5,000+ <span class="sub">/ month</span></div>
-          <p class="package-subtitle">Ongoing leadership and shadow negotiation</p>
-          <ul class="package-features list">
-            <li><span class="li-dot"></span><span>We act as your RevOps / Sales Director</span></li>
-            <li><span class="li-dot"></span><span>Weekly pipeline reviews with your team</span></li>
-            <li><span class="li-dot"></span><span>Shadow negotiation on big tickets</span></li>
-            <li><span class="li-dot"></span><span>Hiring & Onboarding support</span></li>
-            <li><span class="li-dot"></span><span>KPI system implementation</span></li>
-          </ul>
-          <div class="package-cta">
-            <button class="btn btn-primary" onclick="selectPackage(event, 'Retainer')">Apply for Partnership</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="cases" class="section">
-    <div class="container reveal">
-      <h2 style="text-align:center">Client Wins</h2>
-      <div class="grid-3" style="margin-top:24px;">
-        <div class="card">
-          <div class="case-icon" style="font-size:32px; margin-bottom:12px">🏗️</div>
-          <h3>Industrial Equipment Manufacturer</h3>
-          <p class="muted"><strong>Challenge:</strong> 18-month sales cycles and constant price wars.</p>
-          <p class="muted"><strong>Result:</strong> Implemented qualification gates. Reduced cycle to 9 months and protected 15% margin.</p>
-        </div>
-        <div class="card">
-          <div class="case-icon" style="font-size:32px; margin-bottom:12px">💻</div>
-          <h3>Fintech SaaS (Series B)</h3>
-          <p class="muted"><strong>Challenge:</strong> Marketing and Sales were fighting over lead quality.</p>
-          <p class="muted"><strong>Result:</strong> Built a unified RevOps SLA. Conversion from Demo to Close increased by 22% in quarter one.</p>
-        </div>
-        <div class="card">
-          <div class="case-icon" style="font-size:32px; margin-bottom:12px">🏢</div>
-          <h3>Commercial Real Estate</h3>
-          <p class="muted"><strong>Challenge:</strong> Deals stalling at the contract phase.</p>
-          <p class="muted"><strong>Result:</strong> Redesigned the negotiation framework. Closed a stagnant $12M asset deal within 3 weeks of consulting.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="audit-form" class="section">
-    <div class="container">
-      <h2 class="reveal">Discuss Your Situation</h2>
-      <p class="muted reveal" style="text-align:center; margin-bottom:32px">
-        Fill out the form. We will analyze your case and determine if we are the right fit to help.
-      </p>
-
-      <!-- Using the specific Formspree endpoint for consulting -->
-      <form class="lead-form reveal" action="https://formspree.io/f/mqardokd" method="POST">
-        <input type="hidden" id="package" name="package" value="">
-      
-        <div class="form-grid">
-          <div class="form-group">
-            <label class="form-label" for="name">Name <span class="form-required">*</span></label>
-            <input class="form-input" type="text" id="name" name="name" required placeholder="Your name">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="contact">Email or Telegram <span class="form-required">*</span></label>
-            <input class="form-input" type="text" id="contact" name="contact" required placeholder="@username or email">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="niche">Industry</label>
-            <input class="form-input" type="text" id="niche" name="niche" placeholder="e.g. SaaS, Construction, Real Estate">
-          </div>
-
-          <div class="form-group">
-            <label class="form-label" for="revenue">Current Annual Revenue</label>
-            <select class="form-select" id="revenue" name="revenue">
-              <option value="">Select range</option>
-              <option value="<1M">Pre-Revenue / &lt;$1M</option>
-              <option value="1M-5M">$1M - $5M</option>
-              <option value="5M-20M">$5M - $20M</option>
-              <option value="20M+">$20M+</option>
-            </select>
-          </div>
-
-          <div class="form-group full-width">
-            <label class="form-label" for="comment">What is the biggest bottleneck right now?</label>
-            <textarea class="form-textarea" id="comment" name="comment" placeholder="e.g. Leads are low quality, or we can't close big enterprise deals..." required></textarea>
-          </div>
-
-          <div class="form-group full-width">
-            <button class="btn btn-primary form-submit btn-pulse" type="submit">Request Discovery Call</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <section id="faq" class="section">
-    <div class="container">
-      <h2 class="reveal">FAQ</h2>
-
-      <div class="faq-item reveal">
-        <details>
-          <summary>What exactly is RevOps?</summary>
-          <div class="faq-answer">
-            Revenue Operations (RevOps) is the alignment of marketing, sales, and customer success operations across the full customer life cycle. Instead of these departments working in silos, we unify their data, processes, and KPIs to drive predictable revenue growth.
-          </div>
-        </details>
-      </div>
-
-      <div class="faq-item reveal">
-        <details>
-          <summary>Do you offer standard sales training?</summary>
-          <div class="faq-answer">
-            We don't do generic "motivation" training. We do strategic consulting and tactical workshops. We build the system and teach your team how to operate within it to close complex deals.
-          </div>
-        </details>
-      </div>
-
-      <div class="faq-item reveal">
-        <details>
-          <summary>My industry is very specific (e.g. Heavy Machinery). Can you help?</summary>
-          <div class="faq-answer">
-            Yes. With 15 years of experience ranging from heavy construction equipment to intangible fintech assets, we understand that the *principles* of high-ticket B2B sales remain constant, even if the technical specs change. We adapt to your niche.
-          </div>
-        </details>
-      </div>
-
-      <div class="faq-item reveal">
-        <details>
-          <summary>How fast can we see results?</summary>
-          <div class="faq-answer">
-            For "Deal Rescue", results are immediate (strategy for the next call). For RevOps audits, we usually identify "low hanging fruit" changes that impact revenue within the first 30 days.
-          </div>
-        </details>
+      <div id="postsGrid" class="blog-grid reveal">
+        <!-- Posts will be injected here -->
       </div>
     </div>
   </section>
 
   <footer class="footer">
-  <div class="container" style="text-align:center">
-    <div style="display:flex; align-items:center; gap:10px; justify-content:center">
-      <div class="logo-badge" style="width:28px;height:28px;flex-shrink:0" role="img" aria-label="Salebots logo"></div>
-      <div>© <span id="y"></span> Salebots — Sales Consulting & Automation</div>
-    </div>
+    <div class="container">
+      <div style="display:flex; align-items:center; gap:10px; justify-content:center">
+        <div class="logo-badge" style="width:28px;height:28px;flex-shrink:0" role="img"></div>
+        <div>© <span id="y"></span> Salebots — Sales Consulting & Automation</div>
+      </div>
 
-    <div class="muted" style="margin-top:8px">
-      Bali • Working worldwide • B2B Sales Experts
+      <div class="footer-contacts">
+        <a class="footer-contact" href="https://t.me/avtohtonny" target="_blank" rel="noopener">Telegram</a>
+        <a class="footer-contact" href="https://wa.me/66836840045" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="footer-contact" href="mailto:hello@salebots.org">Email</a>
+      </div>
     </div>
-
-    <div class="footer-contacts" style="margin-top:16px">
-      <a class="footer-contact" href="https://t.me/avtohtonny" target="_blank" rel="noopener">Telegram</a>
-      <a class="footer-contact" href="https://wa.me/66836840045" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="footer-contact" href="mailto:hello@salebots.org">Email</a>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
   <script>
-    // Reveal on scroll
-    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
-    }, observerOptions);
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // State
+    let allPosts = [];
+    let currentTag = new URLSearchParams(window.location.search).get('tag') || null;
+    let searchQuery = '';
 
-    // Package selection
-    function selectPackage(e, packageName) {
-      document.getElementById('package').value = packageName;
-      document.getElementById('audit-form').scrollIntoView({ behavior: 'smooth' });
-      document.querySelectorAll('.package-card').forEach(card => {
-        card.style.transform = 'scale(1)'; card.style.boxShadow = 'var(--shadow)';
-      });
-      const selectedCard = e.target.closest('.package-card');
-      if (selectedCard) {
-        selectedCard.style.transform = 'scale(1.02)';
-        selectedCard.style.boxShadow = '0 25px 70px rgba(111,210,255,.4), inset 0 1px 0 rgba(255,255,255,.08)';
+    // Elements
+    const gridEl = document.getElementById('postsGrid');
+    const tagsEl = document.getElementById('tagsFilter');
+    const searchInput = document.getElementById('searchInput');
+
+    // Fetch Data
+    async function init() {
+      try {
+        const res = await fetch('posts.json');
+        if (!res.ok) throw new Error('Failed to load posts');
+        allPosts = await res.json();
+        
+        // Sort by date desc (assuming ISO date strings)
+        allPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        renderTags();
+        renderPosts();
+      } catch (err) {
+        console.error(err);
+        gridEl.innerHTML = `<div class="empty-state">Could not load posts. Please try again later.</div>`;
       }
     }
 
-    // Footer year
+    function renderTags() {
+      const tags = new Set();
+      allPosts.forEach(post => post.tags.forEach(t => tags.add(t)));
+      
+      let html = `<button class="filter-tag ${!currentTag ? 'active' : ''}" onclick="setTag(null)">All</button>`;
+      
+      Array.from(tags).sort().forEach(tag => {
+        html += `<button class="filter-tag ${currentTag === tag ? 'active' : ''}" onclick="setTag('${tag}')">${tag}</button>`;
+      });
+      
+      tagsEl.innerHTML = html;
+    }
+
+    function renderPosts() {
+      const filtered = allPosts.filter(post => {
+        const matchesTag = currentTag ? post.tags.includes(currentTag) : true;
+        const q = searchQuery.toLowerCase();
+        const matchesSearch = !q || 
+          post.title.toLowerCase().includes(q) || 
+          post.excerpt.toLowerCase().includes(q) ||
+          post.tags.some(t => t.toLowerCase().includes(q));
+        return matchesTag && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        gridEl.innerHTML = `<div class="empty-state">No articles found matching your criteria.</div>`;
+        return;
+      }
+
+      gridEl.innerHTML = filtered.map(post => `
+        <article class="blog-card">
+          <time class="b-date">${formatDate(post.date)}</time>
+          <a href="post.html?slug=${post.slug}"><h3 class="b-title">${post.title}</h3></a>
+          <div class="b-tags">
+            ${post.tags.slice(0, 3).map(t => `<span class="b-tag">${t}</span>`).join('')}
+          </div>
+          <p class="b-excerpt">${post.excerpt}</p>
+          <a href="post.html?slug=${post.slug}" class="b-link">Read article <span>›</span></a>
+        </article>
+      `).join('');
+      
+      // Re-trigger reveal animation for new elements
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }
+
+    window.setTag = (tag) => {
+      currentTag = tag;
+      
+      // Update URL without reload
+      const url = new URL(window.location);
+      if (tag) url.searchParams.set('tag', tag);
+      else url.searchParams.delete('tag');
+      window.history.pushState({}, '', url);
+
+      renderTags();
+      renderPosts();
+    };
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderPosts();
+    });
+
+    function formatDate(dateStr) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return new Date(dateStr).toLocaleDateString('en-US', options);
+    }
+
+    // Initialize
+    init();
+
+    // Footer Year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Smooth anchor scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
+    // Reveal Animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    // Lead form submit via fetch
-    document.querySelector('.lead-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const submitBtn = this.querySelector('.form-submit');
-      const formData = new FormData(this);
-      submitBtn.textContent = 'Submitting...';
-      submitBtn.disabled = true;
-
-      fetch('https://formspree.io/f/mqardokd', {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      })
-      .then(response => {
-        if (response.ok) {
-          this.innerHTML = `
-            <div style="text-align:center; padding:40px 20px;">
-              <div style="font-size:48px; margin-bottom:16px;">🎉</div>
-              <h3 style="color:var(--brand); margin:0 0 12px;">Request Received!</h3>
-              <p style="color:var(--muted); margin:0 0 20px;">We will analyze your request and get back to you shortly.</p>
-            </div>
-          `;
-        } else {
-          throw new Error('Submit error');
-        }
-      })
-      .catch(() => {
-        submitBtn.textContent = 'Try again';
-        submitBtn.disabled = false;
-        alert('An error occurred. Please try again or ping us on Telegram.');
-      });
-    });
-
-    // Nav Toggle
+    // Mobile Nav
     document.addEventListener('DOMContentLoaded', function(){
       var toggle = document.querySelector('.nav-toggle');
       var menu = document.querySelector('.nav-menu');
-      if (!toggle || !menu) return;
-
-      toggle.addEventListener('click', function(){
-        toggle.classList.toggle('open');
-        menu.classList.toggle('open');
-      });
-
-      menu.querySelectorAll('a').forEach(function(link){
-        link.addEventListener('click', function(){
-          toggle.classList.remove('open');
-          menu.classList.remove('open');
+      if (toggle && menu) {
+        toggle.addEventListener('click', function(){
+          toggle.classList.toggle('open');
+          menu.classList.toggle('open');
         });
-      });
+      }
     });
   </script>
 </body>
