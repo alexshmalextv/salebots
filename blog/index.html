@@ -12,8 +12,11 @@
   
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Salebots Blog — Sales Strategy & RevOps Insights</title>
-  <meta name="description" content="Insights on B2B sales, high-ticket negotiations, and RevOps methodology. Practical guides and case studies." />
+  <title>Salebots Blog — Insights on B2B Sales & RevOps</title>
+  <meta name="description" content="Articles about high-ticket sales strategies, negotiation psychology, and Revenue Operations methodology. No fluff, just field notes." />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://salebots.org/blog/" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
@@ -33,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     
   <style>
-    /* Reuse core styles from index.html */
+    /* --- Core Styles from Main Site --- */
     :root{
       --bg:#0A0C10; --card:#10141C; --soft:#161C25;
       --text:#E9EEF6; --muted:#9FB0C6;
@@ -87,59 +90,34 @@
     .btn-primary{background:linear-gradient(135deg,#6FD2FF,#7CF5C6);color:#071018;border:none;box-shadow:0 12px 30px rgba(111,210,255,.35)}
     .btn-primary:hover{filter:brightness(1.1) drop-shadow(0 0 8px rgba(124,245,198,.6));transform:translateY(-2px)}
 
-    /* Hero & Common */
+    /* Hero & Layout */
     .hero{position:relative;padding:80px 0 40px; text-align:center;}
-    .hero h1{font-size:clamp(32px,6vw,56px);line-height:1.1;margin:18px 0;}
     .lead{font-size:clamp(16px,2vw,18px);color:var(--muted);max-width:700px; margin: 0 auto;}
     .section{padding:35px 0}
     
-    /* Blog Specific UI */
-    .controls-container {
-      max-width: 800px; margin: 40px auto 20px;
-    }
+    /* Blog UI Components */
+    .controls-container { max-width: 800px; margin: 40px auto 20px; }
     
-    .search-box {
-      position: relative;
-      margin-bottom: 24px;
-    }
+    .search-box { position: relative; margin-bottom: 24px; }
     .search-input {
-      width: 100%;
-      padding: 16px 20px 16px 50px;
-      border-radius: 99px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: var(--text);
-      font-size: 16px;
-      transition: .25s ease;
-      font-family: inherit;
+      width: 100%; padding: 16px 20px 16px 50px; border-radius: 99px;
+      border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04);
+      color: var(--text); font-size: 16px; transition: .25s ease; font-family: inherit;
     }
     .search-input:focus {
-      outline: none;
-      border-color: var(--brand);
-      background: rgba(255,255,255,.08);
+      outline: none; border-color: var(--brand); background: rgba(255,255,255,.08);
       box-shadow: 0 0 0 3px rgba(111,210,255,.15);
     }
     .search-icon {
-      position: absolute;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--muted);
-      pointer-events: none;
+      position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
+      color: var(--muted); pointer-events: none;
     }
 
-    .tags-filter {
-      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
-    }
+    .tags-filter { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
     .filter-tag {
-      background: rgba(255,255,255,0.05); 
-      border: 1px solid rgba(255,255,255,0.1);
-      padding: 6px 14px; 
-      border-radius: 99px; 
-      font-size: 13px; 
-      color: var(--muted);
-      cursor: pointer;
-      transition: all 0.2s ease;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      padding: 6px 14px; border-radius: 99px; font-size: 13px; color: var(--muted);
+      cursor: pointer; transition: all 0.2s ease;
     }
     .filter-tag:hover {
       background: rgba(255,255,255,0.1);
@@ -153,19 +131,12 @@
     }
 
     .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: 32px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px;
     }
     .blog-card {
-      background: var(--card);
-      border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: var(--shadow);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
+      background: var(--card); border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,.08); box-shadow: var(--shadow);
+      padding: 24px; display: flex; flex-direction: column;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .blog-card:hover {
@@ -175,19 +146,17 @@
     }
     .b-date { font-size: 12px; color: var(--muted); margin-bottom: 12px; display: block; }
     .b-title { font-size: 20px; font-weight: 700; margin: 0 0 12px; line-height: 1.3; color: var(--text); }
-    .b-excerpt { font-size: 15px; color: var(--muted); margin-bottom: 20px; flex-grow: 1; line-height: 1.5; }
+    .b-excerpt { 
+      font-size: 15px; color: var(--muted); margin-bottom: 20px; flex-grow: 1; line-height: 1.5;
+    }
     .b-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
     .b-tag { font-size: 11px; padding: 4px 8px; border-radius: 6px; background: rgba(255,255,255,0.06); color: var(--muted); }
     .b-link { color: var(--brand); font-weight: 600; font-size: 14px; margin-top: auto; display: inline-flex; align-items: center; gap: 6px; }
     .b-link:hover { text-decoration: underline; }
 
     .empty-state {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 40px;
-      color: var(--muted);
-      background: var(--glass);
-      border-radius: var(--radius);
+      grid-column: 1 / -1; text-align: center; padding: 40px;
+      color: var(--muted); background: var(--glass); border-radius: var(--radius);
     }
 
     /* Footer */
@@ -206,11 +175,9 @@
       .nav-links{flex-direction:row;gap:18px;}
       .nav-cta{flex-direction:row;align-items:center;margin-top:0;}
     }
-    @media (max-width: 900px) {
-      .blog-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 600px) {
-      .blog-grid { grid-template-columns: 1fr; }
+    @media (max-width: 900px) { .blog-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { 
+      .blog-grid { grid-template-columns: 1fr; } 
       .hero { padding-top: 60px; }
     }
   </style>
@@ -262,7 +229,7 @@
           </div>
           
           <div id="tagsFilter" class="tags-filter">
-            <!-- Tags will be injected here -->
+            <!-- Tags injected by JS -->
           </div>
         </div>
       </div>
@@ -272,7 +239,7 @@
   <section class="section" style="padding-top: 0;">
     <div class="container">
       <div id="postsGrid" class="blog-grid reveal">
-        <!-- Posts will be injected here -->
+        <!-- Posts injected by JS -->
       </div>
     </div>
   </section>
@@ -284,7 +251,11 @@
         <div>© <span id="y"></span> Salebots — Sales Consulting & Automation</div>
       </div>
 
-      <div class="footer-contacts">
+      <div class="muted" style="margin-top:8px">
+        Bali • Working worldwide • B2B Sales Experts
+      </div>
+
+      <div class="footer-contacts" style="margin-top:16px">
         <a class="footer-contact" href="https://t.me/avtohtonny" target="_blank" rel="noopener">Telegram</a>
         <a class="footer-contact" href="https://wa.me/66836840045" target="_blank" rel="noopener">WhatsApp</a>
         <a class="footer-contact" href="mailto:hello@salebots.org">Email</a>
@@ -317,7 +288,7 @@
         renderPosts();
       } catch (err) {
         console.error(err);
-        gridEl.innerHTML = `<div class="empty-state">Could not load posts. Please try again later.</div>`;
+        gridEl.innerHTML = `<div class="empty-state">Could not load posts. Please check back later.</div>`;
       }
     }
 
@@ -350,17 +321,21 @@
         return;
       }
 
-      gridEl.innerHTML = filtered.map(post => `
+      gridEl.innerHTML = filtered.map(post => {
+        // We construct the link to the static HTML file using the slug
+        const postLink = `posts/${post.slug}.html`;
+        
+        return `
         <article class="blog-card">
           <time class="b-date">${formatDate(post.date)}</time>
-          <a href="post.html?slug=${post.slug}"><h3 class="b-title">${post.title}</h3></a>
+          <a href="${postLink}"><h3 class="b-title">${post.title}</h3></a>
           <div class="b-tags">
             ${post.tags.slice(0, 3).map(t => `<span class="b-tag">${t}</span>`).join('')}
           </div>
           <p class="b-excerpt">${post.excerpt}</p>
-          <a href="post.html?slug=${post.slug}" class="b-link">Read article <span>›</span></a>
+          <a href="${postLink}" class="b-link">Read article <span>›</span></a>
         </article>
-      `).join('');
+      `}).join('');
       
       // Re-trigger reveal animation for new elements
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
@@ -368,8 +343,6 @@
 
     window.setTag = (tag) => {
       currentTag = tag;
-      
-      // Update URL without reload
       const url = new URL(window.location);
       if (tag) url.searchParams.set('tag', tag);
       else url.searchParams.delete('tag');
