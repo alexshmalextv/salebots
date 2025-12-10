@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SK0ZK3C8SY"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -12,8 +12,8 @@
   
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>B2B Sales Consulting — Close High-Ticket Deals</title>
-  <meta name="description" content="Expert negotiation consulting for B2B founders. We help you unblock stuck deals, fix your sales pipeline, and close high-ticket contracts without discounting." />
+  <title>Salebots Consulting — B2B RevOps & High-Ticket Sales Strategy</title>
+  <meta name="description" content="We fix broken sales pipelines. 15+ years of experience in B2B: from heavy machinery to Fintech. RevOps methodology to align Marketing, Sales, and Success." />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://salebots.org/consulting/" />
@@ -25,11 +25,11 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180.png">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="B2B Sales Consulting — Salebots" />
-  <meta property="og:description" content="Stop losing high-ticket deals. Negotiation support and pipeline audits for B2B companies." />
+  <meta property="og:title" content="Salebots Consulting — B2B RevOps & Sales Strategy" />
+  <meta property="og:description" content="15 years experience closing high-ticket deals. We align your Marketing and Sales to stop revenue leaks." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://salebots.org/consulting/" />
-  <meta property="og:image" content="https://salebots.org/assets/img/consulting.png" />
+  <meta property="og:image" content="https://salebots.org/assets/img/og-consulting.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -165,20 +165,17 @@
       margin-top:8px;
     }
 
-    /* Buttons */
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
       padding:12px 18px;border-radius:12px;font-weight:600;
       border:1px solid rgba(255,255,255,.08);
       background:rgba(255,255,255,.02);
-      transition:.25s ease;cursor:pointer;
-      font-size:15px;
-      color:var(--text);
+      transition:.25s ease;cursor:pointer
     }
     .btn:hover{
       transform:translateY(-1px);
       background:rgba(255,255,255,.12);
-      color:#ffffff;
+      color:var(--text)
     }
     .btn-primary{
       background:linear-gradient(135deg,#6FD2FF,#7CF5C6);
@@ -187,9 +184,9 @@
     }
     .btn-primary:hover{
       filter:brightness(1.1) drop-shadow(0 0 8px rgba(124,245,198,.6));
-      transform:translateY(-2px);
-      color:#ffffff;
+      transform:translateY(-2px)
     }
+
     .btn-pulse{animation:pulse 2s infinite}
 
     @keyframes pulse{
@@ -198,51 +195,111 @@
       100%{box-shadow:0 12px 30px rgba(111,210,255,.35)}
     }
 
-    /* Common */
     .breadcrumbs{padding:12px 0;font-size:14px;color:var(--muted)}
     .breadcrumbs ol{display:flex;gap:8px;margin:0;padding:0;list-style:none}
     .breadcrumbs li:not(:last-child)::after{content:" › ";margin-left:8px;opacity:.6}
     .breadcrumbs a{color:var(--brand)}
     .breadcrumbs a:hover{text-decoration:underline}
 
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:10px;
-      font-size:12px;letter-spacing:.6px;color:var(--muted);
-      text-transform:uppercase;padding:8px 12px;
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:999px;background:var(--glass)
+    /* Hero */
+    .hero{position:relative;padding:80px 0 40px}
+    .hero-grid{display:flex;flex-direction:column;gap:32px;align-items:center}
+    
+    /* New Hero Styles */
+    .hero-badge-orange {
+      background: linear-gradient(135deg, #FFB347, #FF8C42);
+      color: #071018;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 99px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 20px rgba(255, 140, 66, 0.3);
     }
+    .hero h1{font-size:clamp(32px,7vw,64px);line-height:1.1;margin:18px 0;text-align:center}
+    .lead{font-size:clamp(16px,2vw,20px);color:var(--muted);text-align:center;max-width:700px; margin: 0 auto;}
+    .lead strong {color: var(--text); font-weight: 600;}
+
+    /* Pipeline / Dashboard Styles (Kept if needed for other sections, but removed from hero) */
+    .hero-card{
+      position:relative;background:var(--card);padding:22px;border-radius:var(--radius-lg);
+      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);overflow:hidden;margin-top:20px;
+      min-width: 100%;
+    }
+    
     .section{padding:35px 0}
     .section h2{font-size:clamp(24px,4vw,38px);margin:0 0 18px;text-align:center}
     .muted{color:var(--muted)}
 
-    /* Hero */
-    .hero{position:relative;padding:80px 0 60px}
-    .hero-inner{display:flex;flex-direction:column;gap:24px;align-items:center;text-align:center; max-width:800px; margin:0 auto;}
-    .hero h1{font-size:clamp(32px,6vw,56px);line-height:1.1;margin:18px 0;}
-    .lead{font-size:clamp(16px,2vw,20px);color:var(--muted);line-height:1.5; max-width:65ch;}
-
-    /* Cards & Grids */
     .grid-3{display:flex;flex-direction:column;gap:18px}
     .card{
-      background:var(--card);padding:24px;border-radius:var(--radius);
-      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);
-      display:flex; flex-direction:column;
+      background:var(--card);padding:22px;border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)
     }
-    .card-icon{
-      font-size:32px; margin-bottom:16px; display:inline-block;
-      filter: drop-shadow(0 0 12px rgba(111,210,255,.25));
-    }
-    .card h3{margin:0 0 12px; font-size:18px}
-    .list{display:grid;gap:10px;margin:12px 0 24px;padding:0; flex-grow:1;}
-    .list li{list-style:none;display:flex;gap:10px;align-items:flex-start; color:var(--muted); font-size:15px; line-height:1.5}
+    .card h3{margin:0 0 8px}
+    .list{display:grid;gap:8px;margin:12px 0 0;padding:0}
+    .list li{list-style:none;display:flex;gap:10px;align-items:flex-start}
     .li-dot{
-      width:8px;height:8px;border-radius:50%;margin-top:7px;
+      width:8px;height:8px;border-radius:50%;margin-top:8px;
       background:linear-gradient(135deg,#6FD2FF,#7CF5C6);
       flex-shrink:0;min-width:8px;min-height:8px
     }
 
-    /* Lead Form (Matching Index.html) */
+    .packages{display:flex;flex-direction:column;gap:24px;margin-top:32px}
+    .package-card{
+      background:var(--card);padding:32px;border-radius:var(--radius-lg);
+      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);
+      position:relative;text-align:center;
+      display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+      min-height:500px
+    }
+    .package-card.popular{
+      border:2px solid var(--brand);
+      background:linear-gradient(180deg,rgba(111,210,255,.08),rgba(124,245,198,.04))
+    }
+    .package-badge{
+      position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+      background:linear-gradient(135deg,#6FD2FF,#7CF5C6);
+      color:#071018;padding:6px 16px;border-radius:999px;font-size:12px;font-weight:800
+    }
+    .package-title{font-size:24px;font-weight:800;margin:0 0 8px}
+    .package-price{font-size:32px;font-weight:800;margin:16px 0}
+    .package-price .sub{font-size:16px; color:var(--muted); font-weight:400;}
+    .package-subtitle{color:var(--muted);margin-bottom:24px; font-size: 14px; min-height: 40px;}
+    .package-features{text-align:left;margin:24px 0;width:100%; flex-grow: 1;}
+    .package-cta{margin-top:24px; width: 100%;}
+    .package-cta .btn {width: 100%;}
+
+    .industry-tags {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px;
+      justify-content:center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .i-tag {
+      background: rgba(255,255,255,0.05); 
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 8px 18px; 
+      border-radius: 99px; 
+      font-size: 13px; 
+      color: var(--muted);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+    .i-tag:hover {
+      border-color: var(--brand);
+      color: #fff;
+      background: rgba(111,210,255,0.1);
+      box-shadow: 0 4px 15px rgba(111,210,255,0.2);
+      transform: translateY(-2px);
+    }
+
     .lead-form{
       background:linear-gradient(135deg,rgba(111,210,255,.12),rgba(124,245,198,.08));
       border:1px solid rgba(255,255,255,.12);border-radius:20px;
@@ -254,7 +311,7 @@
     .form-input,.form-select,.form-textarea{
       padding:14px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.12);
       background:rgba(255,255,255,.04);color:var(--text);font-size:16px;
-      transition:.25s ease;font-family:inherit; width: 100%;
+      transition:.25s ease;font-family:inherit
     }
     .form-select option{background:var(--card);color:var(--text);padding:8px}
     .form-input:focus,.form-select:focus,.form-textarea:focus{
@@ -264,16 +321,30 @@
     .form-input::placeholder,.form-textarea::placeholder{color:var(--muted)}
     .form-textarea{resize:vertical;min-height:100px}
     .form-required{color:var(--danger);margin-left:4px}
-    .form-submit{width:100%;padding:16px;font-size:16px;font-weight:700;margin-top:8px}
+    .form-submit{width:100%;padding:16px;font-size:18px;font-weight:700;margin-top:8px}
 
-    /* Cross-sell block */
-    .cross-block{
-      background:var(--soft); border-radius:16px; padding:24px; border:1px solid rgba(255,255,255,.08);
-      display:flex; gap:24px; align-items:center;
+    .cta{
+      position:relative;background:linear-gradient(135deg,rgba(111,210,255,.14),rgba(124,245,198,.10));
+      border:1px solid rgba(255,255,255,.10);border-radius:22px;
+      padding:28px;box-shadow:var(--shadow)
     }
-    .cross-img{width:80px; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.3);}
+    
+    .book-plug {
+      background: var(--soft);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      margin-top: 40px;
+    }
+    .book-plug img {
+      width: 80px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      border-radius: 4px;
+    }
 
-    /* Footer */
     .footer{
       padding:28px 0 60px;color:var(--muted);font-size:14px
     }
@@ -283,14 +354,40 @@
     .footer-contact{font-size:13px;opacity:.7;transition:.25s ease}
     .footer-contact:hover{opacity:1;color:var(--text)}
 
-    /* Animations */
     .reveal{
       opacity:0;transform:translateY(18px);
       transition:opacity .7s ease,transform .7s ease
     }
     .reveal.show{opacity:1;transform:none}
+    .float{animation:float 6s ease-in-out infinite}
+    @keyframes float{
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-6px)}
+      100%{transform:translateY(0)}
+    }
 
-    /* Responsive */
+    .faq-item{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;margin-bottom:12px;overflow:hidden
+    }
+    .faq-item details{padding:18px}
+    .faq-item summary{
+      font-weight:600;color:var(--text);cursor:pointer;
+      list-style:none;outline:none;position:relative;padding-right:30px
+    }
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{
+      content:'+';position:absolute;right:0;top:0;
+      font-size:20px;font-weight:bold;color:var(--brand);
+      transition:transform .3s ease
+    }
+    .faq-item details[open] summary::after{transform:rotate(45deg)}
+    .faq-answer{
+      color:var(--muted);line-height:1.5;margin-top:12px;
+      padding-top:12px;border-top:1px solid rgba(255,255,255,.06)
+    }
+
     @media (min-width:768px){
       .nav-toggle{display:none}
       .nav-menu{
@@ -305,17 +402,28 @@
       }
       .nav-links{flex-direction:row;gap:18px;}
       .nav-cta{flex-direction:row;align-items:center;margin-top:0;}
-      
+
+      .hero-grid{flex-direction:row;align-items:center}
+      .badges{justify-content:flex-start}
       .grid-3{display:grid;grid-template-columns:repeat(3,1fr)}
       .form-grid{grid-template-columns:1fr 1fr;gap:20px}
       .form-group.full-width{grid-column:1 / -1}
+      .packages{display:grid;grid-template-columns:repeat(3,1fr)}
     }
-    
+
     @media (max-width:420px){
       .btn{padding:12px 14px}
       .hero{padding-top:64px}
-      .cross-block{flex-direction:column; text-align:center;}
       .lead-form{padding:24px}
+      .book-plug {flex-direction: column; text-align: center;}
+    }
+
+    @media (max-width:767px){
+      .hero-card{display:none}
+      .hero-grid div:first-child{text-align:center}
+      .hero-grid div:first-child .lead{text-align:center}
+      .hero-grid div:first-child div[style*="display:flex"]{justify-content:center}
+      .packages{flex-direction:column}
     }
   </style>
     
@@ -343,8 +451,8 @@
         </div>
 
         <div class="nav-cta">
-          <a class="btn" href="#services">Services</a>
-          <a class="btn btn-primary" href="#contact">Book audit</a>
+          <a class="btn" href="#expertise">Why us</a>
+          <a class="btn btn-primary" href="#audit-form">Book Discovery</a>
         </div>
       </div>
     </div>
@@ -355,23 +463,38 @@
     <div class="container">
       <ol>
         <li><a href="/">Home</a></li>
-        <li>Consulting</li>
+        <li>B2B Sales Consulting & RevOps</li>
       </ol>
     </div>
   </nav>
 
   <header class="hero">
-    <div class="container hero-inner reveal">
-      <span class="eyebrow">B2B Sales Negotiation</span>
-      <h1>Close High-Ticket Deals on Your Terms</h1>
-      <p class="lead">
-        Strategic consulting for founders and sales leaders. We help you navigate complex B2B deals, 
-        avoid price wars, and sign contracts without leaving money on the table.
-      </p>
-      
-      <div style="display:flex; gap:12px; margin-top:16px; flex-wrap:wrap; justify-content:center;">
-        <a class="btn btn-primary btn-pulse" href="#contact">Book a free discovery</a>
-        <a class="btn" href="#services">See services</a>
+    <div class="container">
+      <div class="reveal" style="display:flex; flex-direction:column; align-items:center; text-align:center; max-width:800px; margin:0 auto;">
+        
+        <div class="hero-badge-orange">
+          <span style="width:6px; height:6px; background:#000; border-radius:50%; opacity:0.6"></span>
+          Accepting New Clients for Q1 2026
+        </div>
+
+        <div style="font-size:20px; color:var(--muted); font-weight:600; margin-bottom:12px;">
+          15 Years of B2B Sales & RevOps
+        </div>
+        
+        <h1 style="font-size:clamp(42px, 7vw, 76px); line-height:1.05; margin:0 0 24px;">
+          Close High-Ticket Deals<br />
+          <span style="background:linear-gradient(90deg, #6FD2FF, #7CF5C6); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">On Your Terms</span>
+        </h1>
+        
+        <p class="lead" style="margin-bottom:32px;">
+          Stop losing margin to price wars. From <strong>heavy machinery</strong> and <strong>real estate</strong> to <strong>SaaS</strong> and <strong>Fintech</strong>, we use <strong>RevOps methodology</strong> to align your marketing and sales—fixing the leaks in your pipeline.
+        </p>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center">
+          <a class="btn btn-primary" href="#audit-form">Analyze my pipeline</a>
+          <a class="btn" href="#expertise">See our experience</a>
+        </div>
+
       </div>
     </div>
   </header>
@@ -379,101 +502,178 @@
   <section class="section">
     <div class="container grid-3 reveal">
       <div class="card">
-        <h3>Deals Get Stuck</h3>
-        <p class="muted">You have leads, but they stall at the "decision" stage for months. We unblock them by finding the real decision-maker and changing the frame.</p>
+        <h3>The Silo Trap</h3>
+        <p class="muted">Marketing generates leads, Sales complains they are "junk", and Success fights churn alone. We break these silos using RevOps methodology.</p>
+        <ul class="list">
+          <li><span class="li-dot"></span><span>Unaligned KPIs cost revenue</span></li>
+          <li><span class="li-dot"></span><span>Customer data gets lost in handoffs</span></li>
+        </ul>
       </div>
       <div class="card">
-        <h3>Price Pressure</h3>
-        <p class="muted">Procurement demands a discount. We give you the scripts and structure to defend your margin and trade variables instead of price.</p>
+        <h3>Stalled High-Ticket Deals</h3>
+        <p class="muted">Your pipeline is full, but deals hang in "decision pending" for months. We provide the strategy to reach the real decision-maker.</p>
+        <ul class="list">
+          <li><span class="li-dot"></span><span>Stop chasing; start leading</span></li>
+          <li><span class="li-dot"></span><span>Disqualify bad leads faster</span></li>
+        </ul>
       </div>
       <div class="card">
-        <h3>Leaky Pipeline</h3>
-        <p class="muted">Your team is busy but revenue isn't growing. We audit your process to stop you from chasing bad deals and focus on the winners.</p>
+        <h3>Discounting to Win</h3>
+        <p class="muted">When you don't control the frame, price becomes the only variable. We teach your team to trade value, not margin.</p>
+        <ul class="list">
+          <li><span class="li-dot"></span><span>Protect your profit margins</span></li>
+          <li><span class="li-dot"></span><span>Negotiate terms, not just price</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="expertise" class="section" style="background:var(--soft);">
+    <div class="container">
+      <h2 class="reveal">15+ Years of Hard B2B Experience</h2>
+      <p class="muted reveal" style="text-align:center; max-width:800px; margin:0 auto;">
+        We are not theorists. We have sold everything from excavators to algorithms. Our approach works because it adapts to the complexity of your product, not the other way around.
+      </p>
+      
+      <div class="grid-3" style="margin-top:40px;">
+        <div class="card reveal">
+          <h3>Heavy Industry & Construction</h3>
+          <p class="muted">We know how to sell complex equipment, manage long tender cycles, and deal with technical procurement departments.</p>
+        </div>
+        <div class="card reveal">
+          <h3>SaaS & Fintech</h3>
+          <p class="muted">From startups to scale-ups. We understand recurring revenue models (ARR/MRR), churn reduction, and product-led growth.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Luxury & Investment</h3>
+          <p class="muted">High-net-worth individuals require a different touch. We have direct experience in premium real estate, yachts, aviation, and other luxury assets.</p>
+        </div>
+      </div>
+      
+      <div class="reveal" style="text-align:center; margin-top:24px;">
+        <div class="industry-tags">
+          <span class="i-tag">Heavy Machinery</span>
+          <span class="i-tag">Construction Equipment</span>
+          <span class="i-tag">Fintech</span>
+          <span class="i-tag">SaaS</span>
+          <span class="i-tag">AI & Neural Networks</span>
+          <span class="i-tag">Cybersecurity</span>
+          <span class="i-tag">MedTech</span>
+          <span class="i-tag">Green Energy</span>
+          <span class="i-tag">Aerospace</span>
+          <span class="i-tag">Luxury Real Estate</span>
+          <span class="i-tag">Investment Assets</span>
+          <span class="i-tag">IT Consulting</span>
+          <span class="i-tag">Logistics & Transport</span>
+        </div>
+      </div>
+      
+      <div class="book-plug reveal">
+        <img src="/assets/img/helicopter-cover.png" alt="Book Cover" style="background:#fff;">
+        <div>
+          <h3>Our Methodology: "How to Sell a Helicopter"</h3>
+          <p class="muted">
+            We literally wrote the playbook on complex B2B sales. Our consulting is based on a proven framework that prioritizes business value over sales tricks.
+          </p>
+          <a href="/helicopter/" style="color:var(--brand); font-weight:600; font-size:14px; margin-top:8px; display:inline-block;">Read more about the book ›</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section id="services" class="section">
     <div class="container">
-      <h2 class="reveal">How we can help</h2>
-      <p class="muted reveal" style="text-align:center; max-width: 600px; margin: 0 auto 32px;">
-        Flexible formats depending on your situation: from emergency help with one deal to building a scalable sales system.
-      </p>
-
-      <div class="grid-3 reveal">
-        <!-- Card 1 -->
-        <div class="card">
-          <div class="card-icon">🚑</div>
-          <h3>Emergency Deal Review</h3>
-          <p class="muted" style="margin-bottom:16px; font-size:15px; line-height:1.5;">
-            One critical deal is stuck or heating up. The stakes are high. We dive in to save it.
-          </p>
-          <ul class="list">
-            <li><span class="li-dot"></span><span>Analysis of stakeholders and correspondence</span></li>
-            <li><span class="li-dot"></span><span>Strategy for the next meeting</span></li>
-            <li><span class="li-dot"></span><span>Specific scripts and questions to ask</span></li>
+      <h2 class="reveal">Consulting Packages</h2>
+      <p class="muted reveal" style="text-align:center">From emergency deal rescue to full-scale RevOps architecture</p>
+    
+      <div class="packages">
+        <div class="package-card reveal">
+          <h3 class="package-title">Deal Rescue</h3>
+          <div class="package-price">$900 <span class="sub">/ session</span></div>
+          <p class="package-subtitle">Emergency support for a critical negotiation</p>
+          <ul class="package-features list">
+            <li><span class="li-dot"></span><span>1.5-hour deep dive into one specific deal</span></li>
+            <li><span class="li-dot"></span><span>Stakeholder analysis & strategy map</span></li>
+            <li><span class="li-dot"></span><span>Exact scripts for the next meeting</span></li>
+            <li><span class="li-dot"></span><span>"Unstuck" strategy for stalled leads</span></li>
           </ul>
-          <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="selectService('review')">Book Review</button>
+          <div class="package-cta">
+            <button class="btn btn-primary" onclick="selectPackage(event, 'Rescue')">Book Session</button>
+          </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="card">
-          <div class="card-icon">🏗️</div>
-          <h3>Pipeline & Process Audit</h3>
-          <p class="muted" style="margin-bottom:16px; font-size:15px; line-height:1.5;">
-            You want to scale, but the process is chaotic. We fix the system.
-          </p>
-          <ul class="list">
-            <li><span class="li-dot"></span><span>Audit of your CRM and sales stages</span></li>
-            <li><span class="li-dot"></span><span>Identifying bottlenecks and conversion drops</span></li>
-            <li><span class="li-dot"></span><span>Action plan to increase throughput</span></li>
+        <div class="package-card popular reveal">
+          <div class="package-badge">Most Popular</div>
+          <h3 class="package-title">RevOps Audit</h3>
+          <div class="package-price">$2,500 <span class="sub">/ one-time</span></div>
+          <p class="package-subtitle">Full diagnostic of your Sales & Marketing engine</p>
+          <ul class="package-features list">
+            <li><span class="li-dot"></span><span>End-to-end customer journey analysis</span></li>
+            <li><span class="li-dot"></span><span>Audit of CRM, Tools, and Automations</span></li>
+            <li><span class="li-dot"></span><span>Identification of revenue leaks</span></li>
+            <li><span class="li-dot"></span><span>Actionable Roadmap to +30% growth</span></li>
+            <li><span class="li-dot"></span><span>1 month follow-up support</span></li>
           </ul>
-          <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="selectService('audit')">Request Audit</button>
+          <div class="package-cta">
+            <button class="btn btn-primary btn-pulse" onclick="selectPackage(event, 'Audit')">Get Audit</button>
+          </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="card">
-          <div class="card-icon">🤝</div>
-          <h3>Shadow Negotiation</h3>
-          <p class="muted" style="margin-bottom:16px; font-size:15px; line-height:1.5;">
-            Ongoing support for a series of high-stakes negotiations (e.g. enterprise sales, M&A).
-          </p>
-          <ul class="list">
-            <li><span class="li-dot"></span><span>Pre-flight prep before every call</span></li>
-            <li><span class="li-dot"></span><span>Debriefing and course correction</span></li>
-            <li><span class="li-dot"></span><span>We act as your behind-the-scenes partner</span></li>
+        <div class="package-card reveal">
+          <h3 class="package-title">Fractional VP</h3>
+          <div class="package-price">$5,000+ <span class="sub">/ month</span></div>
+          <p class="package-subtitle">Ongoing leadership and shadow negotiation</p>
+          <ul class="package-features list">
+            <li><span class="li-dot"></span><span>We act as your RevOps / Sales Director</span></li>
+            <li><span class="li-dot"></span><span>Weekly pipeline reviews with your team</span></li>
+            <li><span class="li-dot"></span><span>Shadow negotiation on big tickets</span></li>
+            <li><span class="li-dot"></span><span>Hiring & Onboarding support</span></li>
+            <li><span class="li-dot"></span><span>KPI system implementation</span></li>
           </ul>
-          <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="selectService('shadow')">Apply Now</button>
+          <div class="package-cta">
+            <button class="btn btn-primary" onclick="selectPackage(event, 'Retainer')">Apply for Partnership</button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section id="cases" class="section">
     <div class="container reveal">
-      <div class="cross-block">
-        <img src="/assets/img/helicopter-cover.png" alt="Book cover" class="cross-img">
-        <div style="flex:1">
-          <h3 style="margin:0 0 8px; font-size:18px;">Our Methodology</h3>
-          <p class="muted" style="margin:0; font-size:14px; line-height:1.5;">
-            Our consulting approach is based on the "How to Sell a Helicopter" playbook. 
-            It avoids manipulation and "sales tricks", focusing instead on deal mechanics, risk management, and status alignment.
-          </p>
+      <h2 style="text-align:center">Client Wins</h2>
+      <div class="grid-3" style="margin-top:24px;">
+        <div class="card">
+          <div class="case-icon" style="font-size:32px; margin-bottom:12px">🏗️</div>
+          <h3>Industrial Equipment Manufacturer</h3>
+          <p class="muted"><strong>Challenge:</strong> 18-month sales cycles and constant price wars.</p>
+          <p class="muted"><strong>Result:</strong> Implemented qualification gates. Reduced cycle to 9 months and protected 15% margin.</p>
         </div>
-        <a href="/helicopter/" class="btn" style="flex-shrink:0;">Read the Book</a>
+        <div class="card">
+          <div class="case-icon" style="font-size:32px; margin-bottom:12px">💻</div>
+          <h3>Fintech SaaS (Series B)</h3>
+          <p class="muted"><strong>Challenge:</strong> Marketing and Sales were fighting over lead quality.</p>
+          <p class="muted"><strong>Result:</strong> Built a unified RevOps SLA. Conversion from Demo to Close increased by 22% in quarter one.</p>
+        </div>
+        <div class="card">
+          <div class="case-icon" style="font-size:32px; margin-bottom:12px">🏢</div>
+          <h3>Commercial Real Estate</h3>
+          <p class="muted"><strong>Challenge:</strong> Deals stalling at the contract phase.</p>
+          <p class="muted"><strong>Result:</strong> Redesigned the negotiation framework. Closed a stagnant $12M asset deal within 3 weeks of consulting.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
-    <div class="container reveal">
-      <h2 style="text-align:center; margin-bottom:12px;">Discuss your situation</h2>
-      <p class="muted" style="text-align:center; margin-bottom:32px; max-width:600px; margin-left:auto; margin-right:auto;">
-        Fill out the form below. We will review your case and suggest the best format to move forward.
+  <section id="audit-form" class="section">
+    <div class="container">
+      <h2 class="reveal">Discuss Your Situation</h2>
+      <p class="muted reveal" style="text-align:center; margin-bottom:32px">
+        Fill out the form. We will analyze your case and determine if we are the right fit to help.
       </p>
 
-      <form class="lead-form" action="https://formspree.io/f/mqardokd" method="POST">
-        <input type="hidden" id="service" name="service" value="">
+      <!-- Using the specific Formspree endpoint for consulting -->
+      <form class="lead-form reveal" action="https://formspree.io/f/mqardokd" method="POST">
+        <input type="hidden" id="package" name="package" value="">
       
         <div class="form-grid">
           <div class="form-group">
@@ -487,46 +687,95 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label" for="service-select">Interested in</label>
-            <select class="form-select" id="service-select" name="service-visible" onchange="document.getElementById('service').value=this.value">
-              <option value="review">Emergency Deal Review</option>
-              <option value="audit">Pipeline Audit</option>
-              <option value="shadow">Shadow Negotiation</option>
-              <option value="other">Other / Not sure</option>
+            <label class="form-label" for="niche">Industry</label>
+            <input class="form-input" type="text" id="niche" name="niche" placeholder="e.g. SaaS, Construction, Real Estate">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="revenue">Current Annual Revenue</label>
+            <select class="form-select" id="revenue" name="revenue">
+              <option value="">Select range</option>
+              <option value="<1M">Pre-Revenue / &lt;$1M</option>
+              <option value="1M-5M">$1M - $5M</option>
+              <option value="5M-20M">$5M - $20M</option>
+              <option value="20M+">$20M+</option>
             </select>
           </div>
 
           <div class="form-group full-width">
-            <label class="form-label" for="comment">Context</label>
-            <textarea class="form-textarea" id="comment" name="comment" placeholder="Briefly describe what you are selling and the current challenge..." required></textarea>
+            <label class="form-label" for="comment">What is the biggest bottleneck right now?</label>
+            <textarea class="form-textarea" id="comment" name="comment" placeholder="e.g. Leads are low quality, or we can't close big enterprise deals..." required></textarea>
           </div>
 
           <div class="form-group full-width">
-            <button class="btn btn-primary form-submit btn-pulse" type="submit">Submit Request</button>
+            <button class="btn btn-primary form-submit btn-pulse" type="submit">Request Discovery Call</button>
           </div>
         </div>
       </form>
     </div>
   </section>
 
-  <footer class="footer">
-    <div class="container" style="text-align:center">
-      <div style="display:flex; align-items:center; gap:10px; justify-content:center">
-        <div class="logo-badge" style="width:28px;height:28px" role="img" aria-label="Salebots logo"></div>
-        <div>© <span id="y"></span> Salebots — sales automation & playbooks</div>
+  <section id="faq" class="section">
+    <div class="container">
+      <h2 class="reveal">FAQ</h2>
+
+      <div class="faq-item reveal">
+        <details>
+          <summary>What exactly is RevOps?</summary>
+          <div class="faq-answer">
+            Revenue Operations (RevOps) is the alignment of marketing, sales, and customer success operations across the full customer life cycle. Instead of these departments working in silos, we unify their data, processes, and KPIs to drive predictable revenue growth.
+          </div>
+        </details>
       </div>
 
-      <div class="muted" style="margin-top:8px">
-        Bali • Working worldwide • Chatbots and sales systems
+      <div class="faq-item reveal">
+        <details>
+          <summary>Do you offer standard sales training?</summary>
+          <div class="faq-answer">
+            We don't do generic "motivation" training. We do strategic consulting and tactical workshops. We build the system and teach your team how to operate within it to close complex deals.
+          </div>
+        </details>
       </div>
 
-      <div class="footer-contacts" style="margin-top:16px">
-        <a class="footer-contact" href="https://t.me/avtohtonny" target="_blank" rel="noopener">Telegram</a>
-        <a class="footer-contact" href="https://wa.me/66836840045" target="_blank" rel="noopener">WhatsApp</a>
-        <a class="footer-contact" href="mailto:hello@salebots.org">Email</a>
+      <div class="faq-item reveal">
+        <details>
+          <summary>My industry is very specific (e.g. Heavy Machinery). Can you help?</summary>
+          <div class="faq-answer">
+            Yes. With 15 years of experience ranging from heavy construction equipment to intangible fintech assets, we understand that the *principles* of high-ticket B2B sales remain constant, even if the technical specs change. We adapt to your niche.
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-item reveal">
+        <details>
+          <summary>How fast can we see results?</summary>
+          <div class="faq-answer">
+            For "Deal Rescue", results are immediate (strategy for the next call). For RevOps audits, we usually identify "low hanging fruit" changes that impact revenue within the first 30 days.
+          </div>
+        </details>
       </div>
     </div>
-  </footer>
+  </section>
+
+  <footer class="footer">
+  <div class="container" style="text-align:center">
+    <div style="display:flex; align-items:center; gap:10px; justify-content:center">
+      <div class="logo-badge" style="width:28px;height:28px;flex-shrink:0" role="img" aria-label="Salebots logo"></div>
+      <div>© <span id="y"></span> Salebots — Sales Consulting & Automation</div>
+    </div>
+
+    <div class="muted" style="margin-top:8px">
+      Bali • Working worldwide • B2B Sales Experts
+    </div>
+
+    <div class="footer-contacts" style="margin-top:16px">
+      <a class="footer-contact" href="https://t.me/avtohtonny" target="_blank" rel="noopener">Telegram</a>
+      <a class="footer-contact" href="https://wa.me/66836840045" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="footer-contact" href="mailto:hello@salebots.org">Email</a>
+    </div>
+
+  </div>
+</footer>
 
   <script>
     // Reveal on scroll
@@ -535,6 +784,20 @@
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
     }, observerOptions);
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Package selection
+    function selectPackage(e, packageName) {
+      document.getElementById('package').value = packageName;
+      document.getElementById('audit-form').scrollIntoView({ behavior: 'smooth' });
+      document.querySelectorAll('.package-card').forEach(card => {
+        card.style.transform = 'scale(1)'; card.style.boxShadow = 'var(--shadow)';
+      });
+      const selectedCard = e.target.closest('.package-card');
+      if (selectedCard) {
+        selectedCard.style.transform = 'scale(1.02)';
+        selectedCard.style.boxShadow = '0 25px 70px rgba(111,210,255,.4), inset 0 1px 0 rgba(255,255,255,.08)';
+      }
+    }
 
     // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
@@ -547,32 +810,6 @@
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
-
-    // Nav toggle
-    document.addEventListener('DOMContentLoaded', function(){
-      var toggle = document.querySelector('.nav-toggle');
-      var menu = document.querySelector('.nav-menu');
-      if (!toggle || !menu) return;
-
-      toggle.addEventListener('click', function(){
-        toggle.classList.toggle('open');
-        menu.classList.toggle('open');
-      });
-
-      menu.querySelectorAll('a').forEach(function(link){
-        link.addEventListener('click', function(){
-          toggle.classList.remove('open');
-          menu.classList.remove('open');
-        });
-      });
-    });
-
-    // Service selection handler
-    function selectService(val) {
-      document.getElementById('service').value = val;
-      document.getElementById('service-select').value = val;
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
 
     // Lead form submit via fetch
     document.querySelector('.lead-form').addEventListener('submit', function(e) {
@@ -593,7 +830,7 @@
             <div style="text-align:center; padding:40px 20px;">
               <div style="font-size:48px; margin-bottom:16px;">🎉</div>
               <h3 style="color:var(--brand); margin:0 0 12px;">Request Received!</h3>
-              <p style="color:var(--muted); margin:0;">We will analyze your case and reach out shortly.</p>
+              <p style="color:var(--muted); margin:0 0 20px;">We will analyze your request and get back to you shortly.</p>
             </div>
           `;
         } else {
@@ -603,10 +840,28 @@
       .catch(() => {
         submitBtn.textContent = 'Try again';
         submitBtn.disabled = false;
-        alert('An error occurred. Please try again or contact us via Telegram.');
+        alert('An error occurred. Please try again or ping us on Telegram.');
+      });
+    });
+
+    // Nav Toggle
+    document.addEventListener('DOMContentLoaded', function(){
+      var toggle = document.querySelector('.nav-toggle');
+      var menu = document.querySelector('.nav-menu');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', function(){
+        toggle.classList.toggle('open');
+        menu.classList.toggle('open');
+      });
+
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          toggle.classList.remove('open');
+          menu.classList.remove('open');
+        });
       });
     });
   </script>
-
 </body>
 </html>
