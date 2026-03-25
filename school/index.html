@@ -182,6 +182,28 @@
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
     .reveal.show{opacity:1;transform:none}
 
+    /* Modal */
+    .modal {
+      display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
+      align-items: center; justify-content: center;
+    }
+    .modal.open { display: flex; }
+    .modal-content {
+      background: var(--card); border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-lg); padding: 32px; width: 90%; max-width: 400px;
+      position: relative; box-shadow: var(--shadow);
+    }
+    .close-modal {
+      position: absolute; top: 16px; right: 20px; color: var(--muted);
+      font-size: 28px; font-weight: bold; cursor: pointer; transition: color .2s; line-height: 1;
+    }
+    .close-modal:hover { color: #fff; }
+
+    /* Tasks Grid */
+    .tasks-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+    .tasks-grid > .step { flex: 1 1 280px; max-width: 100%; }
+
     /* Reviews Carousel */
     .reviews-carousel {
       display: flex; gap: 16px; overflow-x: auto; padding-bottom: 24px;
@@ -203,6 +225,8 @@
       .nav-cta{flex-direction:row;align-items:center;margin-top:0;}
       
       .grid-3{grid-template-columns:repeat(3,1fr)}
+      .tasks-grid > .step { max-width: calc(33.333% - 14px); }
+      .tasks-grid > .step.full-width { max-width: 100%; flex: 1 1 100%; }
       .section{padding:100px 0}
     }
   </style>
@@ -230,33 +254,37 @@
         </div>
 
         <div class="nav-cta">
-          <a class="btn btn-primary" href="#pricing">Начать обучение</a>
+          <a class="btn btn-primary btn-cta" href="#" data-package="Навигация">Начать обучение</a>
         </div>
       </div>
     </div>
   </nav>
 
   <!-- 1. HERO -->
-  <header class="section" style="padding-top: 60px; padding-bottom: 40px;">
+  <header class="section" style="padding-top: 80px; padding-bottom: 60px; text-align: center;">
     <div class="container">
-      <div class="reveal">
-        <span class="badge" style="margin-bottom: 24px; color: var(--brand); border-color: rgba(111,210,255,0.3);">Практическое обучение</span>
-        <h1 style="font-size: clamp(36px, 8vw, 64px); font-weight: 900; line-height: 1.1; margin: 0 0 24px;">Освой AI-автоматизации и начни зарабатывать на них за 2 недели</h1>
-        <p class="lead" style="margin: 0 0 32px; max-width: 800px;">Соберёшь реальных ботов и AI-агентов, которые: отвечают клиентам, автоматизируют работу, находят лидов и приносят деньги.</p>
+      <div class="reveal" style="display: flex; flex-direction: column; align-items: center;">
+        <span class="badge" style="margin-bottom: 24px; color: var(--brand); border-color: rgba(111,210,255,0.3); background: rgba(111,210,255,0.1);">🔥 Практическое обучение</span>
+        <h1 style="font-size: clamp(40px, 8vw, 72px); font-weight: 900; line-height: 1.1; margin: 0 0 24px; max-width: 1000px; background: linear-gradient(135deg, #fff, #a5d8ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          Освой AI-автоматизации и начни зарабатывать на них за 2 недели
+        </h1>
+        <p class="lead" style="margin: 0 0 40px; max-width: 800px; font-size: clamp(18px, 2.5vw, 24px); color: #E9EEF6;">
+          Соберёшь реальных ботов и AI-агентов, которые: <span style="color: var(--brand-2); font-weight: 600;">отвечают клиентам</span>, <span style="color: var(--brand-2); font-weight: 600;">автоматизируют работу</span>, <span style="color: var(--brand-2); font-weight: 600;">находят лидов</span> и <span style="color: var(--brand-2); font-weight: 600;">приносят деньги</span>.
+        </p>
         
-        <ul class="list" style="margin-bottom: 40px; max-width: 600px;">
-          <li><span class="li-dot"></span><span>Боты для соцсетей (Telegram, Instagram, WhatsApp, Авито)</span></li>
-          <li><span class="li-dot"></span><span>AI-ассистенты под задачи бизнеса</span></li>
-          <li><span class="li-dot"></span><span>Автоматизация процессов и продаж</span></li>
-          <li><span class="li-dot"></span><span>Реальные сценарии, не теория</span></li>
+        <ul class="list" style="margin-bottom: 48px; max-width: 600px; text-align: left; display: inline-grid; gap: 16px; font-size: 18px;">
+          <li><span class="li-dot" style="margin-top: 8px;"></span><span>Боты для соцсетей (Telegram, Instagram, WhatsApp, Авито)</span></li>
+          <li><span class="li-dot" style="margin-top: 8px;"></span><span>AI-ассистенты под задачи бизнеса</span></li>
+          <li><span class="li-dot" style="margin-top: 8px;"></span><span>Автоматизация процессов и продаж</span></li>
+          <li><span class="li-dot" style="margin-top: 8px;"></span><span>Реальные сценарии, не теория</span></li>
         </ul>
 
-        <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start;">
-          <a class="btn btn-primary btn-pulse" href="#pricing" style="font-size: 18px; padding: 18px 36px;">Оставить заявку</a>
-          <div style="font-size: 15px; color: var(--muted); line-height: 1.6;">
-            <strong>Старт:</strong> 20 апреля 2026<br>
-            <strong>2 потока:</strong> утренний / вечерний<br>
-            <strong style="color: var(--danger);">Ограничено: 20 мест</strong>
+        <div style="display:flex; flex-direction:column; gap:20px; align-items:center;">
+          <a class="btn btn-primary btn-pulse btn-cta" href="#" data-package="HERO" style="font-size: 20px; padding: 20px 48px; font-weight: 800;">Оставить заявку</a>
+          <div style="font-size: 16px; color: var(--muted); line-height: 1.6; background: rgba(255,255,255,0.03); padding: 16px 32px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
+            <strong style="color: #fff;">Старт:</strong> 20 апреля 2026 <span style="margin: 0 8px; opacity: 0.3;">|</span>
+            <strong style="color: #fff;">2 потока:</strong> утренний / вечерний <span style="margin: 0 8px; opacity: 0.3;">|</span>
+            <strong style="color: var(--danger);">Осталось мест: 5</strong>
           </div>
         </div>
       </div>
@@ -338,7 +366,7 @@
       </div>
 
       <div style="text-align: center; margin-top: 48px;">
-        <a class="btn btn-primary" href="#pricing" style="font-size: 18px; padding: 18px 36px;">Хочу собирать системы</a>
+        <a class="btn btn-primary btn-cta" href="#" data-package="Блок: Решение" style="font-size: 18px; padding: 18px 36px;">Хочу собирать системы</a>
       </div>
     </div>
   </section>
@@ -349,7 +377,7 @@
       <h2 style="margin-bottom: 16px;">Реальные задачи, которые ты реализуешь</h2>
       <p class="lead" style="margin-bottom: 48px;">Понятная теория, разборы кейсов и активная практика.</p>
 
-      <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      <div class="tasks-grid">
         <div class="step">
           <h4 style="margin: 0; font-size: 18px; font-weight: 700;">Бот для ответов клиентам и FAQ</h4>
         </div>
@@ -368,7 +396,7 @@
         <div class="step">
           <h4 style="margin: 0; font-size: 18px; font-weight: 700;">Аналитика и отчёты</h4>
         </div>
-        <div class="step" style="grid-column: 1 / -1; background: rgba(124,245,198,0.05); border-color: rgba(124,245,198,0.2); text-align: center; padding: 32px;">
+        <div class="step full-width" style="background: rgba(124,245,198,0.05); border-color: rgba(124,245,198,0.2); text-align: center; padding: 32px;">
           <h4 style="margin: 0 0 12px; font-size: 24px; font-weight: 800; color: var(--brand-2);">Ассистент под нишу</h4>
           <p class="muted" style="margin:0; font-size: 18px;">Юрист, врач, агент по недвижимости, e-commerce и т.д.</p>
         </div>
@@ -376,7 +404,7 @@
 
       <div style="margin-top: 48px; text-align: center;">
         <h3 style="font-size: 28px; font-weight: 900; color: var(--success); margin: 0 0 24px;">Это задачи, за которые платят.</h3>
-        <a class="btn btn-primary btn-pulse" href="#pricing" style="font-size: 18px; padding: 18px 36px;">Иду на курс</a>
+        <a class="btn btn-primary btn-pulse btn-cta" href="#" data-package="Блок: Реальные задачи" style="font-size: 18px; padding: 18px 36px;">Иду на курс</a>
       </div>
     </div>
   </section>
@@ -421,7 +449,7 @@
 
       <div style="text-align: center; margin-top: 48px;">
         <h3 style="font-size: clamp(28px, 5vw, 40px); font-weight: 900; margin: 0 0 32px;">Навык без продаж = <span style="color: var(--danger);">ноль денег</span></h3>
-        <a class="btn" href="#pricing" style="font-size: 18px; padding: 18px 36px; background: var(--danger); color: #000; border: none; font-weight: 800;">Добавить модуль продаж</a>
+        <a class="btn btn-cta" href="#" data-package="Доп. модуль Продажи" style="font-size: 18px; padding: 18px 36px; background: var(--danger); color: #000; border: none; font-weight: 800;">Добавить модуль продаж</a>
       </div>
     </div>
   </section>
@@ -547,7 +575,7 @@
             <li><span class="li-dot"></span><span>Общий чат</span></li>
           </ul>
 
-          <a class="btn" href="#" style="width: 100%; padding: 16px;">Выбрать</a>
+          <a class="btn btn-cta" href="#" data-package="Пакет: Самостоятельно" style="width: 100%; padding: 16px;">Выбрать</a>
         </div>
 
         <!-- С куратором -->
@@ -584,7 +612,7 @@
             <li style="margin-top: 8px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px;"><span class="li-dot" style="background: var(--brand-2);"></span><span><strong>Бонус:</strong> Подписки на популярные нейросети</span></li>
           </ul>
 
-          <a class="btn btn-primary btn-pulse" href="#" style="width: 100%; padding: 16px;">Занять место</a>
+          <a class="btn btn-primary btn-pulse btn-cta" href="#" data-package="Пакет: С куратором" style="width: 100%; padding: 16px;">Занять место</a>
         </div>
 
         <!-- Персонально -->
@@ -615,7 +643,7 @@
             <li style="margin-top: 8px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px;"><span class="li-dot" style="background: var(--brand-2);"></span><span><strong>Бонус:</strong> Максимальный пакет бонусов</span></li>
           </ul>
 
-          <a class="btn" href="#" style="width: 100%; padding: 16px;">Оставить заявку</a>
+          <a class="btn btn-cta" href="#" data-package="Пакет: Персонально" style="width: 100%; padding: 16px;">Оставить заявку</a>
         </div>
       </div>
 
@@ -626,7 +654,7 @@
           $699 <span style="font-size: 18px; font-weight: 500; color: var(--muted); display: inline-block; vertical-align: middle;">при покупке любого пакета<br>(отдельно — $1499)</span>
         </div>
         <p class="muted" style="max-width: 600px; margin: 0 auto 32px; font-size: 18px;">Интенсив от практиков: поиск клиентов, аутрич, упаковка оффера и закрытие сделок. Практика с реальными лидами.</p>
-        <a class="btn" href="#" style="border-color: var(--danger); color: var(--danger); padding: 16px 32px; font-size: 18px;">Добавить к заказу</a>
+        <a class="btn btn-cta" href="#" data-package="Доп. модуль Продажи (отдельно)" style="border-color: var(--danger); color: var(--danger); padding: 16px 32px; font-size: 18px;">Добавить к заказу</a>
         <p style="font-size: 14px; color: var(--muted); margin-top: 20px; margin-bottom: 0;">Модуль продаж можно пройти отдельно</p>
       </div>
 
@@ -710,7 +738,7 @@
     <div class="container reveal" style="text-align: center; padding: 60px 20px; background: linear-gradient(180deg, rgba(111,210,255,0.05), transparent); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.05);">
       <h2 style="font-size: clamp(36px, 6vw, 64px); margin-bottom: 32px;">Перестань смотреть.<br><span style="color: var(--brand);">Начни собирать.</span></h2>
       
-      <a class="btn btn-primary btn-pulse" href="#pricing" style="font-size: 20px; padding: 20px 48px; margin-bottom: 32px;">Занять место на курсе</a>
+      <a class="btn btn-primary btn-pulse btn-cta" href="#" data-package="Финальный блок" style="font-size: 20px; padding: 20px 48px; margin-bottom: 32px;">Занять место на курсе</a>
       
       <div style="font-size: 18px; color: var(--muted); line-height: 1.6;">
         <strong>Старт:</strong> 20 апреля 2026<br>
@@ -738,6 +766,28 @@
       </div>
     </div>
   </footer>
+
+  <!-- Modal Form -->
+  <div id="leadModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3 style="margin-top:0; font-size: 24px; font-weight: 900; margin-bottom: 8px;">Оставить заявку</h3>
+      <p class="muted" style="margin-bottom: 24px; font-size: 15px;">Заполните форму, и мы свяжемся с вами в ближайшее время.</p>
+      <form action="https://formspree.io/f/xnjoawbp" method="POST" id="leadForm">
+        <input type="hidden" name="package" id="packageInput" value="">
+        <div style="margin-bottom: 16px;">
+          <input type="text" name="name" placeholder="Ваше имя" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none;">
+        </div>
+        <div style="margin-bottom: 16px;">
+          <input type="email" name="email" placeholder="Ваш Email" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none;">
+        </div>
+        <div style="margin-bottom: 24px;">
+          <input type="text" name="telegram" placeholder="Ваш Telegram (опционально)" style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none;">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 18px;">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
 
   <script>
     // Reveal on scroll
@@ -775,6 +825,27 @@
           toggle.classList.remove('open');
           menu.classList.remove('open');
         });
+      });
+
+      // Modal logic
+      const modal = document.getElementById('leadModal');
+      const closeModal = document.querySelector('.close-modal');
+      const packageInput = document.getElementById('packageInput');
+
+      document.querySelectorAll('.btn-cta').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const pkg = btn.getAttribute('data-package') || 'Общая заявка';
+          packageInput.value = pkg;
+          modal.classList.add('open');
+        });
+      });
+
+      if(closeModal) {
+        closeModal.addEventListener('click', () => modal.classList.remove('open'));
+      }
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('open');
       });
     });
   </script>
