@@ -218,6 +218,32 @@
     .review-card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: opacity 0.3s ease; }
     .review-card:hover img { opacity: 1; }
 
+    .carousel-btn {
+      width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.2s ease;
+    }
+    .carousel-btn:hover {
+      background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2);
+    }
+
+    .book-plug {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      text-align: left;
+    }
+    .book-plug img {
+      width: 80px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      border-radius: 4px;
+    }
+    @media (max-width: 500px) {
+      .book-plug { flex-direction: column; text-align: center; }
+    }
+
     @media (min-width:768px){
       .nav-toggle{display:none}
       .nav-menu{position:static;display:flex;flex-direction:row;align-items:center;gap:24px;padding:0;background:none;border-bottom:0;}
@@ -410,46 +436,61 @@
   </section>
 
   <!-- 7. МОДУЛЬ ПРОДАЖ (КЛЮЧЕВОЙ) -->
-  <section class="section" style="background: linear-gradient(180deg, rgba(10,12,16,1) 0%, rgba(20,15,10,1) 100%); border-top: 1px solid rgba(255,139,110,0.2); border-bottom: 1px solid rgba(255,139,110,0.2);">
+  <section class="section" style="background: radial-gradient(circle at 50% 0%, rgba(255,139,110,0.15) 0%, rgba(10,12,16,1) 70%); border-top: 1px solid rgba(255,139,110,0.1); border-bottom: 1px solid rgba(255,139,110,0.1);">
     <div class="container reveal">
-      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-        <span class="badge" style="background: rgba(255,139,110,0.1); color: var(--danger); border-color: rgba(255,139,110,0.3);">Ключевой модуль</span>
-        <h2 style="font-size: clamp(32px, 6vw, 56px); margin: 24px 0 16px;">Почему навык не даёт денег?</h2>
-        <p class="lead" style="margin: 0 auto 40px; font-size: 22px;">Большинство умеет делать.<br><strong style="color: #fff;">Но не умеет продавать.</strong></p>
+      <div style="text-align: center; margin-bottom: 48px;">
+        <span class="badge" style="background: rgba(255,139,110,0.1); color: var(--danger); border-color: rgba(255,139,110,0.3); margin-bottom: 16px;">Ключевой модуль</span>
+        <h2 style="font-size: clamp(36px, 6vw, 64px); font-weight: 900; margin: 0 0 24px; line-height: 1.1;">Почему навык<br><span style="color: var(--danger);">не даёт денег?</span></h2>
+        <p class="lead" style="margin: 0 auto; max-width: 600px; font-size: 22px; color: #E9EEF6;">
+          Большинство умеет делать ботов.<br>Но единицы умеют их <strong style="color: #fff; border-bottom: 2px solid var(--danger);">продавать</strong>.
+        </p>
       </div>
 
-      <div class="card" style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,139,110,0.3); padding: clamp(24px, 5vw, 48px);">
-        <h3 style="font-size: clamp(24px, 4vw, 32px); margin-top: 0; margin-bottom: 16px; color: var(--danger);">Дополнительный интенсивный модуль “Продажи”</h3>
-        <p class="muted" style="margin: 0 0 32px; font-size: 18px;">От сильнейших тренеров крупных международных компаний.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; max-width: 1000px; margin: 0 auto;">
+        <div class="card" style="background: rgba(255,139,110,0.05); border: 1px solid rgba(255,139,110,0.2); padding: 40px;">
+          <h3 style="font-size: 28px; font-weight: 900; margin: 0 0 16px; color: #fff;">Модуль “Продажи”</h3>
+          <p class="muted" style="font-size: 16px; margin: 0 0 32px; line-height: 1.6;">Интенсив от практиков из международных компаний. Учим находить клиентов и закрывать сделки на высокие чеки.</p>
+          
+          <h4 style="font-size: 18px; font-weight: 700; margin: 0 0 16px; color: var(--danger); text-transform: uppercase; letter-spacing: 1px;">Что внутри:</h4>
+          <ul class="list" style="gap: 16px;">
+            <li style="align-items: flex-start;"><span class="li-dot" style="background: var(--danger); margin-top: 6px;"></span><span style="font-size: 16px;">Где брать клиентов</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="background: var(--danger); margin-top: 6px;"></span><span style="font-size: 16px;">Как писать и заходить в диалог</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="background: var(--danger); margin-top: 6px;"></span><span style="font-size: 16px;">Как упаковать предложение</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="background: var(--danger); margin-top: 6px;"></span><span style="font-size: 16px;">Как закрывать сделки</span></li>
+          </ul>
+        </div>
         
-        <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
-          <div>
-            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 20px; color: #fff;">Что внутри:</h4>
-            <ul class="list">
-              <li><span class="li-dot" style="background: var(--danger);"></span><span>Где брать клиентов</span></li>
-              <li><span class="li-dot" style="background: var(--danger);"></span><span>Как писать и заходить в диалог</span></li>
-              <li><span class="li-dot" style="background: var(--danger);"></span><span>Как упаковать предложение</span></li>
-              <li><span class="li-dot" style="background: var(--danger);"></span><span>Как закрывать сделки</span></li>
-            </ul>
-          </div>
-          <div>
-            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 20px; color: #fff;">Практика:</h4>
-            <ul class="list">
-              <li><span class="li-dot" style="background: var(--danger);"></span><span>Собираешь бота для поиска клиентов</span></li>
-              <li><span class="li-dot" style="background: var(--danger);"></span><span>Запускаешь аутрич</span></li>
-              <li><span class="li-dot" style="background: var(--danger);"></span><span>Получаешь первые заявки</span></li>
-              <li style="background: rgba(118,227,158,0.1); padding: 12px; border-radius: 8px; border: 1px solid rgba(118,227,158,0.3);">
-                <span class="li-dot" style="background: var(--success); box-shadow: 0 0 10px var(--success);"></span>
-                <strong style="color: var(--success); font-size: 18px;">Закрываешь первые сделки с куратором!</strong>
-              </li>
-            </ul>
+        <div class="card" style="background: rgba(118,227,158,0.05); border: 1px solid rgba(118,227,158,0.2); padding: 40px; display: flex; flex-direction: column;">
+          <h3 style="font-size: 28px; font-weight: 900; margin: 0 0 16px; color: #fff;">Практика</h3>
+          <p class="muted" style="font-size: 16px; margin: 0 0 32px; line-height: 1.6;">Никакой сухой теории. Ты будешь искать реальных клиентов и продавать им свои услуги прямо во время обучения.</p>
+          
+          <ul class="list" style="gap: 16px; margin-bottom: 32px; flex-grow: 1;">
+            <li style="align-items: flex-start;"><span class="li-dot" style="background: var(--success); margin-top: 6px;"></span><span style="font-size: 16px;">Собираешь бота для поиска клиентов</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="background: var(--success); margin-top: 6px;"></span><span style="font-size: 16px;">Запускаешь аутрич</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="background: var(--success); margin-top: 6px;"></span><span style="font-size: 16px;">Получаешь первые заявки</span></li>
+          </ul>
+          
+          <div style="background: rgba(118,227,158,0.15); padding: 20px; border-radius: 12px; border: 1px solid rgba(118,227,158,0.3); display: flex; align-items: center; gap: 16px;">
+            <div style="font-size: 32px;">🤝</div>
+            <strong style="color: var(--success); font-size: 18px; line-height: 1.4;">Закрываешь первые сделки с куратором!</strong>
           </div>
         </div>
       </div>
 
-      <div style="text-align: center; margin-top: 48px;">
-        <h3 style="font-size: clamp(28px, 5vw, 40px); font-weight: 900; margin: 0 0 32px;">Навык без продаж = <span style="color: var(--danger);">ноль денег</span></h3>
-        <a class="btn btn-cta" href="#" data-package="Доп. модуль Продажи" style="font-size: 18px; padding: 18px 36px; background: var(--danger); color: #000; border: none; font-weight: 800;">Добавить модуль продаж</a>
+      <div class="book-plug reveal" style="max-width: 1000px; margin: 24px auto 0; background: rgba(0,0,0,0.2); border-color: rgba(255,139,110,0.2);">
+        <img src="/assets/img/helicopter-cover.png" alt="Обложка книги Как продать вертолет" style="background:#fff;">
+        <div>
+          <h3 style="font-size: 20px; font-weight: 800; margin: 0 0 8px; color: #fff;">Куратор модуля: Robert Knox</h3>
+          <p class="muted" style="margin: 0; font-size: 16px; line-height: 1.5;">
+            15+ лет в B2B продажах. Автор бестселлера «Как продать вертолет». Учит продавать не фичи ботов, а решение бизнес-задач на высокие чеки.
+          </p>
+          <a href="/helicopter/" style="color:var(--danger); font-weight:600; font-size:14px; margin-top:12px; display:inline-block; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Читать подробнее про книгу ›</a>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 56px;">
+        <h3 style="font-size: clamp(24px, 4vw, 32px); font-weight: 900; margin: 0 0 32px;">Навык без продаж = <span style="color: var(--danger);">ноль денег</span></h3>
+        <a class="btn btn-cta" href="#" data-package="Доп. модуль Продажи" style="font-size: 18px; padding: 20px 48px; background: var(--danger); color: #000; border: none; font-weight: 800; box-shadow: 0 0 30px rgba(255,139,110,0.3);">Добавить модуль продаж</a>
       </div>
     </div>
   </section>
@@ -521,9 +562,19 @@
   <!-- 10. ОТЗЫВЫ -->
   <section class="section">
     <div class="container reveal">
-      <h2 style="text-align: center; margin-bottom: 40px;">Отзывы</h2>
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;">
+        <h2 style="margin: 0;">Отзывы</h2>
+        <div style="display: flex; gap: 12px;">
+          <button class="carousel-btn" id="prev-review" aria-label="Предыдущий отзыв">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <button class="carousel-btn" id="next-review" aria-label="Следующий отзыв">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
       
-      <div class="reviews-carousel">
+      <div class="reviews-carousel" id="reviews-carousel">
         <div class="review-card">
           <img src="https://picsum.photos/seed/salebots1/540/960" alt="Отзыв 1">
         </div>
@@ -569,10 +620,11 @@
             </div>
           </div>
 
+          <div style="font-weight: 800; margin-bottom: 16px; font-size: 18px;">В тариф включено:</div>
           <ul class="list" style="margin-bottom: 32px; flex-grow: 1;">
-            <li><span class="li-dot"></span><span>Доступ к материалам</span></li>
-            <li><span class="li-dot"></span><span>Проходишь в своём темпе</span></li>
-            <li><span class="li-dot"></span><span>Общий чат</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Доступ к материалам</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Проходишь в своём темпе</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Общий чат</span></li>
           </ul>
 
           <a class="btn btn-cta" href="#" data-package="Пакет: Самостоятельно" style="width: 100%; padding: 16px;">Выбрать</a>
@@ -601,15 +653,15 @@
 
           <div style="font-weight: 800; margin-bottom: 16px; font-size: 18px;">В тариф включено:</div>
           <ul class="list" style="margin-bottom: 32px; flex-grow: 1;">
-            <li><span class="li-dot"></span><span>Доступ ко всем урокам</span></li>
-            <li><span class="li-dot"></span><span>Создание AI-ассистентов и агентов для магазина, анализа, продаж, поддержки, CRM</span></li>
-            <li><span class="li-dot"></span><span>10 живых групповых уроков с куратором</span></li>
-            <li><span class="li-dot"></span><span>2 групповых zoom с Robert Knox</span></li>
-            <li><span class="li-dot"></span><span>Постоянная поддержка в закрытом чате</span></li>
-            <li><span class="li-dot"></span><span>Проверка домашних заданий</span></li>
-            <li><span class="li-dot"></span><span>Возможность попасть в базу специалистов</span></li>
-            <li><span class="li-dot"></span><span>Сертификат о прохождении</span></li>
-            <li style="margin-top: 8px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px;"><span class="li-dot" style="background: var(--brand-2);"></span><span><strong>Бонус:</strong> Подписки на популярные нейросети</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Доступ ко всем урокам</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Создание AI-ассистентов и агентов для магазина, анализа, продаж, поддержки, CRM</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>10 живых групповых уроков с куратором</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>2 групповых zoom с Robert Knox</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Постоянная поддержка в закрытом чате</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Проверка домашних заданий</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Возможность попасть в базу специалистов</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Сертификат о прохождении</span></li>
+            <li style="margin-top: 8px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px; align-items: flex-start;"><span class="li-dot" style="background: var(--brand-2); margin-top: 6px;"></span><span><strong>Бонус:</strong> Подписки на популярные нейросети</span></li>
           </ul>
 
           <a class="btn btn-primary btn-pulse btn-cta" href="#" data-package="Пакет: С куратором" style="width: 100%; padding: 16px;">Занять место</a>
@@ -636,11 +688,11 @@
 
           <div style="font-weight: 800; margin-bottom: 16px; font-size: 18px;">В тариф включено:</div>
           <ul class="list" style="margin-bottom: 32px; flex-grow: 1;">
-            <li><span class="li-dot"></span><span><strong>Всё из тарифа «С куратором»</strong></span></li>
-            <li><span class="li-dot"></span><span>1 глубокая персональная консультация по вашему проекту со специалистом команды Robert Knox</span></li>
-            <li><span class="li-dot"></span><span>Отдельный чат с куратором и командой</span></li>
-            <li><span class="li-dot"></span><span>Дополнительно 2 месяца поддержки</span></li>
-            <li style="margin-top: 8px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px;"><span class="li-dot" style="background: var(--brand-2);"></span><span><strong>Бонус:</strong> Максимальный пакет бонусов</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span><strong>Всё из тарифа «С куратором»</strong></span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>1 глубокая персональная консультация по вашему проекту со специалистом команды Robert Knox</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Отдельный чат с куратором и командой</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Дополнительно 2 месяца поддержки</span></li>
+            <li style="margin-top: 8px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px; align-items: flex-start;"><span class="li-dot" style="background: var(--brand-2); margin-top: 6px;"></span><span><strong>Бонус:</strong> Максимальный пакет бонусов</span></li>
           </ul>
 
           <a class="btn btn-cta" href="#" data-package="Пакет: Персонально" style="width: 100%; padding: 16px;">Оставить заявку</a>
@@ -664,28 +716,31 @@
   <!-- 12. ДЛЯ КОГО -->
   <section class="section">
     <div class="container reveal">
-      <h2 style="text-align: center; margin-bottom: 48px;">Кому подойдёт</h2>
+      <h2 style="text-align: center; margin-bottom: 48px;">Кому подойдёт этот курс</h2>
       
-      <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 24px;">
-          <div style="font-size: 32px;">🎯</div>
-          <div style="font-weight: 700; font-size: 18px;">Хочешь зарабатывать на AI</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+        <div class="card" style="padding: 32px; background: rgba(255,255,255,0.02);">
+          <div style="font-size: 40px; margin-bottom: 16px;">🎯</div>
+          <h3 style="font-size: 20px; font-weight: 800; margin: 0 0 12px;">Тем, кто хочет зарабатывать на AI</h3>
+          <p class="muted" style="margin: 0; font-size: 16px; line-height: 1.5;">Освойте востребованный навык и начните брать заказы на создание ботов и автоматизаций.</p>
         </div>
-        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 24px;">
-          <div style="font-size: 32px;">⚙️</div>
-          <div style="font-weight: 700; font-size: 18px;">Хочешь автоматизировать свою работу</div>
+        
+        <div class="card" style="padding: 32px; background: rgba(255,255,255,0.02);">
+          <div style="font-size: 40px; margin-bottom: 16px;">⚙️</div>
+          <h3 style="font-size: 20px; font-weight: 800; margin: 0 0 12px;">Предпринимателям и экспертам</h3>
+          <p class="muted" style="margin: 0; font-size: 16px; line-height: 1.5;">Автоматизируйте рутину, поддержку и продажи в своём бизнесе, чтобы освободить время.</p>
         </div>
-        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 24px;">
-          <div style="font-size: 32px;">😫</div>
-          <div style="font-weight: 700; font-size: 18px;">Устал от рутины</div>
+        
+        <div class="card" style="padding: 32px; background: rgba(255,255,255,0.02);">
+          <div style="font-size: 40px; margin-bottom: 16px;">🚀</div>
+          <h3 style="font-size: 20px; font-weight: 800; margin: 0 0 12px;">Тем, кто ищет быстрый старт</h3>
+          <p class="muted" style="margin: 0; font-size: 16px; line-height: 1.5;">Не нужно учить программирование годами. Вы получите результат и первые проекты уже через пару недель.</p>
         </div>
-        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 24px;">
-          <div style="font-size: 32px;">🚀</div>
-          <div style="font-weight: 700; font-size: 18px;">Хочешь новый навык с быстрым результатом</div>
-        </div>
-        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 24px;">
-          <div style="font-size: 32px;">🔄</div>
-          <div style="font-weight: 700; font-size: 18px;">Хочешь сменить направление</div>
+        
+        <div class="card" style="padding: 32px; background: rgba(255,255,255,0.02);">
+          <div style="font-size: 40px; margin-bottom: 16px;">🔄</div>
+          <h3 style="font-size: 20px; font-weight: 800; margin: 0 0 12px;">Желающим сменить профессию</h3>
+          <p class="muted" style="margin: 0; font-size: 16px; line-height: 1.5;">Войдите в IT через самую трендовую и понятную дверь — создание AI-ассистентов.</p>
         </div>
       </div>
     </div>
@@ -847,6 +902,20 @@
       window.addEventListener('click', (e) => {
         if (e.target === modal) modal.classList.remove('open');
       });
+
+      // Reviews Carousel
+      const carousel = document.getElementById('reviews-carousel');
+      const prevBtn = document.getElementById('prev-review');
+      const nextBtn = document.getElementById('next-review');
+
+      if (carousel && prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+          carousel.scrollBy({ left: -300, behavior: 'smooth' });
+        });
+        nextBtn.addEventListener('click', () => {
+          carousel.scrollBy({ left: 300, behavior: 'smooth' });
+        });
+      }
     });
   </script>
 </body>
