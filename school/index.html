@@ -315,10 +315,26 @@
 
         <div style="display:flex; flex-direction:column; gap:20px; align-items:center;">
           <a class="btn btn-primary btn-pulse btn-cta" href="#" data-package="HERO" style="font-size: 20px; padding: 20px 48px; font-weight: 800;">Оставить заявку</a>
-          <div style="font-size: 16px; color: var(--muted); line-height: 1.6; background: rgba(255,255,255,0.03); padding: 16px 32px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);">
-            <strong style="color: #fff;">Старт:</strong> 20 апреля 2026 <span style="margin: 0 8px; opacity: 0.3;">|</span>
-            <strong style="color: #fff;">2 потока:</strong> утренний / вечерний <span style="margin: 0 8px; opacity: 0.3;">|</span>
-            <strong style="color: var(--danger);">Осталось мест: 5</strong>
+          <style>
+            .hero-info-block {
+              display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; text-align: center;
+              font-size: 16px; color: var(--muted); line-height: 1.6; background: rgba(255,255,255,0.03); padding: 16px 32px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05);
+            }
+            .hero-info-item { white-space: nowrap; }
+            .hero-info-sep { opacity: 0.3; }
+            @media (max-width: 768px) {
+              .hero-info-sep { display: none; }
+              .hero-info-block { flex-direction: column; gap: 8px; padding: 16px; }
+            }
+          </style>
+          <div class="hero-info-block">
+            <span class="hero-info-item"><strong style="color: #fff;">Старт:</strong> 20 апреля 2026</span>
+            <span class="hero-info-sep">|</span>
+            <span class="hero-info-item"><strong style="color: #fff;">2 потока:</strong> утренний / вечерний</span>
+            <span class="hero-info-sep">|</span>
+            <span class="hero-info-item"><strong style="color: #fff;">Малые группы:</strong> по 10 человек</span>
+            <span class="hero-info-sep">|</span>
+            <span class="hero-info-item"><strong style="color: var(--danger);">Осталось мест: 5</strong></span>
           </div>
         </div>
       </div>
@@ -450,7 +466,7 @@
         <span class="badge" style="background: rgba(255,139,110,0.1); color: var(--danger); border-color: rgba(255,139,110,0.3); margin-bottom: 16px;">Ключевой модуль</span>
         <h2 style="font-size: clamp(36px, 6vw, 64px); font-weight: 900; margin: 0 0 24px; line-height: 1.1;">Почему навык<br><span style="color: var(--danger);">не даёт денег?</span></h2>
         <p class="lead" style="margin: 0 auto; max-width: 600px; font-size: 22px; color: #E9EEF6;">
-          Большинство умеет делать ботов.<br>Но единицы умеют их <strong style="color: #fff; border-bottom: 2px solid var(--danger);">продавать</strong>.
+          Многие умеют делать ботов.<br>Но единицы умеют их <strong style="color: #fff; border-bottom: 2px solid var(--danger);">продавать</strong>.
         </p>
       </div>
 
@@ -584,19 +600,19 @@
       
       <div class="reviews-carousel" id="reviews-carousel">
         <div class="review-card">
-          <img src="https://picsum.photos/seed/salebots1/540/960" alt="Отзыв 1">
+          <img src="assets/img/school/reviews_rus/1.png" alt="Отзыв 1" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div class="review-card">
-          <img src="https://picsum.photos/seed/salebots2/540/960" alt="Отзыв 2">
+          <img src="assets/img/school/reviews_rus/2.png" alt="Отзыв 2" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div class="review-card">
-          <img src="https://picsum.photos/seed/salebots3/540/960" alt="Отзыв 3">
+          <img src="assets/img/school/reviews_rus/3.png" alt="Отзыв 3" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div class="review-card">
-          <img src="https://picsum.photos/seed/salebots4/540/960" alt="Отзыв 4">
+          <img src="assets/img/school/reviews_rus/4.png" alt="Отзыв 4" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
         <div class="review-card">
-          <img src="https://picsum.photos/seed/salebots5/540/960" alt="Отзыв 5">
+          <img src="assets/img/school/reviews_rus/5.png" alt="Отзыв 5" style="width: 100%; height: 100%; object-fit: cover;">
         </div>
       </div>
     </div>
@@ -664,6 +680,7 @@
             <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Доступ ко всем урокам</span></li>
             <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Создание AI-ассистентов и агентов для магазина, анализа, продаж, поддержки, CRM</span></li>
             <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>10 живых групповых уроков с куратором</span></li>
+            <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span><strong>Малые группы:</strong> обучение по 10 человек</span></li>
             <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>2 групповых zoom с Robert Knox</span></li>
             <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Постоянная поддержка в закрытом чате</span></li>
             <li style="align-items: flex-start;"><span class="li-dot" style="margin-top: 6px;"></span><span>Проверка домашних заданий</span></li>
@@ -817,6 +834,7 @@
       <div style="font-size: 18px; color: var(--muted); line-height: 1.6;">
         <strong>Старт:</strong> 20 апреля 2026<br>
         <strong>2 потока:</strong> утренний / вечерний<br>
+        <strong>Малые группы:</strong> по 10 человек<br>
         <strong style="color: var(--danger); font-size: 20px; display: inline-block; margin-top: 12px; padding: 8px 16px; background: rgba(255,139,110,0.1); border-radius: 8px;">Осталось мест: 5</strong>
       </div>
     </div>
