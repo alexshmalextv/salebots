@@ -122,6 +122,14 @@
       50%{box-shadow:0 12px 30px rgba(111,210,255,.6),0 0 0 8px rgba(111,210,255,.2)}
       100%{box-shadow:0 12px 30px rgba(111,210,255,.35)}
     }
+    .pulse-danger {
+      animation: pulse-danger 2s infinite;
+    }
+    @keyframes pulse-danger {
+      0% { box-shadow: 0 0 0 0 rgba(255, 139, 110, 0.4); }
+      70% { box-shadow: 0 0 0 15px rgba(255, 139, 110, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 139, 110, 0); }
+    }
 
     .section{padding:60px 0}
     .section h2{font-size:clamp(28px,6vw,48px);font-weight:900;margin:0 0 24px;line-height:1.1}
@@ -597,12 +605,7 @@
   <!-- 11. ЦЕНЫ -->
   <section id="pricing" class="section">
     <div class="container reveal">
-      <h2 style="text-align: center; margin-bottom: 16px;">Форматы и стоимость</h2>
-      <div style="text-align: center; margin-bottom: 48px;">
-        <span style="display: inline-block; padding: 8px 16px; background: rgba(255,139,110,0.1); color: var(--danger); border-radius: 8px; font-weight: 600; font-size: 16px;">
-          Следующий поток стартует 15.06.2026. Ожидается повышение цен.
-        </span>
-      </div>
+      <h2 style="text-align: center; margin-bottom: 48px;">Форматы и стоимость</h2>
       
       <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: stretch;">
         
@@ -713,6 +716,17 @@
         <p class="muted" style="max-width: 600px; margin: 0 auto 32px; font-size: 18px;">Интенсив от практиков: поиск клиентов, аутрич, упаковка оффера и закрытие сделок. Практика с реальными лидами.</p>
         <a class="btn btn-cta" href="#" data-package="Модуль Продажи" style="border-color: var(--danger); color: var(--danger); padding: 16px 32px; font-size: 18px;">Добавить к заказу</a>
         <p style="font-size: 14px; color: var(--muted); margin-top: 20px; margin-bottom: 0;">Модуль продаж можно пройти отдельно</p>
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <div class="pulse-danger" style="display: inline-block; padding: 16px 32px; background: rgba(255,139,110,0.1); border: 1px solid var(--danger); border-radius: 12px;">
+          <div style="color: var(--danger); font-weight: 800; font-size: 18px; margin-bottom: 8px;">
+            Следующий поток стартует 15 июня 2026. Ожидается повышение цен.
+          </div>
+          <div style="color: #fff; font-size: 16px; font-weight: 600;">
+            В потоке на 20 апреля осталось 5 мест.
+          </div>
+        </div>
       </div>
 
     </div>
@@ -834,12 +848,12 @@
       <h3 style="margin-top:0; font-size: 24px; font-weight: 900; margin-bottom: 8px;">Оставить заявку</h3>
       <p class="muted" style="margin-bottom: 24px; font-size: 15px;">Заполните форму, и мы свяжемся с вами в ближайшее время.</p>
       <form action="https://formspree.io/f/xnjoawbp" method="POST" id="leadForm">
-        <div style="margin-bottom: 16px;">
-          <select name="package" id="packageSelect" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none; appearance: none; cursor: pointer;">
-            <option value="Самостоятельно" style="color: #000;">Самостоятельно</option>
-            <option value="С куратором" style="color: #000;">С куратором</option>
-            <option value="Персональный" style="color: #000;">Персональный</option>
-            <option value="Модуль Продажи" style="color: #000;">Модуль Продажи</option>
+        <div style="margin-bottom: 16px; position: relative;">
+          <select name="package" id="packageSelect" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05) url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>') no-repeat right 14px center; color: #fff; font-family: inherit; font-size: 16px; outline: none; appearance: none; cursor: pointer; padding-right: 48px;">
+            <option value="Самостоятельно" style="color: #000;">Самостоятельно ($449)</option>
+            <option value="С куратором" style="color: #000;">С куратором ($799)</option>
+            <option value="Персональный" style="color: #000;">Персональный ($1499)</option>
+            <option value="Модуль Продажи" style="color: #000;">Модуль Продажи ($1499)</option>
           </select>
         </div>
         <div id="salesModuleCheckboxWrapper" style="margin-bottom: 16px; display: none;">
