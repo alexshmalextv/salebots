@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SK0ZK3C8SY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SK0ZK3C8SY');
+  </script>
+  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Обучение AI-автоматизациям и чат-ботам | Salebots</title>
+  <meta name="description" content="Освой AI-автоматизации и начни зарабатывать на них за 2 недели. Практическое обучение созданию ботов и AI-агентов." />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://salebots.org/school/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="120x120" href="/assets/img/favicon-120.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon-180.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Обучение AI-автоматизациям | Salebots" />
+  <meta property="og:description" content="Освой AI-автоматизации и начни зарабатывать на них за 2 недели." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://salebots.org/school/" />
+  <meta property="og:image" content="https://salebots.org/assets/img/og-school.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    
+  <style>
+    :root{
+      --bg:#0A0C10; --card:#10141C; --soft:#161C25;
+      --text:#E9EEF6; --muted:#9FB0C6;
+      --brand:#6FD2FF; --brand-2:#7CF5C6;
+      --danger:#FF8B6E; --success:#76E39E;
+      --gradient: linear-gradient(135deg, rgba(111,210,255,.25), rgba(124,245,198,.15));
+      --glass: rgba(255,255,255,.06);
+      --shadow: 0 20px 60px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.04);
+      --radius:16px; --radius-sm:12px; --radius-lg:24px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;padding:0;
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(111,210,255,.12), transparent),
+        radial-gradient(800px 500px at 90% -20%, rgba(124,245,198,.10), transparent),
+        var(--bg);
+      background-attachment: fixed;
+      color:var(--text);
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      scroll-behavior: smooth;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(1200px,92vw);margin:0 auto}
+
+    .nav{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:saturate(140%) blur(10px);
+      background:linear-gradient(180deg,rgba(10,12,16,.75),rgba(10,12,16,.35));
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav-inner{
+      position:relative;display:flex;align-items:center;justify-content:space-between;padding:16px 0;
+    }
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.5px;}
+    .logo-badge{width:36px;height:36px;border-radius:12px;background:conic-gradient(from 140deg,#6FD2FF,#7CF5C6);box-shadow:0 10px 30px rgba(111,210,255,.35);}
+
+    .nav-toggle{
+      display:inline-flex;flex-direction:column;gap:4px;padding:8px;margin-left:auto;background:transparent;border:0;cursor:pointer;
+    }
+    .nav-toggle span{width:20px;height:2px;border-radius:999px;background:#ffffff;transition:.2s;}
+    .nav-toggle.open span:nth-child(1){transform:translateY(4px) rotate(45deg);}
+    .nav-toggle.open span:nth-child(2){transform:translateY(-4px) rotate(-45deg);}
+
+    .nav-menu{
+      position:absolute;top:100%;right:0;left:0;display:none;flex-direction:column;gap:16px;padding:12px 16px 16px;
+      background:linear-gradient(180deg,rgba(10,12,16,.98),rgba(10,12,16,.94));border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav-menu.open{display:flex;}
+
+    .nav-links{display:flex;flex-direction:column;gap:12px;font-size:14px;color:var(--muted);}
+    .nav-links a{padding:4px 0;position:relative;}
+    .nav-links a::after{
+      content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;
+      background:linear-gradient(90deg,var(--brand),var(--brand-2));transition:width .2s ease;
+    }
+    .nav-links a:hover::after{width:100%}
+    .nav-links a.active{color:#fff}
+    .nav-links a.active::after{width:100%}
+
+    .nav-cta{display:flex;flex-direction:column;gap:8px;align-items:flex-start;margin-top:8px;}
+
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 18px;border-radius:12px;font-weight:700;
+      border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);
+      transition:.25s ease;cursor:pointer;font-size:16px;text-align:center;
+    }
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.12);color:var(--text)}
+    .btn-primary{
+      background:linear-gradient(135deg,#6FD2FF,#7CF5C6);color:#071018;border:none;
+      box-shadow:0 12px 30px rgba(111,210,255,.35)
+    }
+    .btn-primary:hover{
+      filter:brightness(1.1) drop-shadow(0 0 8px rgba(124,245,198,.6));transform:translateY(-2px)
+    }
+    .btn-pulse{animation:pulse 2s infinite}
+
+    @keyframes pulse{
+      0%{box-shadow:0 12px 30px rgba(111,210,255,.35)}
+      50%{box-shadow:0 12px 30px rgba(111,210,255,.6),0 0 0 8px rgba(111,210,255,.2)}
+      100%{box-shadow:0 12px 30px rgba(111,210,255,.35)}
+    }
+
+    .section{padding:60px 0}
+    .section h2{font-size:clamp(28px,6vw,48px);font-weight:900;margin:0 0 24px;line-height:1.1}
+    .lead{font-size:clamp(16px,2vw,20px);color:var(--muted);line-height:1.5}
+    .muted{color:var(--muted)}
+
+    .grid-3{display:grid;gap:20px;grid-template-columns:1fr}
+    .card{
+      background:var(--card);padding:24px;border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)
+    }
+    .card h3{margin:0 0 12px;font-size:22px;font-weight:800}
+    
+    .list{display:grid;gap:12px;margin:0;padding:0}
+    .list li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-size:16px;line-height:1.4}
+    .li-dot{
+      width:8px;height:8px;border-radius:50%;margin-top:6px;
+      background:linear-gradient(135deg,#6FD2FF,#7CF5C6);
+      flex-shrink:0;min-width:8px;min-height:8px
+    }
+
+    .step{
+      background:var(--soft);border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,.08);padding:24px;
+    }
+
+    .badge{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:14px;font-weight:600;padding:8px 16px;
+      border-radius:999px;background:var(--glass);border:1px solid rgba(255,255,255,.1)
+    }
+
+    .faq-item{
+      background:var(--card);border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;margin-bottom:12px;overflow:hidden
+    }
+    .faq-item details{padding:20px}
+    .faq-item summary{
+      font-weight:700;font-size:18px;color:var(--text);cursor:pointer;
+      list-style:none;outline:none;position:relative;padding-right:30px
+    }
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::after{
+      content:'+';position:absolute;right:0;top:0;
+      font-size:24px;font-weight:bold;color:var(--brand);transition:transform .3s ease
+    }
+    .faq-item details[open] summary::after{transform:rotate(45deg)}
+    .faq-answer{
+      color:var(--muted);line-height:1.6;margin-top:16px;font-size:16px;
+      padding-top:16px;border-top:1px solid rgba(255,255,255,.06)
+    }
+
+    .footer{padding:40px 0 60px;color:var(--muted);font-size:14px;text-align:center}
+    .footer-contacts{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:16px}
+    .footer-contact{font-size:14px;opacity:.7;transition:.25s ease}
+    .footer-contact:hover{opacity:1;color:var(--text)}
+
+    .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.show{opacity:1;transform:none}
+
+    /* Reviews Carousel */
+    .reviews-carousel {
+      display: flex; gap: 16px; overflow-x: auto; padding-bottom: 24px;
+      scroll-snap-type: x mandatory; scrollbar-width: none;
+    }
+    .reviews-carousel::-webkit-scrollbar { display: none; }
+    .review-card {
+      flex: 0 0 280px; aspect-ratio: 9/16; background: var(--card);
+      border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.1);
+      scroll-snap-align: start; overflow: hidden; position: relative;
+    }
+    .review-card img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: opacity 0.3s ease; }
+    .review-card:hover img { opacity: 1; }
+
+    @media (min-width:768px){
+      .nav-toggle{display:none}
+      .nav-menu{position:static;display:flex;flex-direction:row;align-items:center;gap:24px;padding:0;background:none;border-bottom:0;}
+      .nav-links{flex-direction:row;gap:24px;}
+      .nav-cta{flex-direction:row;align-items:center;margin-top:0;}
+      
+      .grid-3{grid-template-columns:repeat(3,1fr)}
+      .section{padding:100px 0}
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="logo">
+        <div class="logo-badge" role="img" aria-label="Salebots logo"></div>
+        <span>Salebots</span>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu">
+        <div class="nav-links">
+          <a href="/">Автоматизация</a>
+          <a href="/helicopter/">Как продать вертолет</a>
+          <a href="/consulting/">Консалтинг</a>
+          <a href="/blog/">Блог</a>
+        </div>
+
+        <div class="nav-cta">
+          <a class="btn btn-primary" href="#pricing">Начать обучение</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 1. HERO -->
+  <header class="section" style="padding-top: 60px; padding-bottom: 40px;">
+    <div class="container">
+      <div class="reveal">
+        <span class="badge" style="margin-bottom: 24px; color: var(--brand); border-color: rgba(111,210,255,0.3);">Практическое обучение</span>
+        <h1 style="font-size: clamp(36px, 8vw, 64px); font-weight: 900; line-height: 1.1; margin: 0 0 24px;">Освой AI-автоматизации и начни зарабатывать на них за 2 недели</h1>
+        <p class="lead" style="margin: 0 0 32px; max-width: 800px;">Соберёшь реальных ботов и AI-агентов, которые: отвечают клиентам, автоматизируют работу, находят лидов и приносят деньги.</p>
+        
+        <ul class="list" style="margin-bottom: 40px; max-width: 600px;">
+          <li><span class="li-dot"></span><span>Боты для соцсетей (Telegram, Instagram, WhatsApp, Авито)</span></li>
+          <li><span class="li-dot"></span><span>AI-ассистенты под задачи бизнеса</span></li>
+          <li><span class="li-dot"></span><span>Автоматизация процессов и продаж</span></li>
+          <li><span class="li-dot"></span><span>Реальные сценарии, не теория</span></li>
+        </ul>
+
+        <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start;">
+          <a class="btn btn-primary btn-pulse" href="#pricing" style="font-size: 18px; padding: 18px 36px;">Оставить заявку</a>
+          <div style="font-size: 15px; color: var(--muted); line-height: 1.6;">
+            <strong>Старт:</strong> 20 апреля 2026<br>
+            <strong>2 потока:</strong> утренний / вечерний<br>
+            <strong style="color: var(--danger);">Ограничено: 20 мест</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. ПРОБЛЕМА -->
+  <section class="section" style="background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="container reveal">
+      <h2 style="text-align: center; margin-bottom: 40px;">Почему у большинства не получается</h2>
+      <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 16px;">🤯</div>
+          <p style="margin:0; font-weight: 500;">Куча идей, но нет понимания, с чего начать</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 16px;">📺</div>
+          <p style="margin:0; font-weight: 500;">Смотришь уроки — результата нет</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 16px;">🤖</div>
+          <p style="margin:0; font-weight: 500;">Сделал бота, но он бесполезен</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 16px;">💸</div>
+          <p style="margin:0; font-weight: 500;">Не понимаешь, как на этом зарабатывать</p>
+        </div>
+        <div class="card" style="text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 16px;">🌪️</div>
+          <p style="margin:0; font-weight: 500;">Всё выглядит сложно и хаотично</p>
+        </div>
+      </div>
+      
+      <div style="margin: 40px auto 0; max-width: 600px; padding: 32px; background: rgba(255,139,110,0.05); border-left: 4px solid var(--danger); border-radius: 0 16px 16px 0;">
+        <h3 style="margin: 0 0 8px; color: var(--danger); font-size: 24px; font-weight: 900;">Проблема не в AI.</h3>
+        <p style="margin: 0; font-size: 20px; font-weight: 600;">Проблема в отсутствии системы.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. РАЗРУШЕНИЕ ОЖИДАНИЙ -->
+  <section class="section">
+    <div class="container reveal" style="max-width: 800px; text-align: center;">
+      <h2>AI не делает “всё за тебя”</h2>
+      <p class="lead" style="margin: 0 auto 32px;">Бот — это инструмент. Он решает конкретную задачу:</p>
+      
+      <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 40px;">
+        <span class="badge" style="font-size: 18px; padding: 12px 24px;">Отвечает</span>
+        <span class="badge" style="font-size: 18px; padding: 12px 24px;">Обрабатывает</span>
+        <span class="badge" style="font-size: 18px; padding: 12px 24px;">Анализирует</span>
+        <span class="badge" style="font-size: 18px; padding: 12px 24px;">Продаёт</span>
+      </div>
+
+      <h3 style="font-size: 28px; font-weight: 900; color: var(--brand); margin: 0;">Если нет системы — не будет результата.</h3>
+    </div>
+  </section>
+
+  <!-- 4. РЕШЕНИЕ -->
+  <section class="section" style="background: rgba(111,210,255,0.03);">
+    <div class="container reveal">
+      <h2 style="text-align: center; margin-bottom: 48px;">Ты собираешь не ботов.<br><span style="color: var(--brand);">Ты собираешь систему.</span></h2>
+      
+      <div class="grid-3">
+        <div class="card" style="text-align: center; padding: 40px 24px;">
+          <div style="font-size: 48px; margin-bottom: 24px;">💬</div>
+          <h3>Коммуникация</h3>
+          <p class="muted" style="font-size: 16px; margin: 0;">Боты отвечают клиентам, ведут диалог, записывают на услуги.</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 40px 24px;">
+          <div style="font-size: 48px; margin-bottom: 24px;">⚙️</div>
+          <h3>Операционка</h3>
+          <p class="muted" style="font-size: 16px; margin: 0;">Обрабатывают заявки, документы, рутинные задачи.</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 40px 24px; border-color: var(--brand); background: rgba(111,210,255,0.05);">
+          <div style="font-size: 48px; margin-bottom: 24px;">💰</div>
+          <h3 style="color: var(--brand);">Деньги</h3>
+          <p class="muted" style="font-size: 16px; margin: 0;">Находят клиентов, прогревают и помогают закрывать сделки.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <a class="btn btn-primary" href="#pricing" style="font-size: 18px; padding: 18px 36px;">Хочу собирать системы</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ЧТО ТЫ СДЕЛАЕШЬ -->
+  <section class="section">
+    <div class="container reveal">
+      <h2 style="margin-bottom: 16px;">Реальные задачи, которые ты реализуешь</h2>
+      <p class="lead" style="margin-bottom: 48px;">Понятная теория, разборы кейсов и активная практика.</p>
+
+      <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="step">
+          <h4 style="margin: 0; font-size: 18px; font-weight: 700;">Бот для ответов клиентам и FAQ</h4>
+        </div>
+        <div class="step">
+          <h4 style="margin: 0; font-size: 18px; font-weight: 700;">Бот для приёма заявок и записи</h4>
+        </div>
+        <div class="step">
+          <h4 style="margin: 0; font-size: 18px; font-weight: 700;">AI-ассистент для задач и планирования</h4>
+        </div>
+        <div class="step">
+          <h4 style="margin: 0; font-size: 18px; font-weight: 700;">Бот для поиска клиентов и парсинга</h4>
+        </div>
+        <div class="step">
+          <h4 style="margin: 0; font-size: 18px; font-weight: 700;">Автоматизация контента</h4>
+        </div>
+        <div class="step">
+          <h4 style="margin: 0; font-size: 18px; font-weight: 700;">Аналитика и отчёты</h4>
+        </div>
+        <div class="step" style="grid-column: 1 / -1; background: rgba(124,245,198,0.05); border-color: rgba(124,245,198,0.2); text-align: center; padding: 32px;">
+          <h4 style="margin: 0 0 12px; font-size: 24px; font-weight: 800; color: var(--brand-2);">Ассистент под нишу</h4>
+          <p class="muted" style="margin:0; font-size: 18px;">Юрист, врач, агент по недвижимости, e-commerce и т.д.</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 48px; text-align: center;">
+        <h3 style="font-size: 28px; font-weight: 900; color: var(--success); margin: 0 0 24px;">Это задачи, за которые платят.</h3>
+        <a class="btn btn-primary btn-pulse" href="#pricing" style="font-size: 18px; padding: 18px 36px;">Иду на курс</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. МОДУЛЬ ПРОДАЖ (КЛЮЧЕВОЙ) -->
+  <section class="section" style="background: linear-gradient(180deg, rgba(10,12,16,1) 0%, rgba(20,15,10,1) 100%); border-top: 1px solid rgba(255,139,110,0.2); border-bottom: 1px solid rgba(255,139,110,0.2);">
+    <div class="container reveal">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <span class="badge" style="background: rgba(255,139,110,0.1); color: var(--danger); border-color: rgba(255,139,110,0.3);">Ключевой модуль</span>
+        <h2 style="font-size: clamp(32px, 6vw, 56px); margin: 24px 0 16px;">Почему навык не даёт денег?</h2>
+        <p class="lead" style="margin: 0 auto 40px; font-size: 22px;">Большинство умеет делать.<br><strong style="color: #fff;">Но не умеет продавать.</strong></p>
+      </div>
+
+      <div class="card" style="background: rgba(0,0,0,0.4); border: 1px solid rgba(255,139,110,0.3); padding: clamp(24px, 5vw, 48px);">
+        <h3 style="font-size: clamp(24px, 4vw, 32px); margin-top: 0; margin-bottom: 16px; color: var(--danger);">Дополнительный интенсивный модуль “Продажи”</h3>
+        <p class="muted" style="margin: 0 0 32px; font-size: 18px;">От сильнейших тренеров крупных международных компаний.</p>
+        
+        <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+          <div>
+            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 20px; color: #fff;">Что внутри:</h4>
+            <ul class="list">
+              <li><span class="li-dot" style="background: var(--danger);"></span><span>Где брать клиентов</span></li>
+              <li><span class="li-dot" style="background: var(--danger);"></span><span>Как писать и заходить в диалог</span></li>
+              <li><span class="li-dot" style="background: var(--danger);"></span><span>Как упаковать предложение</span></li>
+              <li><span class="li-dot" style="background: var(--danger);"></span><span>Как закрывать сделки</span></li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size: 20px; font-weight: 800; margin: 0 0 20px; color: #fff;">Практика:</h4>
+            <ul class="list">
+              <li><span class="li-dot" style="background: var(--danger);"></span><span>Собираешь бота для поиска клиентов</span></li>
+              <li><span class="li-dot" style="background: var(--danger);"></span><span>Запускаешь аутрич</span></li>
+              <li><span class="li-dot" style="background: var(--danger);"></span><span>Получаешь первые заявки</span></li>
+              <li style="background: rgba(118,227,158,0.1); padding: 12px; border-radius: 8px; border: 1px solid rgba(118,227,158,0.3);">
+                <span class="li-dot" style="background: var(--success); box-shadow: 0 0 10px var(--success);"></span>
+                <strong style="color: var(--success); font-size: 18px;">Закрываешь первые сделки с куратором!</strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <h3 style="font-size: clamp(28px, 5vw, 40px); font-weight: 900; margin: 0 0 32px;">Навык без продаж = <span style="color: var(--danger);">ноль денег</span></h3>
+        <a class="btn" href="#pricing" style="font-size: 18px; padding: 18px 36px; background: var(--danger); color: #000; border: none; font-weight: 800;">Добавить модуль продаж</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. КАК ПРОХОДИТ ОБУЧЕНИЕ -->
+  <section class="section">
+    <div class="container reveal">
+      <h2 style="text-align: center; margin-bottom: 48px;">Как это происходит</h2>
+      
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 600px; margin: 0 auto;">
+        <div class="step" style="display: flex; align-items: center; gap: 24px; padding: 20px;">
+          <div style="font-size: 32px; font-weight: 900; color: var(--brand); opacity: 0.5; width: 40px; text-align: center;">1</div>
+          <div style="font-size: 18px; font-weight: 600;">Получаешь доступ</div>
+        </div>
+        <div class="step" style="display: flex; align-items: center; gap: 24px; padding: 20px;">
+          <div style="font-size: 32px; font-weight: 900; color: var(--brand); opacity: 0.5; width: 40px; text-align: center;">2</div>
+          <div style="font-size: 18px; font-weight: 600;">Проходишь модули</div>
+        </div>
+        <div class="step" style="display: flex; align-items: center; gap: 24px; padding: 20px;">
+          <div style="font-size: 32px; font-weight: 900; color: var(--brand); opacity: 0.5; width: 40px; text-align: center;">3</div>
+          <div style="font-size: 18px; font-weight: 600;">Делаешь практику по каждому модулю</div>
+        </div>
+        <div class="step" style="display: flex; align-items: center; gap: 24px; padding: 20px;">
+          <div style="font-size: 32px; font-weight: 900; color: var(--brand); opacity: 0.5; width: 40px; text-align: center;">4</div>
+          <div style="font-size: 18px; font-weight: 600;">Получаешь обратную связь</div>
+        </div>
+        <div class="step" style="display: flex; align-items: center; gap: 24px; padding: 20px;">
+          <div style="font-size: 32px; font-weight: 900; color: var(--brand); opacity: 0.5; width: 40px; text-align: center;">5</div>
+          <div style="font-size: 18px; font-weight: 600;">Запускаешь свои решения</div>
+        </div>
+        <div class="step" style="display: flex; align-items: center; gap: 24px; padding: 20px; background: rgba(124,245,198,0.05); border-color: rgba(124,245,198,0.3);">
+          <div style="font-size: 32px; font-weight: 900; color: var(--success); opacity: 0.8; width: 40px; text-align: center;">6</div>
+          <div style="font-size: 18px; font-weight: 700; color: var(--success);">Выходишь на первые продажи (опционально)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. РЕЗУЛЬТАТ -->
+  <section class="section" style="background: rgba(255,255,255,0.02);">
+    <div class="container reveal">
+      <h2 style="text-align: center; margin-bottom: 48px;">Что у тебя будет на выходе</h2>
+      
+      <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="card" style="text-align: center; padding: 32px 24px;">
+          <div style="font-size: 48px; margin-bottom: 20px;">🤖</div>
+          <p style="font-weight: 700; font-size: 20px; margin: 0;">Рабочие боты и автоматизации</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 32px 24px;">
+          <div style="font-size: 48px; margin-bottom: 20px;">🧩</div>
+          <p style="font-weight: 700; font-size: 20px; margin: 0;">Понимание, как собирать их под любую задачу</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 32px 24px;">
+          <div style="font-size: 48px; margin-bottom: 20px;">🧠</div>
+          <p style="font-weight: 700; font-size: 20px; margin: 0;">Системное мышление вместо хаоса</p>
+        </div>
+        <div class="card" style="text-align: center; padding: 32px 24px; border-color: var(--success); background: rgba(118,227,158,0.05);">
+          <div style="font-size: 48px; margin-bottom: 20px;">💵</div>
+          <p style="font-weight: 800; font-size: 20px; color: var(--success); margin: 0;">Первые клиенты и деньги (опционально)</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 48px; text-align: center; padding: 32px; background: linear-gradient(135deg, rgba(111,210,255,0.1), rgba(124,245,198,0.1)); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.1);">
+        <h3 style="margin: 0; font-size: clamp(20px, 4vw, 28px); font-weight: 900;">📜 Выдаётся сертификат по итогам обучения</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. ОТЗЫВЫ -->
+  <section class="section">
+    <div class="container reveal">
+      <h2 style="text-align: center; margin-bottom: 40px;">Отзывы</h2>
+      
+      <div class="reviews-carousel">
+        <div class="review-card">
+          <img src="https://picsum.photos/seed/salebots1/540/960" alt="Отзыв 1">
+        </div>
+        <div class="review-card">
+          <img src="https://picsum.photos/seed/salebots2/540/960" alt="Отзыв 2">
+        </div>
+        <div class="review-card">
+          <img src="https://picsum.photos/seed/salebots3/540/960" alt="Отзыв 3">
+        </div>
+        <div class="review-card">
+          <img src="https://picsum.photos/seed/salebots4/540/960" alt="Отзыв 4">
+        </div>
+        <div class="review-card">
+          <img src="https://picsum.photos/seed/salebots5/540/960" alt="Отзыв 5">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. ЦЕНЫ -->
+  <section id="pricing" class="section">
+    <div class="container reveal">
+      <h2 style="text-align: center; margin-bottom: 48px;">Форматы и стоимость</h2>
+      
+      <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; align-items: stretch;">
+        
+        <!-- Самостоятельно -->
+        <div class="card" style="display: flex; flex-direction: column; padding: 32px;">
+          <h3 style="font-size: 28px; font-weight: 900; margin: 0 0 16px;">Самостоятельно</h3>
+          <div style="font-size: 48px; font-weight: 900; margin-bottom: 24px;">
+            <span style="text-decoration: line-through; opacity: 0.4; font-size: 24px; margin-right: 8px;">$749</span>$449
+          </div>
+          
+          <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 15px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="muted">Уровень:</span> <strong>Абсолютные новички</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="muted">Старт:</span> <strong>В день покупки</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span class="muted">Доступ:</span> <strong>3 месяца</strong>
+            </div>
+          </div>
+
+          <ul class="list" style="margin-bottom: 32px; flex-grow: 1;">
+            <li><span class="li-dot"></span><span>Доступ к материалам</span></li>
+            <li><span class="li-dot"></span><span>Проходишь в своём темпе</span></li>
+            <li><span class="li-dot"></span><span>Общий чат</span></li>
+          </ul>
+
+          <a class="btn" href="#" style="width: 100%; padding: 16px;">Выбрать</a>
+        </div>
+
+        <!-- С куратором -->
+        <div class="card" style="background: linear-gradient(180deg, rgba(111,210,255,0.08), rgba(124,245,198,0.04)); padding: 32px; border: 2px solid var(--brand); display: flex; flex-direction: column; position: relative;">
+          <div style="position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg,#6FD2FF,#7CF5C6); color: #071018; padding: 6px 20px; border-radius: 999px; font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">С куратором</div>
+          
+          <h3 style="font-size: 28px; font-weight: 900; margin: 0 0 16px; margin-top: 8px;">Группа</h3>
+          <div style="font-size: 48px; font-weight: 900; margin-bottom: 24px; color: var(--brand);">
+            <span style="text-decoration: line-through; opacity: 0.4; font-size: 24px; margin-right: 8px; color: var(--text);">+$999</span>$799
+          </div>
+          
+          <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 15px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="muted">Уровень:</span> <strong>Абсолютные новички</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="muted">Старт:</span> <strong>20 апреля 2026</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span class="muted">Доступ:</span> <strong>6 месяцев</strong>
+            </div>
+          </div>
+
+          <div style="font-weight: 800; margin-bottom: 16px; font-size: 18px;">В тариф включено:</div>
+          <ul class="list" style="margin-bottom: 32px; flex-grow: 1;">
+            <li><span class="li-dot"></span><span>Доступ ко всем урокам</span></li>
+            <li><span class="li-dot"></span><span>Создание AI-ассистентов и агентов для магазина, анализа, продаж, поддержки, CRM</span></li>
+            <li><span class="li-dot"></span><span>10 живых групповых уроков с куратором</span></li>
+            <li><span class="li-dot"></span><span>2 групповых zoom с Robert Knox</span></li>
+            <li><span class="li-dot"></span><span>Постоянная поддержка в закрытом чате</span></li>
+            <li><span class="li-dot"></span><span>Проверка домашних заданий</span></li>
+            <li><span class="li-dot"></span><span>Возможность попасть в базу специалистов</span></li>
+            <li><span class="li-dot"></span><span>Сертификат о прохождении</span></li>
+            <li style="margin-top: 8px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px;"><span class="li-dot" style="background: var(--brand-2);"></span><span><strong>Бонус:</strong> Подписки на популярные нейросети</span></li>
+          </ul>
+
+          <a class="btn btn-primary btn-pulse" href="#" style="width: 100%; padding: 16px;">Занять место</a>
+        </div>
+
+        <!-- Персонально -->
+        <div class="card" style="display: flex; flex-direction: column; padding: 32px;">
+          <h3 style="font-size: 28px; font-weight: 900; margin: 0 0 16px;">Персонально</h3>
+          <div style="font-size: 48px; font-weight: 900; margin-bottom: 24px;">
+            <span style="text-decoration: line-through; opacity: 0.4; font-size: 24px; margin-right: 8px;">$2449</span>$1499
+          </div>
+          
+          <div style="margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 15px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="muted">Уровень:</span> <strong>Абсолютные новички</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+              <span class="muted">Старт:</span> <strong>20 апреля 2026</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span class="muted">Доступ:</span> <strong>12 месяцев</strong>
+            </div>
+          </div>
+
+          <div style="font-weight: 800; margin-bottom: 16px; font-size: 18px;">В тариф включено:</div>
+          <ul class="list" style="margin-bottom: 32px; flex-grow: 1;">
+            <li><span class="li-dot"></span><span><strong>Всё из тарифа «С куратором»</strong></span></li>
+            <li><span class="li-dot"></span><span>1 глубокая персональная консультация по вашему проекту со специалистом команды Robert Knox</span></li>
+            <li><span class="li-dot"></span><span>Отдельный чат с куратором и командой</span></li>
+            <li><span class="li-dot"></span><span>Дополнительно 2 месяца поддержки</span></li>
+            <li style="margin-top: 8px; padding: 12px; background: rgba(255,255,255,0.05); border-radius: 8px;"><span class="li-dot" style="background: var(--brand-2);"></span><span><strong>Бонус:</strong> Максимальный пакет бонусов</span></li>
+          </ul>
+
+          <a class="btn" href="#" style="width: 100%; padding: 16px;">Оставить заявку</a>
+        </div>
+      </div>
+
+      <!-- Модуль продаж -->
+      <div style="margin-top: 48px; background: rgba(255,139,110,0.05); border: 1px solid rgba(255,139,110,0.2); border-radius: var(--radius-lg); padding: 40px; text-align: center;">
+        <h3 style="font-size: clamp(24px, 4vw, 32px); font-weight: 900; margin: 0 0 16px; color: var(--danger);">Доп. модуль “Продажи”</h3>
+        <div style="font-size: clamp(32px, 5vw, 48px); font-weight: 900; margin-bottom: 16px;">
+          $699 <span style="font-size: 18px; font-weight: 500; color: var(--muted); display: inline-block; vertical-align: middle;">при покупке любого пакета<br>(отдельно — $1499)</span>
+        </div>
+        <p class="muted" style="max-width: 600px; margin: 0 auto 32px; font-size: 18px;">Интенсив от практиков: поиск клиентов, аутрич, упаковка оффера и закрытие сделок. Практика с реальными лидами.</p>
+        <a class="btn" href="#" style="border-color: var(--danger); color: var(--danger); padding: 16px 32px; font-size: 18px;">Добавить к заказу</a>
+        <p style="font-size: 14px; color: var(--muted); margin-top: 20px; margin-bottom: 0;">Модуль продаж можно пройти отдельно</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 12. ДЛЯ КОГО -->
+  <section class="section">
+    <div class="container reveal">
+      <h2 style="text-align: center; margin-bottom: 48px;">Кому подойдёт</h2>
+      
+      <div class="grid-3" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 24px;">
+          <div style="font-size: 32px;">🎯</div>
+          <div style="font-weight: 700; font-size: 18px;">Хочешь зарабатывать на AI</div>
+        </div>
+        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 24px;">
+          <div style="font-size: 32px;">⚙️</div>
+          <div style="font-weight: 700; font-size: 18px;">Хочешь автоматизировать свою работу</div>
+        </div>
+        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 24px;">
+          <div style="font-size: 32px;">😫</div>
+          <div style="font-weight: 700; font-size: 18px;">Устал от рутины</div>
+        </div>
+        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 24px;">
+          <div style="font-size: 32px;">🚀</div>
+          <div style="font-weight: 700; font-size: 18px;">Хочешь новый навык с быстрым результатом</div>
+        </div>
+        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 24px;">
+          <div style="font-size: 32px;">🔄</div>
+          <div style="font-weight: 700; font-size: 18px;">Хочешь сменить направление</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13. ОГРАНИЧЕНИЕ -->
+  <section class="section" style="background: rgba(255,139,110,0.05);">
+    <div class="container reveal" style="text-align: center;">
+      <h2 style="margin-bottom: 20px; color: var(--danger);">Ограниченное количество мест</h2>
+      <p class="lead" style="margin: 0 auto; max-width: 600px; font-weight: 500;">Количество участников строго ограничено.<br>Работа с кураторами не масштабируется.</p>
+    </div>
+  </section>
+
+  <!-- 14. FAQ -->
+  <section class="section">
+    <div class="container reveal">
+      <h2 style="text-align: center; margin-bottom: 48px;">Вопросы</h2>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="faq-item">
+          <details>
+            <summary>Нужен ли опыт в программировании?</summary>
+            <div class="faq-answer">Нет. Мы используем no-code и low-code инструменты. Главное — логика и понимание бизнес-процессов.</div>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Сколько времени занимает обучение?</summary>
+            <div class="faq-answer">Основная программа рассчитана на 14 рабочих дней плотной практики.</div>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Какие инструменты используются?</summary>
+            <div class="faq-answer">Make (Integromat), n8n, OpenAI (ChatGPT), Flowise, Dify, Telegram Bot API, Google Sheets и другие современные AI/no-code платформы.</div>
+          </details>
+        </div>
+        <div class="faq-item">
+          <details>
+            <summary>Подойдёт ли для моего бизнеса?</summary>
+            <div class="faq-answer">Да, если у вас есть повторяющиеся процессы, рутина или поток клиентов, с которыми нужно общаться.</div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. ФИНАЛЬНЫЙ БЛОК -->
+  <section class="section">
+    <div class="container reveal" style="text-align: center; padding: 60px 20px; background: linear-gradient(180deg, rgba(111,210,255,0.05), transparent); border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,0.05);">
+      <h2 style="font-size: clamp(36px, 6vw, 64px); margin-bottom: 32px;">Перестань смотреть.<br><span style="color: var(--brand);">Начни собирать.</span></h2>
+      
+      <a class="btn btn-primary btn-pulse" href="#pricing" style="font-size: 20px; padding: 20px 48px; margin-bottom: 32px;">Занять место на курсе</a>
+      
+      <div style="font-size: 18px; color: var(--muted); line-height: 1.6;">
+        <strong>Старт:</strong> 20 апреля 2026<br>
+        <strong>2 потока:</strong> утренний / вечерний<br>
+        <strong style="color: var(--danger); font-size: 20px; display: inline-block; margin-top: 12px; padding: 8px 16px; background: rgba(255,139,110,0.1); border-radius: 8px;">Осталось мест: 5</strong>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container" style="text-align:center">
+      <div style="display:flex; align-items:center; gap:10px; justify-content:center">
+        <div class="logo-badge" style="width:28px;height:28px" role="img" aria-label="Salebots logo"></div>
+        <div>© <span id="y"></span> Salebots — обучение автоматизации</div>
+      </div>
+
+      <div class="muted" style="margin-top:12px">
+        Бали • Работаем по всему миру • Чат-боты для бизнеса
+      </div>
+
+      <div class="footer-contacts" style="margin-top:20px">
+        <a class="footer-contact" href="https://t.me/avtohtonny" target="_blank" rel="noopener">Telegram</a>
+        <a class="footer-contact" href="https://wa.me/66836840045" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="footer-contact" href="mailto:hello@salebots.org">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Reveal on scroll
+    const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('show'); });
+    }, observerOptions);
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function(){
+      var toggle = document.querySelector('.nav-toggle');
+      var menu = document.querySelector('.nav-menu');
+      if (!toggle || !menu) return;
+
+      toggle.addEventListener('click', function(){
+        toggle.classList.toggle('open');
+        menu.classList.toggle('open');
+      });
+
+      menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          toggle.classList.remove('open');
+          menu.classList.remove('open');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
