@@ -190,24 +190,6 @@
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
     .reveal.show{opacity:1;transform:none}
 
-    /* Modal */
-    .modal {
-      display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
-      align-items: center; justify-content: center;
-    }
-    .modal.open { display: flex; }
-    .modal-content {
-      background: var(--card); border: 1px solid rgba(255,255,255,.1);
-      border-radius: var(--radius-lg); padding: 32px; width: 90%; max-width: 400px;
-      position: relative; box-shadow: var(--shadow);
-    }
-    .close-modal {
-      position: absolute; top: 16px; right: 20px; color: var(--muted);
-      font-size: 28px; font-weight: bold; cursor: pointer; transition: color .2s; line-height: 1;
-    }
-    .close-modal:hover { color: #fff; }
-
     /* Tasks Grid */
     .tasks-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
     .tasks-grid > .step { flex: 1 1 280px; max-width: 100%; }
@@ -737,11 +719,11 @@
 
       <div style="text-align: center; margin-top: 48px;">
         <div class="pulse-danger" style="display: inline-block; padding: 16px 32px; background: rgba(255,139,110,0.1); border: 1px solid var(--danger); border-radius: 12px;">
-          <div style="color: var(--danger); font-weight: 800; font-size: 18px; margin-bottom: 8px;">
-            Следующий поток стартует 15 июня 2026. Ожидается повышение цен.
-          </div>
-          <div style="color: #fff; font-size: 16px; font-weight: 600;">
+          <div style="color: #fff; font-size: 16px; font-weight: 600; margin-bottom: 8px;">
             В потоке на 20 апреля осталось 5 мест.
+          </div>
+          <div style="color: var(--danger); font-weight: 800; font-size: 18px;">
+            Следующий поток стартует 15 июня 2026. Ожидается повышение цен.
           </div>
         </div>
       </div>
@@ -805,13 +787,13 @@
         <div class="faq-item">
           <details>
             <summary>Сколько времени занимает обучение?</summary>
-            <div class="faq-answer">Основная программа рассчитана на 14 рабочих дней плотной практики.</div>
+            <div class="faq-answer">Основная программа рассчитана на 4 недели плотной теории и практики.</div>
           </details>
         </div>
         <div class="faq-item">
           <details>
             <summary>Какие инструменты используются?</summary>
-            <div class="faq-answer">Make (Integromat), n8n, OpenAI (ChatGPT), Flowise, Dify, Telegram Bot API, Google Sheets и другие современные AI/no-code платформы.</div>
+            <div class="faq-answer">Make, n8n, ChatGPT, Gemini, OpenClaw, Telegram Bot API, Google Sheets и другие современные AI/no-code платформы.</div>
           </details>
         </div>
         <div class="faq-item">
@@ -837,6 +819,37 @@
         <strong>Малые группы:</strong> по 10 человек<br>
         <strong style="color: var(--danger); font-size: 20px; display: inline-block; margin-top: 12px; padding: 8px 16px; background: rgba(255,139,110,0.1); border-radius: 8px;">Осталось мест: 5</strong>
       </div>
+
+      <div id="apply-form" style="max-width: 400px; margin: 48px auto 0; text-align: left; background: var(--card); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow);">
+        <h3 style="margin-top:0; font-size: 24px; font-weight: 900; margin-bottom: 8px;">Оставить заявку</h3>
+        <p class="muted" style="margin-bottom: 24px; font-size: 15px;">Заполните форму, и мы свяжемся с вами в ближайшее время.</p>
+        <form action="https://formspree.io/f/xnjoawbp" method="POST" id="leadForm">
+          <div style="margin-bottom: 16px; position: relative;">
+            <select name="package" id="packageSelect" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05) url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>') no-repeat right 14px center; color: #fff; font-family: inherit; font-size: 16px; outline: none; appearance: none; cursor: pointer; padding-right: 48px;">
+              <option value="Самостоятельно" style="color: #000;">Самостоятельно ($449)</option>
+              <option value="С куратором" style="color: #000;">С куратором ($799)</option>
+              <option value="Персональный" style="color: #000;">Персональный ($1499)</option>
+              <option value="Модуль Продажи" style="color: #000;">Модуль Продажи ($1499)</option>
+            </select>
+          </div>
+          <div id="salesModuleCheckboxWrapper" style="margin-bottom: 16px; display: none;">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 15px;">
+              <input type="checkbox" name="add_sales_module" id="addSalesModule" value="Да" style="width: 18px; height: 18px; accent-color: var(--brand); cursor: pointer;">
+              Добавить модуль продаж (+$699)
+            </label>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <input type="text" name="name" placeholder="Ваше имя" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none;">
+          </div>
+          <div style="margin-bottom: 16px;">
+            <input type="email" name="email" placeholder="Ваш Email" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none;">
+          </div>
+          <div style="margin-bottom: 24px;">
+            <input type="text" name="telegram" placeholder="Ваш Telegram (опционально)" style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none;">
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 18px; border: none; cursor: pointer;">Отправить заявку</button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -858,41 +871,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Modal Form -->
-  <div id="leadModal" class="modal">
-    <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <h3 style="margin-top:0; font-size: 24px; font-weight: 900; margin-bottom: 8px;">Оставить заявку</h3>
-      <p class="muted" style="margin-bottom: 24px; font-size: 15px;">Заполните форму, и мы свяжемся с вами в ближайшее время.</p>
-      <form action="https://formspree.io/f/xnjoawbp" method="POST" id="leadForm">
-        <div style="margin-bottom: 16px; position: relative;">
-          <select name="package" id="packageSelect" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05) url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>') no-repeat right 14px center; color: #fff; font-family: inherit; font-size: 16px; outline: none; appearance: none; cursor: pointer; padding-right: 48px;">
-            <option value="Самостоятельно" style="color: #000;">Самостоятельно ($449)</option>
-            <option value="С куратором" style="color: #000;">С куратором ($799)</option>
-            <option value="Персональный" style="color: #000;">Персональный ($1499)</option>
-            <option value="Модуль Продажи" style="color: #000;">Модуль Продажи ($1499)</option>
-          </select>
-        </div>
-        <div id="salesModuleCheckboxWrapper" style="margin-bottom: 16px; display: none;">
-          <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 15px;">
-            <input type="checkbox" name="add_sales_module" id="addSalesModule" value="Да" style="width: 18px; height: 18px; accent-color: var(--brand); cursor: pointer;">
-            Добавить модуль продаж (+$699)
-          </label>
-        </div>
-        <div style="margin-bottom: 16px;">
-          <input type="text" name="name" placeholder="Ваше имя" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none;">
-        </div>
-        <div style="margin-bottom: 16px;">
-          <input type="email" name="email" placeholder="Ваш Email" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none;">
-        </div>
-        <div style="margin-bottom: 24px;">
-          <input type="text" name="telegram" placeholder="Ваш Telegram (опционально)" style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none;">
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 18px;">Отправить заявку</button>
-      </form>
-    </div>
-  </div>
 
   <script>
     // Reveal on scroll
@@ -932,19 +910,20 @@
         });
       });
 
-      // Modal logic
-      const modal = document.getElementById('leadModal');
-      const closeModal = document.querySelector('.close-modal');
+      // Form logic
       const packageSelect = document.getElementById('packageSelect');
       const salesModuleCheckboxWrapper = document.getElementById('salesModuleCheckboxWrapper');
       const addSalesModule = document.getElementById('addSalesModule');
+      const leadForm = document.getElementById('leadForm');
 
       function updateSalesModuleVisibility() {
-        if (packageSelect.value === 'Модуль Продажи') {
-          salesModuleCheckboxWrapper.style.display = 'none';
-          addSalesModule.checked = false;
-        } else {
-          salesModuleCheckboxWrapper.style.display = 'block';
+        if (packageSelect && salesModuleCheckboxWrapper && addSalesModule) {
+          if (packageSelect.value === 'Самостоятельно' || packageSelect.value === 'С куратором') {
+            salesModuleCheckboxWrapper.style.display = 'block';
+          } else {
+            salesModuleCheckboxWrapper.style.display = 'none';
+            addSalesModule.checked = false;
+          }
         }
       }
 
@@ -964,16 +943,63 @@
             packageSelect.value = pkg;
             updateSalesModuleVisibility();
           }
-          modal.classList.add('open');
+          
+          // Scroll to form
+          const formSection = document.getElementById('apply-form');
+          if (formSection) {
+            formSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Optional: highlight form briefly
+            formSection.style.transition = 'box-shadow 0.3s ease';
+            formSection.style.boxShadow = '0 0 0 2px var(--brand), var(--shadow)';
+            setTimeout(() => {
+              formSection.style.boxShadow = 'var(--shadow)';
+            }, 1500);
+          }
         });
       });
 
-      if(closeModal) {
-        closeModal.addEventListener('click', () => modal.classList.remove('open'));
+      // AJAX form submission
+      if (leadForm) {
+        leadForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          
+          const submitBtn = leadForm.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn.textContent;
+          submitBtn.textContent = 'Отправка...';
+          submitBtn.disabled = true;
+          
+          const formData = new FormData(leadForm);
+          
+          try {
+            const response = await fetch(leadForm.action, {
+              method: leadForm.method,
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
+            
+            if (response.ok) {
+              leadForm.parentElement.innerHTML = `
+                <div style="text-align: center; padding: 40px 0;">
+                  <div style="font-size: 64px; margin-bottom: 16px;">✅</div>
+                  <h3 style="font-size: 28px; font-weight: 900; margin-bottom: 12px;">Спасибо! Заявка отправлена.</h3>
+                  <p style="color: var(--muted); font-size: 16px;">Мы свяжемся с вами в ближайшее время.</p>
+                </div>
+              `;
+            } else {
+              alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
+              submitBtn.textContent = originalBtnText;
+              submitBtn.disabled = false;
+            }
+          } catch (error) {
+            alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
+          }
+        });
       }
-      window.addEventListener('click', (e) => {
-        if (e.target === modal) modal.classList.remove('open');
-      });
 
       // Reviews Carousel
       const carousel = document.getElementById('reviews-carousel');
