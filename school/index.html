@@ -245,6 +245,116 @@
       .tasks-grid > .step.full-width { max-width: 100%; flex: 1 1 100%; }
       .section{padding:100px 0}
     }
+
+    /* Lead Form Styles */
+    .lead-form-wrapper {
+      max-width: 500px;
+      margin: 48px auto 0;
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      text-align: left;
+    }
+    .package-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 480px) {
+      .package-cards { grid-template-columns: 1fr; }
+    }
+    .pkg-card { position: relative; cursor: pointer; }
+    .pkg-card input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .pkg-content {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      height: 100%;
+    }
+    .pkg-card input:checked + .pkg-content {
+      background: rgba(111,210,255,0.1);
+      border-color: var(--brand);
+    }
+    .pkg-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 4px;
+      transition: color 0.2s ease;
+    }
+    .pkg-card input:checked + .pkg-content .pkg-name { color: #fff; }
+    .pkg-price { font-size: 20px; font-weight: 900; color: #fff; }
+    .addon-toggle {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 24px;
+      transition: all 0.3s ease;
+    }
+    .addon-toggle label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      margin: 0;
+    }
+    .addon-info { display: flex; flex-direction: column; }
+    .addon-name { font-size: 15px; font-weight: 600; color: #fff; }
+    .addon-price { font-size: 14px; color: var(--brand); font-weight: 700; }
+    .addon-toggle input { position: absolute; opacity: 0; }
+    .toggle-switch {
+      width: 44px; height: 24px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 24px;
+      position: relative;
+      transition: background 0.3s ease;
+      flex-shrink: 0;
+    }
+    .toggle-switch::after {
+      content: '';
+      position: absolute;
+      top: 2px; left: 2px;
+      width: 20px; height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+    }
+    .addon-toggle input:checked ~ .toggle-switch { background: var(--brand); }
+    .addon-toggle input:checked ~ .toggle-switch::after { transform: translateX(20px); }
+    .total-price-display {
+      font-size: 18px; font-weight: 600; color: var(--muted);
+      margin-bottom: 24px; text-align: right;
+      padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .total-price-display span {
+      font-size: 32px; font-weight: 900; color: #fff;
+      margin-left: 8px; vertical-align: middle;
+    }
+    .form-inputs input {
+      width: 100%; padding: 16px; border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.03);
+      color: #fff; font-family: inherit; font-size: 16px;
+      outline: none; margin-bottom: 12px;
+      transition: border-color 0.2s ease, background 0.2s ease;
+      box-sizing: border-box;
+    }
+    .form-inputs input:focus {
+      border-color: var(--brand); background: rgba(255,255,255,0.05);
+    }
+    .btn-submit {
+      width: 100%; padding: 18px; font-size: 18px;
+      border: none; cursor: pointer; margin-top: 8px;
+      border-radius: 12px; font-weight: 800;
+    }
   </style>
 </head>
 <body>
@@ -784,34 +894,69 @@
         <strong style="color: var(--danger); font-size: 20px; display: inline-block; margin-top: 12px; padding: 8px 16px; background: rgba(255,139,110,0.1); border-radius: 8px;">Осталось мест: 5</strong>
       </div>
 
-      <div id="apply-form" style="max-width: 400px; margin: 48px auto 0; text-align: left; background: var(--card); border: 1px solid rgba(255,255,255,.1); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow);">
-        <h3 style="margin-top:0; font-size: 24px; font-weight: 900; margin-bottom: 8px;">Оставить заявку</h3>
-        <p class="muted" style="margin-bottom: 24px; font-size: 15px;">Заполните форму, и мы свяжемся с вами в ближайшее время.</p>
+      <div id="apply-form" class="lead-form-wrapper">
+        <h3 style="margin-top:0; font-size: 24px; font-weight: 900; margin-bottom: 8px;">Оформить заявку</h3>
+        <p class="muted" style="margin-bottom: 24px; font-size: 15px;">Выберите формат обучения и заполните данные.</p>
+        
         <form action="https://formspree.io/f/xnjoawbp" method="POST" id="leadForm">
-          <div style="margin-bottom: 16px; position: relative;">
-            <select name="package" id="packageSelect" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05) url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'white\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>') no-repeat right 14px center; color: #fff; font-family: inherit; font-size: 16px; outline: none; appearance: none; cursor: pointer; padding-right: 48px;">
-              <option value="Самостоятельно" style="color: #000;">Самостоятельно ($449)</option>
-              <option value="С куратором" style="color: #000;">С куратором ($799)</option>
-              <option value="Персональный" style="color: #000;">Персональный ($1499)</option>
-              <option value="Модуль Продажи" style="color: #000;">Модуль Продажи ($1499)</option>
-            </select>
-          </div>
-          <div id="salesModuleCheckboxWrapper" style="margin-bottom: 16px; display: none;">
-            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; font-size: 15px;">
-              <input type="checkbox" name="add_sales_module" id="addSalesModule" value="Да" style="width: 18px; height: 18px; accent-color: var(--brand); cursor: pointer;">
-              Добавить модуль продаж (+$699)
+          
+          <!-- Package Cards -->
+          <div class="package-cards">
+            <label class="pkg-card">
+              <input type="radio" name="package" value="Самостоятельно" data-price="449" checked>
+              <div class="pkg-content">
+                <span class="pkg-name">Самостоятельно</span>
+                <span class="pkg-price">$449</span>
+              </div>
+            </label>
+            <label class="pkg-card">
+              <input type="radio" name="package" value="С куратором" data-price="799">
+              <div class="pkg-content">
+                <span class="pkg-name">С куратором</span>
+                <span class="pkg-price">$799</span>
+              </div>
+            </label>
+            <label class="pkg-card">
+              <input type="radio" name="package" value="Персональный" data-price="1499">
+              <div class="pkg-content">
+                <span class="pkg-name">Персональный</span>
+                <span class="pkg-price">$1499</span>
+              </div>
+            </label>
+            <label class="pkg-card">
+              <input type="radio" name="package" value="Модуль Продажи" data-price="1499">
+              <div class="pkg-content">
+                <span class="pkg-name">Только продажи</span>
+                <span class="pkg-price">$1499</span>
+              </div>
             </label>
           </div>
-          <div style="margin-bottom: 16px;">
-            <input type="text" name="name" placeholder="Ваше имя" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none;">
+
+          <!-- Add-on Toggle -->
+          <div id="salesModuleWrapper" class="addon-toggle">
+            <label>
+              <div class="addon-info">
+                <span class="addon-name">Добавить модуль продаж</span>
+                <span class="addon-price">+$699</span>
+              </div>
+              <input type="checkbox" name="add_sales_module" id="addSalesModule" value="Да">
+              <div class="toggle-switch"></div>
+            </label>
           </div>
-          <div style="margin-bottom: 16px;">
-            <input type="email" name="email" placeholder="Ваш Email" required style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none;">
+
+          <!-- Total Price -->
+          <div class="total-price-display">
+            Итого: <span id="totalPriceCalc">$449</span>
           </div>
-          <div style="margin-bottom: 24px;">
-            <input type="text" name="telegram" placeholder="Ваш Telegram (опционально)" style="width: 100%; padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.05); color: #fff; font-family: inherit; font-size: 16px; outline: none;">
+
+          <!-- Inputs -->
+          <div class="form-inputs">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="email" name="email" placeholder="Ваш Email" required>
+            <input type="text" name="telegram" placeholder="Ваш Telegram (опционально)">
           </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 16px; font-size: 18px; border: none; cursor: pointer;">Отправить заявку</button>
+
+          <button type="submit" class="btn btn-primary btn-submit">Отправить заявку</button>
         </form>
       </div>
     </div>
@@ -909,25 +1054,48 @@
       });
 
       // Form logic
-      const packageSelect = document.getElementById('packageSelect');
-      const salesModuleCheckboxWrapper = document.getElementById('salesModuleCheckboxWrapper');
+      const packageRadios = document.querySelectorAll('input[name="package"]');
+      const salesModuleWrapper = document.getElementById('salesModuleWrapper');
       const addSalesModule = document.getElementById('addSalesModule');
+      const totalPriceCalc = document.getElementById('totalPriceCalc');
       const leadForm = document.getElementById('leadForm');
 
-      function updateSalesModuleVisibility() {
-        if (packageSelect && salesModuleCheckboxWrapper && addSalesModule) {
-          if (packageSelect.value === 'Самостоятельно' || packageSelect.value === 'С куратором') {
-            salesModuleCheckboxWrapper.style.display = 'block';
-          } else {
-            salesModuleCheckboxWrapper.style.display = 'none';
-            addSalesModule.checked = false;
-          }
+      function updateFormCalculations() {
+        if (!packageRadios.length || !totalPriceCalc) return;
+        
+        let selectedPkg = document.querySelector('input[name="package"]:checked');
+        if (!selectedPkg) return;
+        
+        let basePrice = parseInt(selectedPkg.getAttribute('data-price')) || 0;
+        let pkgValue = selectedPkg.value;
+        
+        // Show/hide addon toggle
+        if (pkgValue === 'Самостоятельно' || pkgValue === 'С куратором' || pkgValue === 'Персональный') {
+          salesModuleWrapper.style.display = 'block';
+        } else {
+          salesModuleWrapper.style.display = 'none';
+          if (addSalesModule) addSalesModule.checked = false;
         }
+
+        let addonPrice = 0;
+        if (addSalesModule && addSalesModule.checked && salesModuleWrapper.style.display !== 'none') {
+          addonPrice = 699;
+        }
+
+        let total = basePrice + addonPrice;
+        totalPriceCalc.textContent = '$' + total;
       }
 
-      if (packageSelect) {
-        packageSelect.addEventListener('change', updateSalesModuleVisibility);
+      packageRadios.forEach(radio => {
+        radio.addEventListener('change', updateFormCalculations);
+      });
+
+      if (addSalesModule) {
+        addSalesModule.addEventListener('change', updateFormCalculations);
       }
+
+      // Initial calculation
+      updateFormCalculations();
 
       document.querySelectorAll('.btn-cta').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -937,9 +1105,11 @@
           if (!validPackages.includes(pkg)) {
             pkg = 'С куратором'; // Default package
           }
-          if (packageSelect) {
-            packageSelect.value = pkg;
-            updateSalesModuleVisibility();
+          
+          let targetRadio = document.querySelector(`input[name="package"][value="${pkg}"]`);
+          if (targetRadio) {
+            targetRadio.checked = true;
+            updateFormCalculations();
           }
           
           // Scroll to form
@@ -949,9 +1119,9 @@
             
             // Optional: highlight form briefly
             formSection.style.transition = 'box-shadow 0.3s ease';
-            formSection.style.boxShadow = '0 0 0 2px var(--brand), var(--shadow)';
+            formSection.style.boxShadow = '0 0 0 2px var(--brand), 0 20px 40px rgba(0,0,0,0.4)';
             setTimeout(() => {
-              formSection.style.boxShadow = 'var(--shadow)';
+              formSection.style.boxShadow = '0 20px 40px rgba(0,0,0,0.4)';
             }, 1500);
           }
         });
