@@ -689,6 +689,103 @@
           </button>
         </div>
       </div>
+
+      <style>
+        .reviews-summary {
+          background: var(--card); border: 1px solid rgba(255,255,255,0.05); border-radius: var(--radius-lg); 
+          padding: 32px; margin-bottom: 40px; display: flex; flex-wrap: wrap; gap: 40px; align-items: center;
+        }
+        .reviews-rating {
+          flex: 1 1 200px; text-align: center;
+        }
+        .reviews-list {
+          flex: 3 1 400px;
+        }
+        @media (min-width: 768px) {
+          .reviews-rating {
+            border-right: 1px solid rgba(255,255,255,0.1);
+            padding-right: 40px;
+          }
+        }
+        .review-highlight-item {
+          display: flex; gap: 12px; align-items: flex-start;
+        }
+        .review-highlight-item svg {
+          flex-shrink: 0; color: var(--brand); width: 20px; height: 20px; margin-top: 2px;
+        }
+        .review-highlight-item span {
+          font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.4;
+        }
+        .review-highlight-item strong {
+          color: #fff; font-weight: 700;
+        }
+      </style>
+
+      <div class="reviews-summary">
+        <div class="reviews-rating">
+          <div style="font-size: 72px; font-weight: 900; line-height: 1; margin-bottom: 12px; background: linear-gradient(135deg, #fff, #a0a0a0); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">4.9</div>
+          <div style="display: flex; justify-content: center; gap: 4px; margin-bottom: 12px; color: #F59E0B;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div style="font-size: 14px; color: var(--muted); font-weight: 500; line-height: 1.4;">из 5 по результатам<br>157 оценок</div>
+        </div>
+
+        <div class="reviews-list">
+          <h4 style="font-size: 18px; font-weight: 800; margin: 0 0 20px; color: #fff;">Ученики выделяют:</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px 24px;">
+            
+            <div class="review-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Чёткая система</strong> вместо хаоса</span>
+            </div>
+            
+            <div class="review-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Быстрое применение:</strong> первые боты уже в процессе обучения</span>
+            </div>
+
+            <div class="review-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Понятное объяснение</strong> без перегруза и лишней теории</span>
+            </div>
+
+            <div class="review-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Постоянная обратная связь</strong> от кураторов</span>
+            </div>
+
+            <div class="review-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Живое и полезное общение</strong> в чате</span>
+            </div>
+
+            <div class="review-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Реальные задачи</strong> из бизнеса, а не “игрушечные” примеры</span>
+            </div>
+
+            <div class="review-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Закрытие первых клиентов</strong> и понимание, как зарабатывать</span>
+            </div>
+
+            <div class="review-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Экономия времени</strong> за счёт автоматизации своих процессов</span>
+            </div>
+
+            <div class="review-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span><strong>Уверенность:</strong> понятно, что делать дальше и как расти</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
       
       <div class="reviews-carousel" id="reviews-carousel">
         <div class="review-card">
